@@ -19,8 +19,8 @@ ApplicationWindow {
             color: "#202020" // szürke háttér a kontraszt miatt
 
             // Szélesség és magasság beállítása
-            width: (parent.width > parent.height ? parent.width * 0.6 : parent.width) // Ha szélesebb, mint magas, akkor 60% a szélesség
-            height: (parent.width > parent.height ? parent.height : parent.height * 0.6) // Ha szélesebb, akkor teljes magasság, máskülönben 60% a magasság
+            width: (scatterSeries.selectedItem < 0 ? parent.width : (parent.width > parent.height ? parent.width * 0.6 : parent.width))
+            height: (parent.width > parent.height ? parent.height : parent.height * 0.6)
 
             // Diagram beállításai
             Scatter3D {
@@ -86,8 +86,8 @@ ApplicationWindow {
             color: "#303030" // sötétszürke háttér
 
             // Szélesség és magasság beállítása
-            width: (parent.width > parent.height ? parent.width * 0.4 : parent.width) // Ha szélesebb, mint magas, akkor 40% a szélesség
-            height: (parent.width > parent.height ? parent.height : parent.height * 0.4) // Ha szélesebb, akkor teljes magasság, máskülönben 40% a magasság
+            width: (parent.width > parent.height ? parent.width * 0.4 : parent.width)
+            height: (parent.width > parent.height ? parent.height : parent.height * 0.4)
 
             Column {
                 anchors.centerIn: parent
