@@ -6,50 +6,101 @@ ApplicationWindow {
     visible: true
     width: 800
     height: 600
+    color: "black"
 
-    Scatter3D {
-        id: scatter
+    // Felső rész: Diagramot tartalmazó Rectangle
+    Rectangle {
+        id: diagramRect
+        anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.bottom: dataRect.top  // alsó Rectangle-hez kapcsolódik
+        height: parent.height * 0.7   // a képernyő 70%-át foglalja el
+        color: "#202020"              // szürke háttér a kontraszt miatt
 
-        anchors.fill: parent
+        Scatter3D {
+            id: scatter
+            anchors.fill: parent
 
-        theme: Theme3D {
-            labelBackgroundEnabled: false
-            gridEnabled: true
-        }
-
-        // Tengelyek beállítása
-        axisX: ValueAxis3D {
-            title: "X"
-            min: -10
-            max: 10
-        }
-        axisY: ValueAxis3D {
-            title: "Y"
-            min: -10
-            max: 10
-        }
-        axisZ: ValueAxis3D {
-            title: "Z"
-            min: -10
-            max: 10
-        }
-
-        Scatter3DSeries {
-            // Adatsorok meghatározása
-            ItemModelScatterDataProxy {
-                itemModel: ListModel {
-                    // Adatok pontként való hozzáadása
-                    ListElement { x: -5; y: 0; z: 5 }
-                    ListElement { x: 0; y: 2; z: -3 }
-                    ListElement { x: 3; y: 7; z: 2 }
-                    ListElement { x: 6; y: 5; z: -6 }
-                    ListElement { x: 1; y: -4; z: 8 }
-                }
-                xPosRole: "x"
-                yPosRole: "y"
-                zPosRole: "z"
+            theme: Theme3D {
+                labelBackgroundEnabled: false
+                gridEnabled: true
             }
-            baseColor: "blue"
+
+            axisX: ValueAxis3D {
+                title: "X"
+                min: -10
+                max: 10
+            }
+            axisY: ValueAxis3D {
+                title: "Y"
+                min: -10
+                max: 10
+            }
+            axisZ: ValueAxis3D {
+                title: "Z"
+                min: -10
+                max: 10
+            }
+
+            Scatter3DSeries {
+                id: scatterSeries
+                ItemModelScatterDataProxy {
+                    itemModel: ListModel {
+                        ListElement { x: -5; y: 0; z: 5; name: "Point A" }
+                        ListElement { x: 0; y: 2; z: -3; name: "Point B" }
+                        ListElement { x: 3; y: 7; z: 2; name: "Point C" }
+                        ListElement { x: 6; y: 5; z: -6; name: "Point D" }
+                        ListElement { x: 1; y: -4; z: 8; name: "Point E" }
+                    }
+                    xPosRole: "x"
+                    yPosRole: "y"
+                    zPosRole: "z"
+                }
+
+                baseColor: "blue"
+
+                // Választott pont eseményének kezelése
+                onSelectedItemChanged: {
+                    if (selectedItem >= 0) {
+                        var item = scatterSeries.dataProxy.itemModel.get(selectedItem)
+                        selectedName.text = "Name: " + item.name
+                        selectedCoords.text = "Coordinates: (" + item.x + ", " + item.y + ", " + item.z + ")"
+                    } else {
+                        selectedName.text = "Name: None"
+                        selectedCoords.text = "Coordinates: (N/A, N/A, N/A)"
+                    }
+                }
+            }
+        }
+    }
+
+    // Alsó rész: Adatok megjelenítésére szolgáló Rectangle
+    Rectangle {
+        id: dataRect
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
+        height: parent.height * 0.3   // a képernyő 30%-át foglalja el
+        color: "#303030"              // sötétszürke háttér
+
+        Column {
+            anchors.centerIn: parent
+            spacing: 10
+
+            Text {
+                id: selectedName
+                text: "Name: None"
+                color: "white"
+                font.pixelSize: 18
+            }
+
+            Text {
+                id: selectedCoords
+                text: "Coordinates: (N/A, N/A, N/A)"
+                color: "white"
+                font.pixelSize: 18
+            }
         }
     }
 }
