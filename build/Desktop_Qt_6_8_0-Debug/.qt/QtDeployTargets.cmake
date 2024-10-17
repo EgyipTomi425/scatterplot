@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_appscatterplot_FILE /home/kecyke/Dokumentumok/qt/scatterplot/build/Desktop_Qt_6_8_0-Debug/appscatterplot)
+set(__QT_DEPLOY_TARGET_appscatterplot_TYPE EXECUTABLE)

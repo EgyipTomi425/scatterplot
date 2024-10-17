@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_appscatterplot_FILE /home/kecyke/Dokumentumok/qt/scatterplot/build/Android-Debug/libappscatterplot_x86_64.so)
+set(__QT_DEPLOY_TARGET_appscatterplot_TYPE MODULE_LIBRARY)

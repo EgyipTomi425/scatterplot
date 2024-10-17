@@ -1,0 +1,14 @@
+-rootPath
+/home/kecyke/Dokumentumok/qt/scatterplot
+-cmake-output
+-output-file
+/home/kecyke/Dokumentumok/qt/scatterplot/build/Android-Debug/.qt/qml_imports/appscatterplot_conf.cmake
+-importPath
+/home/kecyke/Dokumentumok/qt/scatterplot/build/Android-Debug/scatterplot
+-importPath
+/home/kecyke/Dokumentumok/qt/scatterplot/build/Android-Debug
+-importPath
+/home/kecyke/Qt/6.7.3/android_x86_64/qml
+-qrcFiles
+/home/kecyke/Dokumentumok/qt/scatterplot/build/Android-Debug/.qt/rcc/qmake_scatterplot.qrc
+/home/kecyke/Dokumentumok/qt/scatterplot/build/Android-Debug/.qt/rcc/appscatterplot_raw_qml_0.qrc

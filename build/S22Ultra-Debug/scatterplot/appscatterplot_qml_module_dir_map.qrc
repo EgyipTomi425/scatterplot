@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="/scatterplot">/home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/scatterplot</file>
+
+  </qresource>
+</RCC>

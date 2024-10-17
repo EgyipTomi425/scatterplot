@@ -1,0 +1,169 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-98852d23525656611807.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "scatterplot",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint-Debug-054b865d1c7eb5f192c5.json",
+					"name" : "all_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_json-Debug-a4b6eabe989fa8ff9964.json",
+					"name" : "all_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_module-Debug-246826a5b443ae6250c1.json",
+					"name" : "all_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmltyperegistrations-Debug-70d3ee39725f3ca87231.json",
+					"name" : "all_qmltyperegistrations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appscatterplot::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appscatterplot-Debug-beb9e19921a1e2306c37.json",
+					"name" : "appscatterplot",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appscatterplot_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appscatterplot_autogen-Debug-a7afdf32e24f2ee0e1ba.json",
+					"name" : "appscatterplot_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appscatterplot_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appscatterplot_autogen_timestamp_deps-Debug-b4214642ea127beea4d9.json",
+					"name" : "appscatterplot_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appscatterplot_qmlimportscan::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appscatterplot_qmlimportscan-Debug-680b9844a1af2e14d2cf.json",
+					"name" : "appscatterplot_qmlimportscan",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appscatterplot_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appscatterplot_qmllint-Debug-676bdcd5a04e96549dce.json",
+					"name" : "appscatterplot_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appscatterplot_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appscatterplot_qmllint_json-Debug-a13c1ad6104196f5bcf6.json",
+					"name" : "appscatterplot_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appscatterplot_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appscatterplot_qmllint_module-Debug-8c5e08e4478fd2e18f19.json",
+					"name" : "appscatterplot_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appscatterplot_qmltyperegistration::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appscatterplot_qmltyperegistration-Debug-9848a99dfcf55096474c.json",
+					"name" : "appscatterplot_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appscatterplot_tooling::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appscatterplot_tooling-Debug-11b43dcfc46be28b720d.json",
+					"name" : "appscatterplot_tooling",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/kecyke/Dokumentumok/qt/scatterplot/build/Desktop_Qt_6_7_2-Debug",
+		"source" : "/home/kecyke/Dokumentumok/qt/scatterplot"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

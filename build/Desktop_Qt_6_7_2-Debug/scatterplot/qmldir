@@ -1,0 +1,5 @@
+module scatterplot
+typeinfo appscatterplot.qmltypes
+prefer :/scatterplot/
+Main 1.0 Main.qml
+

@@ -1,0 +1,14 @@
+-rootPath
+/home/kecyke/Dokumentumok/qt/scatterplot
+-cmake-output
+-output-file
+/home/kecyke/Dokumentumok/qt/scatterplot/build/Desktop_Qt_6_8_0-Debug/.qt/qml_imports/appscatterplot_conf.cmake
+-importPath
+/home/kecyke/Dokumentumok/qt/scatterplot/build/Desktop_Qt_6_8_0-Debug/scatterplot
+-importPath
+/home/kecyke/Dokumentumok/qt/scatterplot/build/Desktop_Qt_6_8_0-Debug
+-importPath
+/home/kecyke/Qt/6.8.0/gcc_64/qml
+-qrcFiles
+/home/kecyke/Dokumentumok/qt/scatterplot/build/Desktop_Qt_6_8_0-Debug/.qt/rcc/qmake_scatterplot.qrc
+/home/kecyke/Dokumentumok/qt/scatterplot/build/Desktop_Qt_6_8_0-Debug/.qt/rcc/appscatterplot_raw_qml_0.qrc

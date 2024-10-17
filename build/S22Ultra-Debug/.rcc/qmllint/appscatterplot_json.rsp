@@ -1,0 +1,12 @@
+--bare
+-I
+/home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug
+-I
+/home/kecyke/Qt/6.8.0/android_arm64_v8a/qml
+--resource
+/home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/.qt/rcc/qmake_scatterplot.qrc
+--resource
+/home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/.qt/rcc/appscatterplot_raw_qml_0.qrc
+/home/kecyke/Dokumentumok/qt/scatterplot/Main.qml
+--json
+/home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/appscatterplot_qmllint.json

@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_appscatterplot_FILE /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/libappscatterplot_arm64-v8a.so)
+set(__QT_DEPLOY_TARGET_appscatterplot_TYPE MODULE_LIBRARY)
