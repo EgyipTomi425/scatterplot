@@ -1,4 +1,4 @@
-set(qml_import_scanner_imports_count 30)
+set(qml_import_scanner_imports_count 29)
 set(qml_import_scanner_import_0 "CLASSNAME;QtQuick2Plugin;LINKTARGET;Qt6::qtquick2plugin;NAME;QtQuick;PATH;/home/kecyke/Qt/6.8.0/android_arm64_v8a/qml/QtQuick;PLUGIN;qml_QtQuick_qtquick2plugin;PLUGINISOPTIONAL;;PREFER;:/qt-project.org/imports/QtQuick/;RELATIVEPATH;QtQuick;TYPE;module;")
 set(qml_import_scanner_import_1 "CLASSNAME;QtQmlPlugin;LINKTARGET;Qt6::qmlplugin;NAME;QtQml;PATH;/home/kecyke/Qt/6.8.0/android_arm64_v8a/qml/QtQml;PLUGIN;qml_QtQml_qmlplugin;PLUGINISOPTIONAL;;PREFER;:/qt-project.org/imports/QtQml/;RELATIVEPATH;QtQml;TYPE;module;")
 set(qml_import_scanner_import_2 "NAME;QML;PATH;/home/kecyke/Qt/6.8.0/android_arm64_v8a/qml/QML;PREFER;:/qt-project.org/imports/QML/;RELATIVEPATH;QML;TYPE;module;")
@@ -28,5 +28,4 @@ set(qml_import_scanner_import_25 "CLASSNAME;QmlShapesPlugin;LINKTARGET;Qt6::qmls
 set(qml_import_scanner_import_26 "CLASSNAME;QtQuickControls2BasicStyleImplPlugin;LINKTARGET;Qt6::qtquickcontrols2basicstyleimplplugin;NAME;QtQuick.Controls.Basic.impl;PATH;/home/kecyke/Qt/6.8.0/android_arm64_v8a/qml/QtQuick/Controls/Basic/impl;PLUGIN;qml_QtQuick_Controls_Basic_impl_qtquickcontrols2basicstyleimplplugin;PLUGINISOPTIONAL;;PREFER;:/qt-project.org/imports/QtQuick/Controls/Basic/impl/;RELATIVEPATH;QtQuick/Controls/Basic/impl;TYPE;module;")
 set(qml_import_scanner_import_27 "CLASSNAME;QtGraphsPlugin;LINKTARGET;Qt6::Graphsplugin;NAME;QtGraphs;PATH;/home/kecyke/Qt/6.8.0/android_arm64_v8a/qml/QtGraphs;PLUGIN;qml_QtGraphs_graphsplugin;PLUGINISOPTIONAL;;PREFER;:/qt-project.org/imports/QtGraphs/;RELATIVEPATH;QtGraphs;TYPE;module;")
 set(qml_import_scanner_import_28 "CLASSNAME;QQuick3DPlugin;LINKTARGET;Qt6::qquick3dplugin;NAME;QtQuick3D;PATH;/home/kecyke/Qt/6.8.0/android_arm64_v8a/qml/QtQuick3D;PLUGIN;qml_QtQuick3D_qquick3dplugin;PREFER;:/qt-project.org/imports/QtQuick3D/;RELATIVEPATH;QtQuick3D;TYPE;module;")
-set(qml_import_scanner_import_29 "CLASSNAME;QtDataVisualizationPlugin;LINKTARGET;Qt6::DataVisualizationQmlplugin;NAME;QtDataVisualization;PATH;/home/kecyke/Qt/6.8.0/android_arm64_v8a/qml/QtDataVisualization;PLUGIN;qml_QtDataVisualization_datavisualizationqmlplugin;PLUGINISOPTIONAL;;PREFER;:/qt-project.org/imports/QtDataVisualization/;RELATIVEPATH;QtDataVisualization;TYPE;module;")
 

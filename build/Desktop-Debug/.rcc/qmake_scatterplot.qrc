@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/scatterplot">
-    <file alias="qmldir">/home/kecyke/Dokumentumok/qt/scatterplot/build/Desktop-Debug/scatterplot/qmldir</file>
-  </qresource>
-</RCC>
-

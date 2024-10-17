@@ -1,5 +1,6 @@
 /home/kecyke/Dokumentumok/qt/scatterplot/build/Android-Debug/CMakeFiles/apk.dir
 /home/kecyke/Dokumentumok/qt/scatterplot/build/Android-Debug/CMakeFiles/aab.dir
+/home/kecyke/Dokumentumok/qt/scatterplot/build/Android-Debug/CMakeFiles/aar.dir
 /home/kecyke/Dokumentumok/qt/scatterplot/build/Android-Debug/CMakeFiles/appscatterplot.dir
 /home/kecyke/Dokumentumok/qt/scatterplot/build/Android-Debug/CMakeFiles/appscatterplot_qmltyperegistration.dir
 /home/kecyke/Dokumentumok/qt/scatterplot/build/Android-Debug/CMakeFiles/all_qmltyperegistrations.dir
@@ -9,12 +10,15 @@
 /home/kecyke/Dokumentumok/qt/scatterplot/build/Android-Debug/CMakeFiles/all_qmllint.dir
 /home/kecyke/Dokumentumok/qt/scatterplot/build/Android-Debug/CMakeFiles/all_qmllint_json.dir
 /home/kecyke/Dokumentumok/qt/scatterplot/build/Android-Debug/CMakeFiles/all_qmllint_module.dir
+/home/kecyke/Dokumentumok/qt/scatterplot/build/Android-Debug/CMakeFiles/module_appscatterplot_aotstats_targets.dir
 /home/kecyke/Dokumentumok/qt/scatterplot/build/Android-Debug/CMakeFiles/appscatterplot_tooling.dir
+/home/kecyke/Dokumentumok/qt/scatterplot/build/Android-Debug/CMakeFiles/all_aotstats.dir
 /home/kecyke/Dokumentumok/qt/scatterplot/build/Android-Debug/CMakeFiles/_qt_internal_apk_dependencies.dir
 /home/kecyke/Dokumentumok/qt/scatterplot/build/Android-Debug/CMakeFiles/apk_all.dir
 /home/kecyke/Dokumentumok/qt/scatterplot/build/Android-Debug/CMakeFiles/qt_internal_plugins.dir
 /home/kecyke/Dokumentumok/qt/scatterplot/build/Android-Debug/CMakeFiles/appscatterplot_prepare_apk_dir.dir
 /home/kecyke/Dokumentumok/qt/scatterplot/build/Android-Debug/CMakeFiles/appscatterplot_make_apk.dir
+/home/kecyke/Dokumentumok/qt/scatterplot/build/Android-Debug/CMakeFiles/appscatterplot_make_aar.dir
 /home/kecyke/Dokumentumok/qt/scatterplot/build/Android-Debug/CMakeFiles/appscatterplot_make_aab.dir
 /home/kecyke/Dokumentumok/qt/scatterplot/build/Android-Debug/CMakeFiles/edit_cache.dir
 /home/kecyke/Dokumentumok/qt/scatterplot/build/Android-Debug/CMakeFiles/rebuild_cache.dir

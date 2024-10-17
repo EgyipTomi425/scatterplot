@@ -1,0 +1,43 @@
+{
+    "logs": [
+        {
+            "outputFile": "org.qtproject.example.appscatterplot-mergeDebugResources-8:/values-de/values-de.xml",
+            "map": [
+                {
+                    "source": "/home/kecyke/.gradle/caches/8.10/transforms/614f50bb2b90647a5f75820a3da4b2e4/transformed/core-1.13.1/res/values-de/values-de.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,153,255,355,455,563,668,786",
+                        "endColumns": "97,101,99,99,107,104,117,100",
+                        "endOffsets": "148,250,350,450,558,663,781,882"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,10",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,153,255,355,455,563,668,927",
+                        "endColumns": "97,101,99,99,107,104,117,100",
+                        "endOffsets": "148,250,350,450,558,663,781,1023"
+                    }
+                },
+                {
+                    "source": "/home/kecyke/Qt/6.8.0/android_arm64_v8a/src/android/java/res/values-de/strings.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,196",
+                        "endColumns": "140,101",
+                        "endOffsets": "191,293"
+                    },
+                    "to": {
+                        "startLines": "9,11",
+                        "startColumns": "4,4",
+                        "startOffsets": "786,1028",
+                        "endColumns": "140,101",
+                        "endOffsets": "922,1125"
+                    }
+                }
+            ]
+        }
+    ]
+}

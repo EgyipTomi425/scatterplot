@@ -58,8 +58,10 @@ ApplicationWindow {
             color: "#303030" // sötétszürke háttér
 
             // Szélesség és magasság beállítása
-            width: (parent.width > parent.height ? parent.width * 0.4 : parent.width)
-            height: (parent.width > parent.height ? parent.height : parent.height * 0.4)
+            width: (scatterSeries.selectedItem < 0 ? 0 : (parent.width > parent.height ? parent.width * 0.4 : parent.width))
+            height: (scatterSeries.selectedItem < 0 ? 0 : (parent.width > parent.height ? parent.height : parent.height * 0.4))
+
+            //visible: scatterSeries.selectedItem >= 0 // Csak látható, ha van kiválasztott elem
 
             Column {
                 anchors.centerIn: parent
@@ -70,6 +72,7 @@ ApplicationWindow {
                     text: "Name: None"
                     color: "white"
                     font.pixelSize: 18
+                    //visible: scatterSeries.selectedItem >= 0 // Csak látható, ha van kiválasztott elem
                 }
 
                 Text {
@@ -77,6 +80,7 @@ ApplicationWindow {
                     text: "Coordinates: (N/A, N/A, N/A)"
                     color: "white"
                     font.pixelSize: 18
+                    //visible: scatterSeries.selectedItem >= 0 // Csak látható, ha van kiválasztott elem
                 }
             }
         }

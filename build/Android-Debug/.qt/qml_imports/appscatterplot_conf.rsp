@@ -8,7 +8,7 @@
 -importPath
 /home/kecyke/Dokumentumok/qt/scatterplot/build/Android-Debug
 -importPath
-/home/kecyke/Qt/6.7.3/android_x86_64/qml
+/home/kecyke/Qt/6.8.0/android_x86_64/qml
 -qrcFiles
 /home/kecyke/Dokumentumok/qt/scatterplot/build/Android-Debug/.qt/rcc/qmake_scatterplot.qrc
 /home/kecyke/Dokumentumok/qt/scatterplot/build/Android-Debug/.qt/rcc/appscatterplot_raw_qml_0.qrc

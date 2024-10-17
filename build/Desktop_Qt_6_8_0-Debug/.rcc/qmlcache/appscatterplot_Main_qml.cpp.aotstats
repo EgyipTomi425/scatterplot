@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 110,
+                        "durationMicroseconds": 72,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 12
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 20,
-                        "durationMicroseconds": 545,
+                        "durationMicroseconds": 439,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 21
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 21,
-                        "durationMicroseconds": 587,
+                        "durationMicroseconds": 457,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 22
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 66,
+                        "durationMicroseconds": 36,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 27
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 44,
-                        "durationMicroseconds": 2032,
+                        "durationMicroseconds": 901,
                         "errorMessage": "Cannot generate efficient code for lookup in QJSValue",
                         "functionName": "onSelectedItemChanged",
                         "line": 41
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 36,
-                        "durationMicroseconds": 130,
+                        "durationMicroseconds": 51,
                         "errorMessage": "",
                         "functionName": "itemModel",
                         "line": 32
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 20,
-                        "durationMicroseconds": 613,
+                        "durationMicroseconds": 383,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 61
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 21,
-                        "durationMicroseconds": 437,
+                        "durationMicroseconds": 382,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 62
@@ -70,10 +70,10 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 48,
+                        "durationMicroseconds": 36,
                         "errorMessage": "",
                         "functionName": "centerIn",
-                        "line": 65
+                        "line": 67
                     }
                 ],
                 "filepath": "/home/kecyke/Dokumentumok/qt/scatterplot/build/Desktop_Qt_6_8_0-Debug/Main.qml"

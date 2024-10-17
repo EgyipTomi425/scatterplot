@@ -250,13 +250,13 @@ build appscatterplot_prepare_apk_dir: phony CMakeFiles/appscatterplot_prepare_ap
 #############################################
 # Utility command for appscatterplot_make_apk
 
-build appscatterplot_make_apk: phony CMakeFiles/appscatterplot_make_apk android-build/appscatterplot.apk libappscatterplot_arm64-v8a.so qt_internal_plugins
+build appscatterplot_make_apk: phony CMakeFiles/appscatterplot_make_apk android-build-appscatterplot/appscatterplot.apk libappscatterplot_arm64-v8a.so qt_internal_plugins
 
 
 #############################################
 # Utility command for appscatterplot_make_aar
 
-build appscatterplot_make_aar: phony CMakeFiles/appscatterplot_make_aar android-build/appscatterplot.aar libappscatterplot_arm64-v8a.so qt_internal_plugins
+build appscatterplot_make_aar: phony CMakeFiles/appscatterplot_make_aar android-build-appscatterplot/appscatterplot.aar libappscatterplot_arm64-v8a.so qt_internal_plugins
 
 
 #############################################
@@ -488,23 +488,23 @@ build .rcc/qmlcache/all_aotstats.aotstats .rcc/qmlcache/all_aotstats.txt | ${cma
 # Custom command for CMakeFiles/appscatterplot_prepare_apk_dir
 
 build CMakeFiles/appscatterplot_prepare_apk_dir | ${cmake_ninja_workdir}CMakeFiles/appscatterplot_prepare_apk_dir: CUSTOM_COMMAND libappscatterplot_arm64-v8a.so || appscatterplot_autogen appscatterplot_autogen_timestamp_deps appscatterplot_tooling libappscatterplot_arm64-v8a.so qt_internal_plugins
-  COMMAND = cd /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug && /home/kecyke/Qt/Tools/CMake/bin/cmake -E copy_if_different /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/libappscatterplot_arm64-v8a.so /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/android-build/libs/arm64-v8a/libappscatterplot_arm64-v8a.so
+  COMMAND = cd /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug && /home/kecyke/Qt/Tools/CMake/bin/cmake -E copy_if_different /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/libappscatterplot_arm64-v8a.so /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/android-build-appscatterplot/libs/arm64-v8a/libappscatterplot_arm64-v8a.so
   DESC = Copying appscatterplot binary to apk folder
 
 
 #############################################
 # Phony custom command for CMakeFiles/appscatterplot_make_apk
 
-build CMakeFiles/appscatterplot_make_apk | ${cmake_ninja_workdir}CMakeFiles/appscatterplot_make_apk: phony android-build/appscatterplot.apk || appscatterplot_autogen appscatterplot_autogen_timestamp_deps appscatterplot_tooling libappscatterplot_arm64-v8a.so qt_internal_plugins
+build CMakeFiles/appscatterplot_make_apk | ${cmake_ninja_workdir}CMakeFiles/appscatterplot_make_apk: phony android-build-appscatterplot/appscatterplot.apk || appscatterplot_autogen appscatterplot_autogen_timestamp_deps appscatterplot_tooling libappscatterplot_arm64-v8a.so qt_internal_plugins
 
 
 #############################################
-# Custom command for android-build/appscatterplot.apk
+# Custom command for android-build-appscatterplot/appscatterplot.apk
 
-build android-build/appscatterplot.apk | ${cmake_ninja_workdir}android-build/appscatterplot.apk: CUSTOM_COMMAND libappscatterplot_arm64-v8a.so android-appscatterplot-deployment-settings.json || appscatterplot_autogen appscatterplot_autogen_timestamp_deps appscatterplot_tooling libappscatterplot_arm64-v8a.so qt_internal_plugins
-  COMMAND = cd /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug && /home/kecyke/Qt/Tools/CMake/bin/cmake -E copy /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/libappscatterplot_arm64-v8a.so /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/android-build/libs/arm64-v8a/libappscatterplot_arm64-v8a.so && /home/kecyke/Qt/6.8.0/gcc_64/bin/androiddeployqt --input /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/android-appscatterplot-deployment-settings.json --output /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/android-build --apk /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/android-build/appscatterplot.apk --depfile /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/android-build/appscatterplot.d --builddir /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug "" && /home/kecyke/Qt/Tools/CMake/bin/cmake -E cmake_transform_depfile Ninja gccdepfile /home/kecyke/Dokumentumok/qt/scatterplot /home/kecyke/Dokumentumok/qt/scatterplot /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/android-build/appscatterplot.d /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/CMakeFiles/d/de53b4831b25e8814e57ba92490f733deb50b69c7d32d50825250c73a880ae6f.d
+build android-build-appscatterplot/appscatterplot.apk | ${cmake_ninja_workdir}android-build-appscatterplot/appscatterplot.apk: CUSTOM_COMMAND libappscatterplot_arm64-v8a.so android-appscatterplot-deployment-settings.json || appscatterplot_autogen appscatterplot_autogen_timestamp_deps appscatterplot_tooling libappscatterplot_arm64-v8a.so qt_internal_plugins
+  COMMAND = cd /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug && /home/kecyke/Qt/Tools/CMake/bin/cmake -E copy /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/libappscatterplot_arm64-v8a.so /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/android-build-appscatterplot/libs/arm64-v8a/libappscatterplot_arm64-v8a.so && /home/kecyke/Qt/6.8.0/gcc_64/bin/androiddeployqt --input /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/android-appscatterplot-deployment-settings.json --output /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/android-build-appscatterplot --apk /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/android-build-appscatterplot/appscatterplot.apk --depfile /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/android-build-appscatterplot/appscatterplot.d --builddir /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug "" && /home/kecyke/Qt/Tools/CMake/bin/cmake -E cmake_transform_depfile Ninja gccdepfile /home/kecyke/Dokumentumok/qt/scatterplot /home/kecyke/Dokumentumok/qt/scatterplot /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/android-build-appscatterplot/appscatterplot.d /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/CMakeFiles/d/15804115051d0be84d88d06902c53bb070c3274704e425f440f2cd864c87f0a2.d
   DESC = Creating APK for appscatterplot
-  depfile = CMakeFiles/d/de53b4831b25e8814e57ba92490f733deb50b69c7d32d50825250c73a880ae6f.d
+  depfile = CMakeFiles/d/15804115051d0be84d88d06902c53bb070c3274704e425f440f2cd864c87f0a2.d
   deps = gcc
   restat = 1
 
@@ -512,16 +512,16 @@ build android-build/appscatterplot.apk | ${cmake_ninja_workdir}android-build/app
 #############################################
 # Phony custom command for CMakeFiles/appscatterplot_make_aar
 
-build CMakeFiles/appscatterplot_make_aar | ${cmake_ninja_workdir}CMakeFiles/appscatterplot_make_aar: phony android-build/appscatterplot.aar || appscatterplot_autogen appscatterplot_autogen_timestamp_deps appscatterplot_tooling libappscatterplot_arm64-v8a.so qt_internal_plugins
+build CMakeFiles/appscatterplot_make_aar | ${cmake_ninja_workdir}CMakeFiles/appscatterplot_make_aar: phony android-build-appscatterplot/appscatterplot.aar || appscatterplot_autogen appscatterplot_autogen_timestamp_deps appscatterplot_tooling libappscatterplot_arm64-v8a.so qt_internal_plugins
 
 
 #############################################
-# Custom command for android-build/appscatterplot.aar
+# Custom command for android-build-appscatterplot/appscatterplot.aar
 
-build android-build/appscatterplot.aar | ${cmake_ninja_workdir}android-build/appscatterplot.aar: CUSTOM_COMMAND libappscatterplot_arm64-v8a.so android-appscatterplot-deployment-settings.json || appscatterplot_autogen appscatterplot_autogen_timestamp_deps appscatterplot_tooling libappscatterplot_arm64-v8a.so qt_internal_plugins
-  COMMAND = cd /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug && /home/kecyke/Qt/Tools/CMake/bin/cmake -E copy /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/libappscatterplot_arm64-v8a.so /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/android-build/libs/arm64-v8a/libappscatterplot_arm64-v8a.so && /home/kecyke/Qt/6.8.0/gcc_64/bin/androiddeployqt --input /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/android-appscatterplot-deployment-settings.json --output /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/android-build --apk /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/android-build/appscatterplot.aar --depfile /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/android-build/appscatterplot.d --builddir /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug --build-aar "" && /home/kecyke/Qt/Tools/CMake/bin/cmake -E cmake_transform_depfile Ninja gccdepfile /home/kecyke/Dokumentumok/qt/scatterplot /home/kecyke/Dokumentumok/qt/scatterplot /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/android-build/appscatterplot.d /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/CMakeFiles/d/de53b4831b25e8814e57ba92490f733deb50b69c7d32d50825250c73a880ae6f.d
+build android-build-appscatterplot/appscatterplot.aar | ${cmake_ninja_workdir}android-build-appscatterplot/appscatterplot.aar: CUSTOM_COMMAND libappscatterplot_arm64-v8a.so android-appscatterplot-deployment-settings.json || appscatterplot_autogen appscatterplot_autogen_timestamp_deps appscatterplot_tooling libappscatterplot_arm64-v8a.so qt_internal_plugins
+  COMMAND = cd /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug && /home/kecyke/Qt/Tools/CMake/bin/cmake -E copy /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/libappscatterplot_arm64-v8a.so /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/android-build-appscatterplot/libs/arm64-v8a/libappscatterplot_arm64-v8a.so && /home/kecyke/Qt/6.8.0/gcc_64/bin/androiddeployqt --input /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/android-appscatterplot-deployment-settings.json --output /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/android-build-appscatterplot --apk /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/android-build-appscatterplot/appscatterplot.aar --depfile /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/android-build-appscatterplot/appscatterplot.d --builddir /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug --build-aar "" && /home/kecyke/Qt/Tools/CMake/bin/cmake -E cmake_transform_depfile Ninja gccdepfile /home/kecyke/Dokumentumok/qt/scatterplot /home/kecyke/Dokumentumok/qt/scatterplot /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/android-build-appscatterplot/appscatterplot.d /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/CMakeFiles/d/15804115051d0be84d88d06902c53bb070c3274704e425f440f2cd864c87f0a2.d
   DESC = Creating AAR for appscatterplot
-  depfile = CMakeFiles/d/de53b4831b25e8814e57ba92490f733deb50b69c7d32d50825250c73a880ae6f.d
+  depfile = CMakeFiles/d/15804115051d0be84d88d06902c53bb070c3274704e425f440f2cd864c87f0a2.d
   deps = gcc
   restat = 1
 
@@ -530,7 +530,7 @@ build android-build/appscatterplot.aar | ${cmake_ninja_workdir}android-build/app
 # Custom command for CMakeFiles/appscatterplot_make_aab
 
 build CMakeFiles/appscatterplot_make_aab | ${cmake_ninja_workdir}CMakeFiles/appscatterplot_make_aab: CUSTOM_COMMAND || appscatterplot_autogen appscatterplot_autogen_timestamp_deps appscatterplot_prepare_apk_dir appscatterplot_tooling libappscatterplot_arm64-v8a.so qt_internal_plugins
-  COMMAND = cd /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug && /home/kecyke/Qt/6.8.0/gcc_64/bin/androiddeployqt --input /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/android-appscatterplot-deployment-settings.json --output /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/android-build --apk /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/android-build/appscatterplot.apk --aab
+  COMMAND = cd /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug && /home/kecyke/Qt/6.8.0/gcc_64/bin/androiddeployqt --input /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/android-appscatterplot-deployment-settings.json --output /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/android-build-appscatterplot --apk /home/kecyke/Dokumentumok/qt/scatterplot/build/S22Ultra-Debug/android-build-appscatterplot/appscatterplot.apk --aab
   DESC = Creating AAB for appscatterplot
 
 

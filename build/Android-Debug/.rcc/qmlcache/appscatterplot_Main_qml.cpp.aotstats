@@ -1,0 +1,84 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 23,
+                        "durationMicroseconds": 80,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 12
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 20,
+                        "durationMicroseconds": 454,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 21
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 21,
+                        "durationMicroseconds": 427,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 22
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 31,
+                        "durationMicroseconds": 39,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 27
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 44,
+                        "durationMicroseconds": 1033,
+                        "errorMessage": "Cannot generate efficient code for lookup in QJSValue",
+                        "functionName": "onSelectedItemChanged",
+                        "line": 41
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 36,
+                        "durationMicroseconds": 60,
+                        "errorMessage": "",
+                        "functionName": "itemModel",
+                        "line": 32
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 20,
+                        "durationMicroseconds": 263,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 61
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 21,
+                        "durationMicroseconds": 252,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 62
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 35,
+                        "durationMicroseconds": 35,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 65
+                    }
+                ],
+                "filepath": "/home/kecyke/Dokumentumok/qt/scatterplot/build/Android-Debug/Main.qml"
+            }
+        ],
+        "moduleId": "scatterplot(appscatterplot)"
+    }
+]

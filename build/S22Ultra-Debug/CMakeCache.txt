@@ -340,6 +340,9 @@ QT_NO_GLOBAL_APK_TARGET_PART_OF_ALL:BOOL=ON
 //No help, variable specified on the command line.
 QT_QMAKE_EXECUTABLE:FILEPATH=/home/kecyke/Qt/6.8.0/android_arm64_v8a/bin/qmake
 
+//No help, variable specified on the command line.
+QT_USE_TARGET_ANDROID_BUILD_DIR:BOOL=ON
+
 //The directory containing a CMake configuration file for Qt6CoreTools.
 Qt6CoreTools_DIR:PATH=/home/kecyke/Qt/6.8.0/gcc_64/lib/cmake/Qt6CoreTools
 

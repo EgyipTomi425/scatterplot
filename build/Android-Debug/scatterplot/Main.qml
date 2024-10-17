@@ -1,7 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
-import QtQuick.Layouts 1.15
-import QtDataVisualization 1.2
+import QtGraphs
 
 ApplicationWindow {
     visible: true
@@ -27,37 +26,10 @@ ApplicationWindow {
                 id: scatter
                 anchors.fill: parent
 
-                theme: Theme3D {
-                    labelBackgroundEnabled: false
-                    gridEnabled: true
-                }
-
-                axisX: ValueAxis3D {
-                    title: "X"
-                    min: -10
-                    max: 10
-                }
-                axisY: ValueAxis3D {
-                    title: "Y"
-                    min: -10
-                    max: 10
-                }
-                axisZ: ValueAxis3D {
-                    title: "Z"
-                    min: -10
-                    max: 10
-                }
-
                 Scatter3DSeries {
                     id: scatterSeries
                     ItemModelScatterDataProxy {
-                        itemModel: ListModel {
-                            ListElement { x: -5; y: 0; z: 5; name: "Point A" }
-                            ListElement { x: 0; y: 2; z: -3; name: "Point B" }
-                            ListElement { x: 3; y: 7; z: 2; name: "Point C" }
-                            ListElement { x: 6; y: 5; z: -6; name: "Point D" }
-                            ListElement { x: 1; y: -4; z: 8; name: "Point E" }
-                        }
+                        itemModel: scatterDataModel // Hivatkozás a külön ListModel-ra
                         xPosRole: "x"
                         yPosRole: "y"
                         zPosRole: "z"
@@ -68,12 +40,12 @@ ApplicationWindow {
                     // Választott pont eseményének kezelése
                     onSelectedItemChanged: {
                         if (selectedItem >= 0) {
-                            var item = scatterSeries.dataProxy.itemModel.get(selectedItem)
-                            selectedName.text = "Name: " + item.name
-                            selectedCoords.text = "Coordinates: (" + item.x + ", " + item.y + ", " + item.z + ")"
+                            var item = scatterDataModel.get(selectedItem); // Kérjük le az elemet a külön ListModel-ból
+                            selectedName.text = "Name: " + item.name;
+                            selectedCoords.text = "Coordinates: (" + item.x + ", " + item.y + ", " + item.z + ")";
                         } else {
-                            selectedName.text = "Name: None"
-                            selectedCoords.text = "Coordinates: (N/A, N/A, N/A)"
+                            selectedName.text = "Name: None";
+                            selectedCoords.text = "Coordinates: (N/A, N/A, N/A)";
                         }
                     }
                 }
@@ -107,6 +79,16 @@ ApplicationWindow {
                     font.pixelSize: 18
                 }
             }
+        }
+
+        // A külön ListModel definiálása
+        ListModel {
+            id: scatterDataModel
+            ListElement { x: -5; y: 0; z: 5; name: "Point A" }
+            ListElement { x: 0; y: 2; z: -3; name: "Point B" }
+            ListElement { x: 3; y: 7; z: 2; name: "Point C" }
+            ListElement { x: 6; y: 5; z: -6; name: "Point D" }
+            ListElement { x: 1; y: -4; z: 8; name: "Point E" }
         }
     }
 }
