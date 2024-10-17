@@ -1,5 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
+import QtQuick.Layouts 1.15
 import QtDataVisualization 1.2
 
 ApplicationWindow {
@@ -8,98 +9,103 @@ ApplicationWindow {
     height: 600
     color: "black"
 
-    // Felső rész: Diagramot tartalmazó Rectangle
-    Rectangle {
-        id: diagramRect
-        anchors.top: parent.top
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.bottom: dataRect.top  // alsó Rectangle-hez kapcsolódik
-        height: parent.height * 0.7   // a képernyő 70%-át foglalja el
-        color: "#202020"              // szürke háttér a kontraszt miatt
+    Flow {
+        anchors.fill: parent
+        spacing: 0 // Nincs távolság a négyzetek között
 
-        Scatter3D {
-            id: scatter
-            anchors.fill: parent
+        // Felső rész: Diagramot tartalmazó Rectangle
+        Rectangle {
+            id: diagramRect
+            color: "#202020" // szürke háttér a kontraszt miatt
 
-            theme: Theme3D {
-                labelBackgroundEnabled: false
-                gridEnabled: true
-            }
+            // Szélesség és magasság beállítása
+            width: (parent.width > parent.height ? parent.width * 0.6 : parent.width) // Ha szélesebb, mint magas, akkor 60% a szélesség
+            height: (parent.width > parent.height ? parent.height : parent.height * 0.6) // Ha szélesebb, akkor teljes magasság, máskülönben 60% a magasság
 
-            axisX: ValueAxis3D {
-                title: "X"
-                min: -10
-                max: 10
-            }
-            axisY: ValueAxis3D {
-                title: "Y"
-                min: -10
-                max: 10
-            }
-            axisZ: ValueAxis3D {
-                title: "Z"
-                min: -10
-                max: 10
-            }
+            // Diagram beállításai
+            Scatter3D {
+                id: scatter
+                anchors.fill: parent
 
-            Scatter3DSeries {
-                id: scatterSeries
-                ItemModelScatterDataProxy {
-                    itemModel: ListModel {
-                        ListElement { x: -5; y: 0; z: 5; name: "Point A" }
-                        ListElement { x: 0; y: 2; z: -3; name: "Point B" }
-                        ListElement { x: 3; y: 7; z: 2; name: "Point C" }
-                        ListElement { x: 6; y: 5; z: -6; name: "Point D" }
-                        ListElement { x: 1; y: -4; z: 8; name: "Point E" }
-                    }
-                    xPosRole: "x"
-                    yPosRole: "y"
-                    zPosRole: "z"
+                theme: Theme3D {
+                    labelBackgroundEnabled: false
+                    gridEnabled: true
                 }
 
-                baseColor: "blue"
+                axisX: ValueAxis3D {
+                    title: "X"
+                    min: -10
+                    max: 10
+                }
+                axisY: ValueAxis3D {
+                    title: "Y"
+                    min: -10
+                    max: 10
+                }
+                axisZ: ValueAxis3D {
+                    title: "Z"
+                    min: -10
+                    max: 10
+                }
 
-                // Választott pont eseményének kezelése
-                onSelectedItemChanged: {
-                    if (selectedItem >= 0) {
-                        var item = scatterSeries.dataProxy.itemModel.get(selectedItem)
-                        selectedName.text = "Name: " + item.name
-                        selectedCoords.text = "Coordinates: (" + item.x + ", " + item.y + ", " + item.z + ")"
-                    } else {
-                        selectedName.text = "Name: None"
-                        selectedCoords.text = "Coordinates: (N/A, N/A, N/A)"
+                Scatter3DSeries {
+                    id: scatterSeries
+                    ItemModelScatterDataProxy {
+                        itemModel: ListModel {
+                            ListElement { x: -5; y: 0; z: 5; name: "Point A" }
+                            ListElement { x: 0; y: 2; z: -3; name: "Point B" }
+                            ListElement { x: 3; y: 7; z: 2; name: "Point C" }
+                            ListElement { x: 6; y: 5; z: -6; name: "Point D" }
+                            ListElement { x: 1; y: -4; z: 8; name: "Point E" }
+                        }
+                        xPosRole: "x"
+                        yPosRole: "y"
+                        zPosRole: "z"
+                    }
+
+                    baseColor: "blue"
+
+                    // Választott pont eseményének kezelése
+                    onSelectedItemChanged: {
+                        if (selectedItem >= 0) {
+                            var item = scatterSeries.dataProxy.itemModel.get(selectedItem)
+                            selectedName.text = "Name: " + item.name
+                            selectedCoords.text = "Coordinates: (" + item.x + ", " + item.y + ", " + item.z + ")"
+                        } else {
+                            selectedName.text = "Name: None"
+                            selectedCoords.text = "Coordinates: (N/A, N/A, N/A)"
+                        }
                     }
                 }
             }
         }
-    }
 
-    // Alsó rész: Adatok megjelenítésére szolgáló Rectangle
-    Rectangle {
-        id: dataRect
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.bottom: parent.bottom
-        height: parent.height * 0.3   // a képernyő 30%-át foglalja el
-        color: "#303030"              // sötétszürke háttér
+        // Alsó rész: Adatok megjelenítésére szolgáló Rectangle
+        Rectangle {
+            id: dataRect
+            color: "#303030" // sötétszürke háttér
 
-        Column {
-            anchors.centerIn: parent
-            spacing: 10
+            // Szélesség és magasság beállítása
+            width: (parent.width > parent.height ? parent.width * 0.4 : parent.width) // Ha szélesebb, mint magas, akkor 40% a szélesség
+            height: (parent.width > parent.height ? parent.height : parent.height * 0.4) // Ha szélesebb, akkor teljes magasság, máskülönben 40% a magasság
 
-            Text {
-                id: selectedName
-                text: "Name: None"
-                color: "white"
-                font.pixelSize: 18
-            }
+            Column {
+                anchors.centerIn: parent
+                spacing: 10
 
-            Text {
-                id: selectedCoords
-                text: "Coordinates: (N/A, N/A, N/A)"
-                color: "white"
-                font.pixelSize: 18
+                Text {
+                    id: selectedName
+                    text: "Name: None"
+                    color: "white"
+                    font.pixelSize: 18
+                }
+
+                Text {
+                    id: selectedCoords
+                    text: "Coordinates: (N/A, N/A, N/A)"
+                    color: "white"
+                    font.pixelSize: 18
+                }
             }
         }
     }
