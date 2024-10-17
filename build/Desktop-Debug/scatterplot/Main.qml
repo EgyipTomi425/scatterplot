@@ -20,7 +20,7 @@ ApplicationWindow {
 
             // Szélesség és magasság beállítása
             width: (scatterSeries.selectedItem < 0 ? parent.width : (parent.width > parent.height ? parent.width * 0.6 : parent.width))
-            height: (parent.width > parent.height ? parent.height : parent.height * 0.6)
+            height: (scatterSeries.selectedItem < 0 ? parent.height : (parent.width > parent.height ? parent.height : parent.height * 0.6))
 
             // Diagram beállításai
             Scatter3D {
