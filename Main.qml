@@ -72,6 +72,7 @@ ApplicationWindow {
                 Rectangle {
                     width: parent.width
                     height: parent.height * 0.8 // Kép 80%-os magassága
+                    color: "#000000"
 
                     Image {
                         id: selectedImage
