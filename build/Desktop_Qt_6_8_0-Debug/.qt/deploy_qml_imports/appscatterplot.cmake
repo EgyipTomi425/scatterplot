@@ -9,7 +9,7 @@ endif()
 
 _qt_internal_deploy_qml_imports_for_target(
     ${__qt_opts}
-    IMPORTS_FILE "/home/kecyke/Dokumentumok/qt/scatterplot/build/Desktop_Qt_6_8_0-Debug/.qt/qml_imports/appscatterplot_build.cmake"
+    IMPORTS_FILE "/home/kecyke/qt/scatterplot/build/Desktop_Qt_6_8_0-Debug/.qt/qml_imports/appscatterplot_build.cmake"
     PLUGINS_FOUND __qt_internal_plugins_found
     QML_DIR     "${arg_QML_DIR}"
     PLUGINS_DIR "${arg_PLUGINS_DIR}"

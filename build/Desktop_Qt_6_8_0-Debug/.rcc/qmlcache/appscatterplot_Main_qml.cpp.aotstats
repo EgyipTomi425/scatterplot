@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 72,
+                        "durationMicroseconds": 529,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 12
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 20,
-                        "durationMicroseconds": 439,
+                        "durationMicroseconds": 942,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 21
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 21,
-                        "durationMicroseconds": 457,
+                        "durationMicroseconds": 869,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 22
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 83,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 27
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 44,
-                        "durationMicroseconds": 901,
+                        "durationMicroseconds": 1945,
                         "errorMessage": "Cannot generate efficient code for lookup in QJSValue",
                         "functionName": "onSelectedItemChanged",
                         "line": 41
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 36,
-                        "durationMicroseconds": 51,
+                        "durationMicroseconds": 114,
                         "errorMessage": "",
                         "functionName": "itemModel",
                         "line": 32
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 20,
-                        "durationMicroseconds": 383,
+                        "durationMicroseconds": 850,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 61
@@ -62,21 +62,45 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 21,
-                        "durationMicroseconds": 382,
+                        "durationMicroseconds": 959,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 62
                     },
                     {
                         "codegenSuccessfull": true,
+                        "column": 22,
+                        "durationMicroseconds": 204,
+                        "errorMessage": "",
+                        "functionName": "visible",
+                        "line": 64
+                    },
+                    {
+                        "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 81,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 67
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 30,
+                        "durationMicroseconds": 201,
+                        "errorMessage": "",
+                        "functionName": "visible",
+                        "line": 75
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 30,
+                        "durationMicroseconds": 191,
+                        "errorMessage": "",
+                        "functionName": "visible",
+                        "line": 83
                     }
                 ],
-                "filepath": "/home/kecyke/Dokumentumok/qt/scatterplot/build/Desktop_Qt_6_8_0-Debug/Main.qml"
+                "filepath": "/home/kecyke/qt/scatterplot/build/Desktop_Qt_6_8_0-Debug/Main.qml"
             }
         ],
         "moduleId": "scatterplot(appscatterplot)"

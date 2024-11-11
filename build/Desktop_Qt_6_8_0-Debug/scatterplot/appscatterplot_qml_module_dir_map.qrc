@@ -1,6 +1,6 @@
 <RCC>
   <qresource prefix="/">
-    <file alias="/scatterplot">/home/kecyke/Dokumentumok/qt/scatterplot/build/Desktop_Qt_6_8_0-Debug/scatterplot</file>
+    <file alias="/scatterplot">/home/kecyke/qt/scatterplot/build/Desktop_Qt_6_8_0-Debug/scatterplot</file>
 
   </qresource>
 </RCC>
