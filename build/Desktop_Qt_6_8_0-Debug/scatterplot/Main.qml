@@ -219,6 +219,7 @@ ApplicationWindow {
         CheckBox {
             text: "Attribute"
             checked: false
+            font.pixelSize: parent.height / 4
         }
     }
 }
