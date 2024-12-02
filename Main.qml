@@ -150,6 +150,5 @@ ApplicationWindow {
 
     ListModel {
         id: scatterDataModel
-        ListElement { x: -5; y: 0; z: 5; name: "Point A"; image: "001_fat.png" }
     }
 }
