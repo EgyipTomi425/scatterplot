@@ -1,2 +1,48 @@
 [
+    {
+        "classes": [
+            {
+                "className": "CsvReader",
+                "lineNumber": 9,
+                "methods": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "filepath",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 1,
+                        "name": "readCsvSample",
+                        "returnType": "QList<QVariantMap>"
+                    }
+                ],
+                "object": true,
+                "qualifiedClassName": "CsvReader",
+                "signals": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "data",
+                                "type": "QList<QVariantMap>"
+                            }
+                        ],
+                        "index": 0,
+                        "name": "dataRead",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "CsvReader.h",
+        "outputRevision": 68
+    }
 ]

@@ -2,12 +2,15 @@ import QtQuick
 import QtQuick.Controls
 import QtGraphs
 import QtQuick.Dialogs
+import scatterplot.csvreader
 
 ApplicationWindow {
     visible: true
     width: 800
     height: 600
     color: "black"
+
+    property var scatterDataModel: ListModel {}
 
     Flow {
         anchors.fill: parent
@@ -29,16 +32,23 @@ ApplicationWindow {
 
                     Rectangle {
                         id: checkboxfieldRect
-                        width : parent.width - parent.height
+                        width: parent.width - parent.height
                         height: parent.height
                         color: "#303030"
                     }
 
-                    Rectangle {
-                        id: filereaderRect
+                    Button {
+                        id: readerButton
+                        text: "Load Test Data"
                         width: parent.height
                         height: parent.height
-                        color: "#404040"
+                        onClicked: {
+                            var testData = csvReader.readCsvSample("/path/to/csv/file.csv");
+                            scatterDataModel.clear();
+                            testData.forEach(function (item) {
+                                scatterDataModel.append(item);
+                            });
+                        }
                     }
                 }
 
@@ -127,14 +137,14 @@ ApplicationWindow {
                 }
             }
         }
+    }
 
-        ListModel {
-            id: scatterDataModel
-            ListElement { x: -5; y: 0; z: 5; name: "Point A"; image: "001_fat.png" }
-            ListElement { x: 0; y: 2; z: -3; name: "Point B"; image: "002_fat.png" }
-            ListElement { x: 3; y: 7; z: 2; name: "Point C"; image: "003_fat.png" }
-            ListElement { x: 6; y: 5; z: -6; name: "Point D"; image: "004_fat.png" }
-            ListElement { x: 1; y: -4; z: 8; name: "Point E"; image: "005_fat.png" }
-        }
+    CsvReader {
+        id: csvReader
+    }
+
+    ListModel {
+        id: scatterDataModel
+        ListElement { x: -5; y: 0; z: 5; name: "Point A"; image: "001_fat.png" }
     }
 }
