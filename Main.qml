@@ -67,9 +67,9 @@ ApplicationWindow {
                         onClicked: {
                             var selectedAttributes = getSelectedAttributes();
                             if (selectedAttributes.length === 3) {
-                                scatterSeries.xPosRole = selectedAttributes[0];
-                                scatterSeries.yPosRole = selectedAttributes[1];
-                                scatterSeries.zPosRole = selectedAttributes[2];
+                                scatterDataProxy.xPosRole = selectedAttributes[0];
+                                scatterDataProxy.yPosRole = selectedAttributes[1];
+                                scatterDataProxy.zPosRole = selectedAttributes[2];
                                 console.log("Updated Scatter3D with: " + selectedAttributes);
                             } else {
                                 console.error("Please select exactly three attributes.");
@@ -85,8 +85,13 @@ ApplicationWindow {
 
                     Scatter3DSeries {
                         id: scatterSeries
+
                         ItemModelScatterDataProxy {
+                            id: scatterDataProxy
                             itemModel: scatterDataModel
+                            xPosRole: "x" // Alapértelmezett attribútum
+                            yPosRole: "y"
+                            zPosRole: "z"
                         }
 
                         baseColor: "blue"
@@ -96,9 +101,9 @@ ApplicationWindow {
                                 var item = scatterDataModel.get(selectedItem);
                                 selectedName.text = "Name: " + (item.name || "N/A");
                                 selectedCoords.text = "Coordinates: ("
-                                                      + (item[scatterSeries.xPosRole] || "N/A") + ", "
-                                                      + (item[scatterSeries.yPosRole] || "N/A") + ", "
-                                                      + (item[scatterSeries.zPosRole] || "N/A") + ")";
+                                                      + (item[scatterDataProxy.xPosRole] || "N/A") + ", "
+                                                      + (item[scatterDataProxy.yPosRole] || "N/A") + ", "
+                                                      + (item[scatterDataProxy.zPosRole] || "N/A") + ")";
                                 selectedImage.source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
                             } else {
                                 selectedName.text = "Name: None";
