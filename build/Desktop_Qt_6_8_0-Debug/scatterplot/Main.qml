@@ -35,6 +35,12 @@ ApplicationWindow {
                         width: parent.width - parent.height
                         height: parent.height
                         color: "#303030"
+
+                        Flow {
+                            id: checkboxLayout
+                            anchors.fill: parent
+                            spacing: 10
+                        }
                     }
 
                     Button {
@@ -47,12 +53,9 @@ ApplicationWindow {
                             scatterDataModel.clear();
                             testData.forEach(function (item, index) {
                                 scatterDataModel.append(item);
-                                console.log("Item " + index + ": " + JSON.stringify(item));
+                                console.log("Item " + index + ": " + JSON.stringify(scatterDataModel.get(index)));
                             });
-                            for (var i = 0; i < scatterDataModel.count; i++) {
-                                    var item = scatterDataModel.get(i);
-                                    console.log("Item " + i + ": " + JSON.stringify(item));
-                                }
+                            createCheckboxesForNumericAttributes();
                         }
                     }
                 }
@@ -150,5 +153,37 @@ ApplicationWindow {
 
     ListModel {
         id: scatterDataModel
+    }
+
+    function createCheckboxesForNumericAttributes() {
+        checkboxLayout.children.forEach(function(child) {
+            child.destroy();
+        });
+
+        if (scatterDataModel.count > 0) {
+            var firstItem = scatterDataModel.get(0);
+            var numericAttributes = [];
+
+            for (var key in firstItem) {
+                var value = firstItem[key];
+                if (typeof value === 'number') {
+                    numericAttributes.push(key);
+                }
+            }
+
+            numericAttributes.forEach(function(attribute) {
+                var newCheckbox = checkboxComponent.createObject(checkboxLayout, { text: attribute });
+                if (newCheckbox) {
+                    console.log("Checkbox created for: " + attribute);
+                }
+            });
+        }
+    }
+
+    Component {
+        id: checkboxComponent
+        CheckBox {
+            font.pixelSize: parent.height / 5
+        }
     }
 }
