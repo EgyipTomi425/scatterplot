@@ -6,8 +6,8 @@ import scatterplot.csvreader
 
 ApplicationWindow {
     visible: true
-    width: 800
-    height: 600
+    width: 1920
+    height: 1080
     color: "black"
 
     property var scatterDataModel: ListModel {}
@@ -107,9 +107,9 @@ ApplicationWindow {
                                 var zAttr = scatterDataProxy.zPosRole;
 
                                 selectedName.text = "Name: " + (item.name || "N/A");
-                                selectedCoords.text = "Coordinates: " +
-                                                      xAttr + ": " + (item[xAttr] || "N/A") + ", " +
-                                                      yAttr + ": " + (item[yAttr] || "N/A") + ", " +
+                                selectedCoords.text = "Coordinates: \n" +
+                                                      xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
+                                                      yAttr + ": " + (item[yAttr] || "N/A") + ", \n" +
                                                       zAttr + ": " + (item[zAttr] || "N/A");
                                 selectedImage.source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
                             } else {
