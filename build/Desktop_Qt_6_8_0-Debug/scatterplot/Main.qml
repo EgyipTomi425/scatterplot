@@ -82,6 +82,9 @@ ApplicationWindow {
                     id: scatter
                     width: parent.width
                     height: parent.height * 0.9
+                    aspectRatio: 1
+                    horizontalAspectRatio: 1
+
 
                     Scatter3DSeries {
                         id: scatterSeries

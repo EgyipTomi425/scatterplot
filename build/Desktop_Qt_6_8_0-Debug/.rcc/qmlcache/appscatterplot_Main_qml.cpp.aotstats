@@ -6,23 +6,23 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 2714,
+                        "durationMicroseconds": 2250,
                         "errorMessage": "Cannot generate efficient code for LoadClosure",
                         "functionName": "createCheckboxesForNumericAttributes",
-                        "line": 185
+                        "line": 188
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 33,
+                        "durationMicroseconds": 21,
                         "errorMessage": "Instruction \"generate_StoreLocal\" not implemented",
                         "functionName": "getSelectedAttributes",
-                        "line": 210
+                        "line": 213
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 120,
+                        "durationMicroseconds": 96,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 16
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 20,
-                        "durationMicroseconds": 965,
+                        "durationMicroseconds": 903,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 22
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 21,
-                        "durationMicroseconds": 874,
+                        "durationMicroseconds": 856,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 23
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 83,
+                        "durationMicroseconds": 81,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 26
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 28,
-                        "durationMicroseconds": 109,
+                        "durationMicroseconds": 108,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 30
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 29,
-                        "durationMicroseconds": 179,
+                        "durationMicroseconds": 175,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 31
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 32,
-                        "durationMicroseconds": 316,
+                        "durationMicroseconds": 293,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 35
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 33,
-                        "durationMicroseconds": 110,
+                        "durationMicroseconds": 104,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 36
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 43,
-                        "durationMicroseconds": 65,
+                        "durationMicroseconds": 66,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 41
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 28,
-                        "durationMicroseconds": 118,
+                        "durationMicroseconds": 120,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 83
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 29,
-                        "durationMicroseconds": 209,
+                        "durationMicroseconds": 180,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 84
@@ -158,138 +158,138 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 48,
-                        "durationMicroseconds": 6026,
+                        "durationMicroseconds": 5087,
                         "errorMessage": "Cannot generate efficient code for lookup in QJSValue",
                         "functionName": "onSelectedItemChanged",
-                        "line": 99
+                        "line": 102
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 40,
-                        "durationMicroseconds": 123,
+                        "durationMicroseconds": 122,
                         "errorMessage": "",
                         "functionName": "itemModel",
-                        "line": 91
+                        "line": 94
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 20,
-                        "durationMicroseconds": 880,
+                        "durationMicroseconds": 844,
                         "errorMessage": "",
                         "functionName": "width",
-                        "line": 126
+                        "line": 129
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 21,
-                        "durationMicroseconds": 1036,
+                        "durationMicroseconds": 814,
                         "errorMessage": "",
                         "functionName": "height",
-                        "line": 127
+                        "line": 130
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 22,
-                        "durationMicroseconds": 269,
+                        "durationMicroseconds": 208,
                         "errorMessage": "",
                         "functionName": "visible",
-                        "line": 128
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 31,
-                        "durationMicroseconds": 93,
-                        "errorMessage": "",
-                        "functionName": "fill",
                         "line": 131
                     },
                     {
                         "codegenSuccessfull": true,
-                        "column": 28,
-                        "durationMicroseconds": 151,
+                        "column": 31,
+                        "durationMicroseconds": 83,
                         "errorMessage": "",
-                        "functionName": "width",
+                        "functionName": "fill",
                         "line": 134
                     },
                     {
                         "codegenSuccessfull": true,
+                        "column": 28,
+                        "durationMicroseconds": 108,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 137
+                    },
+                    {
+                        "codegenSuccessfull": true,
                         "column": 29,
-                        "durationMicroseconds": 194,
+                        "durationMicroseconds": 173,
                         "errorMessage": "",
                         "functionName": "height",
-                        "line": 135
+                        "line": 138
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 32,
-                        "durationMicroseconds": 104,
+                        "durationMicroseconds": 105,
                         "errorMessage": "",
                         "functionName": "width",
-                        "line": 140
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 33,
-                        "durationMicroseconds": 98,
-                        "errorMessage": "",
-                        "functionName": "height",
-                        "line": 141
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 35,
-                        "durationMicroseconds": 102,
-                        "errorMessage": "",
-                        "functionName": "fillMode",
-                        "line": 142
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 34,
-                        "durationMicroseconds": 203,
-                        "errorMessage": "",
-                        "functionName": "visible",
                         "line": 143
                     },
                     {
                         "codegenSuccessfull": true,
+                        "column": 33,
+                        "durationMicroseconds": 100,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 144
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 35,
+                        "durationMicroseconds": 96,
+                        "errorMessage": "",
+                        "functionName": "fillMode",
+                        "line": 145
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 34,
+                        "durationMicroseconds": 201,
+                        "errorMessage": "",
+                        "functionName": "visible",
+                        "line": 146
+                    },
+                    {
+                        "codegenSuccessfull": true,
                         "column": 28,
-                        "durationMicroseconds": 104,
+                        "durationMicroseconds": 99,
                         "errorMessage": "",
                         "functionName": "width",
-                        "line": 148
+                        "line": 151
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 29,
-                        "durationMicroseconds": 181,
+                        "durationMicroseconds": 169,
                         "errorMessage": "",
                         "functionName": "height",
-                        "line": 149
+                        "line": 152
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 43,
-                        "durationMicroseconds": 69,
+                        "durationMicroseconds": 66,
                         "errorMessage": "",
                         "functionName": "centerIn",
-                        "line": 153
+                        "line": 156
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 38,
-                        "durationMicroseconds": 203,
+                        "durationMicroseconds": 202,
                         "errorMessage": "",
                         "functionName": "visible",
-                        "line": 161
+                        "line": 164
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 38,
-                        "durationMicroseconds": 226,
+                        "durationMicroseconds": 193,
                         "errorMessage": "",
                         "functionName": "visible",
-                        "line": 169
+                        "line": 172
                     },
                     {
                         "codegenSuccessfull": false,
@@ -297,7 +297,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Cannot resolve property type  for binding on pixelSize.",
                         "functionName": "pixelSize",
-                        "line": 226
+                        "line": 229
                     }
                 ],
                 "filepath": "/home/kecyke/qt/scatterplot/build/Desktop_Qt_6_8_0-Debug/Main.qml"
