@@ -6,15 +6,23 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 1190,
+                        "durationMicroseconds": 2302,
                         "errorMessage": "Cannot generate efficient code for LoadClosure",
                         "functionName": "createCheckboxesForNumericAttributes",
-                        "line": 158
+                        "line": 176
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 5,
+                        "durationMicroseconds": 21,
+                        "errorMessage": "Instruction \"generate_StoreLocal\" not implemented",
+                        "functionName": "getSelectedAttributes",
+                        "line": 201
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 46,
+                        "durationMicroseconds": 96,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 16
@@ -22,7 +30,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 20,
-                        "durationMicroseconds": 448,
+                        "durationMicroseconds": 908,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 22
@@ -30,7 +38,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 21,
-                        "durationMicroseconds": 458,
+                        "durationMicroseconds": 866,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 23
@@ -38,7 +46,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 91,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 26
@@ -46,7 +54,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 28,
-                        "durationMicroseconds": 65,
+                        "durationMicroseconds": 111,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 30
@@ -54,7 +62,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 29,
-                        "durationMicroseconds": 96,
+                        "durationMicroseconds": 179,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 31
@@ -62,7 +70,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 32,
-                        "durationMicroseconds": 121,
+                        "durationMicroseconds": 298,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 35
@@ -70,7 +78,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 33,
-                        "durationMicroseconds": 53,
+                        "durationMicroseconds": 103,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 36
@@ -78,7 +86,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 43,
-                        "durationMicroseconds": 34,
+                        "durationMicroseconds": 67,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 41
@@ -108,164 +116,180 @@
                         "line": 51
                     },
                     {
-                        "codegenSuccessfull": true,
-                        "column": 28,
-                        "durationMicroseconds": 54,
-                        "errorMessage": "",
+                        "codegenSuccessfull": false,
+                        "column": 32,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Cannot resolve property type  for binding on width.",
                         "functionName": "width",
                         "line": 65
                     },
                     {
-                        "codegenSuccessfull": true,
-                        "column": 29,
-                        "durationMicroseconds": 86,
-                        "errorMessage": "",
+                        "codegenSuccessfull": false,
+                        "column": 33,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Cannot resolve property type  for binding on height.",
                         "functionName": "height",
                         "line": 66
                     },
                     {
                         "codegenSuccessfull": false,
+                        "column": 36,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Cannot resolve property type  for binding on onClicked.",
+                        "functionName": "onClicked",
+                        "line": 67
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 28,
+                        "durationMicroseconds": 115,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 83
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 29,
+                        "durationMicroseconds": 180,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 84
+                    },
+                    {
+                        "codegenSuccessfull": false,
                         "column": 48,
-                        "durationMicroseconds": 1109,
-                        "errorMessage": "Cannot generate efficient code for lookup in QJSValue",
+                        "durationMicroseconds": 300,
+                        "errorMessage": "Cannot load property xPosRole from  stored as QQuickGraphsScatter3DSeries.",
                         "functionName": "onSelectedItemChanged",
-                        "line": 79
+                        "line": 94
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 40,
-                        "durationMicroseconds": 54,
+                        "durationMicroseconds": 106,
                         "errorMessage": "",
                         "functionName": "itemModel",
-                        "line": 71
+                        "line": 89
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 20,
-                        "durationMicroseconds": 423,
+                        "durationMicroseconds": 831,
                         "errorMessage": "",
                         "functionName": "width",
-                        "line": 99
+                        "line": 117
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 21,
-                        "durationMicroseconds": 372,
+                        "durationMicroseconds": 808,
                         "errorMessage": "",
                         "functionName": "height",
-                        "line": 100
+                        "line": 118
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 22,
-                        "durationMicroseconds": 93,
+                        "durationMicroseconds": 211,
                         "errorMessage": "",
                         "functionName": "visible",
-                        "line": 101
+                        "line": 119
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 34,
+                        "durationMicroseconds": 73,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 104
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 28,
-                        "durationMicroseconds": 49,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 107
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 29,
-                        "durationMicroseconds": 86,
-                        "errorMessage": "",
-                        "functionName": "height",
-                        "line": 108
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 32,
-                        "durationMicroseconds": 53,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 113
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 33,
-                        "durationMicroseconds": 52,
-                        "errorMessage": "",
-                        "functionName": "height",
-                        "line": 114
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 35,
-                        "durationMicroseconds": 55,
-                        "errorMessage": "",
-                        "functionName": "fillMode",
-                        "line": 115
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 34,
-                        "durationMicroseconds": 106,
-                        "errorMessage": "",
-                        "functionName": "visible",
-                        "line": 116
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 28,
-                        "durationMicroseconds": 51,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 121
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 29,
-                        "durationMicroseconds": 88,
-                        "errorMessage": "",
-                        "functionName": "height",
                         "line": 122
                     },
                     {
                         "codegenSuccessfull": true,
-                        "column": 43,
-                        "durationMicroseconds": 33,
+                        "column": 28,
+                        "durationMicroseconds": 106,
                         "errorMessage": "",
-                        "functionName": "centerIn",
+                        "functionName": "width",
+                        "line": 125
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 29,
+                        "durationMicroseconds": 176,
+                        "errorMessage": "",
+                        "functionName": "height",
                         "line": 126
                     },
                     {
                         "codegenSuccessfull": true,
-                        "column": 38,
-                        "durationMicroseconds": 98,
+                        "column": 32,
+                        "durationMicroseconds": 105,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 131
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 33,
+                        "durationMicroseconds": 99,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 132
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 35,
+                        "durationMicroseconds": 108,
+                        "errorMessage": "",
+                        "functionName": "fillMode",
+                        "line": 133
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 34,
+                        "durationMicroseconds": 197,
                         "errorMessage": "",
                         "functionName": "visible",
                         "line": 134
                     },
                     {
                         "codegenSuccessfull": true,
-                        "column": 38,
-                        "durationMicroseconds": 93,
+                        "column": 28,
+                        "durationMicroseconds": 108,
                         "errorMessage": "",
-                        "functionName": "visible",
-                        "line": 142
+                        "functionName": "width",
+                        "line": 139
                     },
                     {
-                        "codegenSuccessfull": false,
+                        "codegenSuccessfull": true,
                         "column": 29,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on pixelSize.",
-                        "functionName": "pixelSize",
-                        "line": 186
+                        "durationMicroseconds": 177,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 140
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 43,
+                        "durationMicroseconds": 70,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 144
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 38,
+                        "durationMicroseconds": 201,
+                        "errorMessage": "",
+                        "functionName": "visible",
+                        "line": 152
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 38,
+                        "durationMicroseconds": 200,
+                        "errorMessage": "",
+                        "functionName": "visible",
+                        "line": 160
                     }
                 ],
                 "filepath": "/home/kecyke/qt/scatterplot/build/Desktop_Qt_6_8_0-Debug/Main.qml"

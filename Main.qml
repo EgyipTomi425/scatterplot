@@ -32,7 +32,7 @@ ApplicationWindow {
 
                     Rectangle {
                         id: checkboxfieldRect
-                        width: parent.width - parent.height
+                        width: parent.width - 2 * parent.height
                         height: parent.height
                         color: "#303030"
 
@@ -58,6 +58,24 @@ ApplicationWindow {
                             createCheckboxesForNumericAttributes();
                         }
                     }
+
+                    Button {
+                        id: updateButton
+                        text: "Update Scatter Plot"
+                        width: parent.height
+                        height: parent.height
+                        onClicked: {
+                            var selectedAttributes = getSelectedAttributes();
+                            if (selectedAttributes.length === 3) {
+                                scatterSeries.xPosRole = selectedAttributes[0];
+                                scatterSeries.yPosRole = selectedAttributes[1];
+                                scatterSeries.zPosRole = selectedAttributes[2];
+                                console.log("Updated Scatter3D with: " + selectedAttributes);
+                            } else {
+                                console.error("Please select exactly three attributes.");
+                            }
+                        }
+                    }
                 }
 
                 Scatter3D {
@@ -69,23 +87,23 @@ ApplicationWindow {
                         id: scatterSeries
                         ItemModelScatterDataProxy {
                             itemModel: scatterDataModel
-                            xPosRole: "x"
-                            yPosRole: "y"
-                            zPosRole: "z"
                         }
 
                         baseColor: "blue"
 
                         onSelectedItemChanged: {
                             if (selectedItem >= 0) {
-                                var item = scatterDataModel.get(selectedItem)
-                                selectedName.text = "Name: " + item.name
-                                selectedCoords.text = "Coordinates: (" + item.x + ", " + item.y + ", " + item.z + ")"
-                                selectedImage.source = "file:///home/kecyke/Letöltések/images/" + item.image
+                                var item = scatterDataModel.get(selectedItem);
+                                selectedName.text = "Name: " + (item.name || "N/A");
+                                selectedCoords.text = "Coordinates: ("
+                                                      + (item[scatterSeries.xPosRole] || "N/A") + ", "
+                                                      + (item[scatterSeries.yPosRole] || "N/A") + ", "
+                                                      + (item[scatterSeries.zPosRole] || "N/A") + ")";
+                                selectedImage.source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
                             } else {
-                                selectedName.text = "Name: None"
-                                selectedCoords.text = "Coordinates: (N/A, N/A, N/A)"
-                                selectedImage.source = ""
+                                selectedName.text = "Name: None";
+                                selectedCoords.text = "Coordinates: (N/A, N/A, N/A)";
+                                selectedImage.source = "";
                             }
                         }
                     }
@@ -156,7 +174,7 @@ ApplicationWindow {
     }
 
     function createCheckboxesForNumericAttributes() {
-        checkboxLayout.children.forEach(function(child) {
+        checkboxLayout.children.forEach(function (child) {
             child.destroy();
         });
 
@@ -171,7 +189,7 @@ ApplicationWindow {
                 }
             }
 
-            numericAttributes.forEach(function(attribute) {
+            numericAttributes.forEach(function (attribute) {
                 var newCheckbox = checkboxComponent.createObject(checkboxLayout, { text: attribute });
                 if (newCheckbox) {
                     console.log("Checkbox created for: " + attribute);
@@ -180,10 +198,22 @@ ApplicationWindow {
         }
     }
 
+    function getSelectedAttributes() {
+        var selectedAttributes = [];
+        checkboxLayout.children.forEach(function (checkbox) {
+            if (checkbox.checked) {
+                selectedAttributes.push(checkbox.text);
+            }
+        });
+        console.log(selectedAttributes);
+        return selectedAttributes;
+    }
+
     Component {
         id: checkboxComponent
         CheckBox {
-            font.pixelSize: parent.height / 5
+            text: "Attribute"
+            checked: false
         }
     }
 }
