@@ -99,11 +99,15 @@ ApplicationWindow {
                         onSelectedItemChanged: {
                             if (selectedItem >= 0) {
                                 var item = scatterDataModel.get(selectedItem);
+                                var xAttr = scatterDataProxy.xPosRole;
+                                var yAttr = scatterDataProxy.yPosRole;
+                                var zAttr = scatterDataProxy.zPosRole;
+
                                 selectedName.text = "Name: " + (item.name || "N/A");
-                                selectedCoords.text = "Coordinates: ("
-                                                      + (item[scatterDataProxy.xPosRole] || "N/A") + ", "
-                                                      + (item[scatterDataProxy.yPosRole] || "N/A") + ", "
-                                                      + (item[scatterDataProxy.zPosRole] || "N/A") + ")";
+                                selectedCoords.text = "Coordinates: " +
+                                                      xAttr + ": " + (item[xAttr] || "N/A") + ", " +
+                                                      yAttr + ": " + (item[yAttr] || "N/A") + ", " +
+                                                      zAttr + ": " + (item[zAttr] || "N/A");
                                 selectedImage.source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
                             } else {
                                 selectedName.text = "Name: None";
