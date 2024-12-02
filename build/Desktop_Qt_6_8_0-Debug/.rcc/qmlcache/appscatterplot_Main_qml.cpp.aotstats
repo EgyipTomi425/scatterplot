@@ -4,236 +4,52 @@
             {
                 "entries": [
                     {
-                        "codegenSuccessfull": true,
-                        "column": 23,
-                        "durationMicroseconds": 86,
-                        "errorMessage": "",
-                        "functionName": "fill",
-                        "line": 12
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 20,
-                        "durationMicroseconds": 473,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 18
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 21,
-                        "durationMicroseconds": 432,
-                        "errorMessage": "",
-                        "functionName": "height",
-                        "line": 19
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 31,
-                        "durationMicroseconds": 39,
-                        "errorMessage": "",
-                        "functionName": "fill",
-                        "line": 22
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 28,
-                        "durationMicroseconds": 55,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 26
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 29,
-                        "durationMicroseconds": 89,
-                        "errorMessage": "",
-                        "functionName": "height",
-                        "line": 27
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 33,
-                        "durationMicroseconds": 111,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 31
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 33,
-                        "durationMicroseconds": 51,
-                        "errorMessage": "",
-                        "functionName": "height",
-                        "line": 32
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 32,
-                        "durationMicroseconds": 58,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 38
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 33,
-                        "durationMicroseconds": 54,
-                        "errorMessage": "",
-                        "functionName": "height",
-                        "line": 39
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 28,
-                        "durationMicroseconds": 51,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 46
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 29,
-                        "durationMicroseconds": 83,
-                        "errorMessage": "",
-                        "functionName": "height",
-                        "line": 47
-                    },
-                    {
                         "codegenSuccessfull": false,
-                        "column": 48,
-                        "durationMicroseconds": 1098,
-                        "errorMessage": "Cannot generate efficient code for lookup in QJSValue",
-                        "functionName": "onSelectedItemChanged",
-                        "line": 60
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 40,
-                        "durationMicroseconds": 53,
-                        "errorMessage": "",
-                        "functionName": "itemModel",
-                        "line": 52
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 20,
-                        "durationMicroseconds": 395,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 80
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 21,
-                        "durationMicroseconds": 410,
-                        "errorMessage": "",
-                        "functionName": "height",
-                        "line": 81
+                        "column": 5,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Functions without type annotations won't be compiled",
+                        "functionName": "loadCSVData",
+                        "line": 40
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 22,
-                        "durationMicroseconds": 97,
+                        "durationMicroseconds": 266,
                         "errorMessage": "",
-                        "functionName": "visible",
-                        "line": 82
+                        "functionName": "nameFilters",
+                        "line": 15
                     },
                     {
-                        "codegenSuccessfull": true,
-                        "column": 31,
-                        "durationMicroseconds": 35,
-                        "errorMessage": "",
-                        "functionName": "fill",
-                        "line": 85
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 28,
-                        "durationMicroseconds": 50,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 88
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 29,
-                        "durationMicroseconds": 82,
-                        "errorMessage": "",
-                        "functionName": "height",
-                        "line": 89
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 32,
-                        "durationMicroseconds": 49,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 94
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 33,
-                        "durationMicroseconds": 47,
-                        "errorMessage": "",
-                        "functionName": "height",
-                        "line": 95
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 35,
-                        "durationMicroseconds": 49,
-                        "errorMessage": "",
-                        "functionName": "fillMode",
-                        "line": 96
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 34,
-                        "durationMicroseconds": 97,
-                        "errorMessage": "",
-                        "functionName": "visible",
-                        "line": 97
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 28,
-                        "durationMicroseconds": 54,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 102
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 29,
+                        "codegenSuccessfull": false,
+                        "column": 21,
                         "durationMicroseconds": 84,
-                        "errorMessage": "",
-                        "functionName": "height",
-                        "line": 103
+                        "errorMessage": "Cannot load property fileUrl from  stored as QQuickFileDialog.",
+                        "functionName": "onAccepted",
+                        "line": 16
                     },
                     {
                         "codegenSuccessfull": true,
-                        "column": 43,
-                        "durationMicroseconds": 33,
+                        "column": 21,
+                        "durationMicroseconds": 252,
                         "errorMessage": "",
+                        "functionName": "onRejected",
+                        "line": 20
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 20,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Cannot resolve property type  for binding on onClicked.",
+                        "functionName": "onClicked",
+                        "line": 30
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 27,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Cannot resolve property type  for binding on centerIn.",
                         "functionName": "centerIn",
-                        "line": 107
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 38,
-                        "durationMicroseconds": 96,
-                        "errorMessage": "",
-                        "functionName": "visible",
-                        "line": 115
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 38,
-                        "durationMicroseconds": 90,
-                        "errorMessage": "",
-                        "functionName": "visible",
-                        "line": 123
+                        "line": 29
                     }
                 ],
                 "filepath": "/home/kecyke/qt/scatterplot/build/Desktop_Qt_6_8_0-Debug/Main.qml"

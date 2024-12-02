@@ -7,6 +7,7 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/scatterplot/Main.qml"));
+    qputenv("QML_XHR_ALLOW_FILE_READ", "1");
     QObject::connect(
         &engine,
         &QQmlApplicationEngine::objectCreationFailed,

@@ -1,6 +1,7 @@
-import QtQuick 2.15
-import QtQuick.Controls 2.15
-import QtGraphs
+import QtQuick
+import QtQuick.Controls
+import Qt.labs.folderlistmodel 2.1
+import QtQuick.Dialogs
 
 ApplicationWindow {
     visible: true
@@ -8,132 +9,65 @@ ApplicationWindow {
     height: 600
     color: "black"
 
-    Flow {
-        anchors.fill: parent
-        spacing: 0
+    FileDialog {
+        id: fileDialog
+        title: "Select a CSV File"
+        nameFilters: ["*.csv"]
+        onAccepted: {
+            var filePath = fileDialog.fileUrl.toString().replace("file://", "");
+            loadCSVData(filePath);
+        }
+        onRejected: {
+            console.log("File selection was cancelled.");
+        }
+    }
 
-        Rectangle {
-            id: diagramRect
-            color: "#202020"
-            width: (scatterSeries.selectedItem < 0 ? parent.width : (parent.width > parent.height ? parent.width * 0.6 : parent.width))
-            height: (scatterSeries.selectedItem < 0 ? parent.height : (parent.width > parent.height ? parent.height : parent.height * 0.6))
+    Button {
+        text: "Load CSV Data"
+        width: 200
+        height: 50
+        anchors.centerIn: parent
+        onClicked: {
+            fileDialog.open();
+        }
+    }
 
-            Flow {
-                anchors.fill: parent
-                spacing: 0
+    ListModel {
+        id: scatterDataModel
+        // Az üres modell alapértelmezett állapotban
+    }
 
-                Row {
-                    width: parent.width
-                    height: parent.height * 0.1
+    function loadCSVData(filePath) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "file://" + filePath, true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var csvData = xhr.responseText.split("\n");
+                for (var i = 0; i < csvData.length; i++) {
+                    if (csvData[i].trim() !== "") {
+                        var columns = csvData[i].split(",");
+                        var itemName = columns[0];
+                        var x = parseFloat(columns[1]);
+                        var y = parseFloat(columns[2]);
+                        var z = parseFloat(columns[3]);
+                        var image = itemName + "_fat.png";
+                        var folder = "/home/kecyke/Letöltések/images/";
 
-                    Rectangle {
-                        id: checkboxfieldRect
-                        width : parent.width - parent.height
-                        height: parent.height
-                        color: "#303030"
-                    }
-
-                    Rectangle {
-                        id: filereaderRect
-                        width: parent.height
-                        height: parent.height
-                        color: "#404040"
-                    }
-                }
-
-                Scatter3D {
-                    id: scatter
-                    width: parent.width
-                    height: parent.height * 0.9
-
-                    Scatter3DSeries {
-                        id: scatterSeries
-                        ItemModelScatterDataProxy {
-                            itemModel: scatterDataModel
-                            xPosRole: "x"
-                            yPosRole: "y"
-                            zPosRole: "z"
-                        }
-
-                        baseColor: "blue"
-
-                        onSelectedItemChanged: {
-                            if (selectedItem >= 0) {
-                                var item = scatterDataModel.get(selectedItem)
-                                selectedName.text = "Name: " + item.name
-                                selectedCoords.text = "Coordinates: (" + item.x + ", " + item.y + ", " + item.z + ")"
-                                selectedImage.source = "file:///home/kecyke/Letöltések/images/" + item.image
-                            } else {
-                                selectedName.text = "Name: None"
-                                selectedCoords.text = "Coordinates: (N/A, N/A, N/A)"
-                                selectedImage.source = ""
-                            }
-                        }
+                        scatterDataModel.append({
+                            id: itemName,
+                            x: x,
+                            y: y,
+                            z: z,
+                            name: itemName,
+                            image: image,
+                            folder: folder
+                        });
                     }
                 }
+            } else if (xhr.readyState == 4) {
+                console.log("Failed to load CSV file.");
             }
         }
-
-        Rectangle {
-            id: dataRect
-            color: "#303030"
-            width: (scatterSeries.selectedItem < 0 ? 0 : (parent.width > parent.height ? parent.width * 0.4 : parent.width))
-            height: (scatterSeries.selectedItem < 0 ? 0 : (parent.width > parent.height ? parent.height : parent.height * 0.4))
-            visible: scatterSeries.selectedItem >= 0
-
-            Column {
-                anchors.fill: parent
-
-                Rectangle {
-                    width: parent.width
-                    height: parent.height * 0.8
-                    color: "#000000"
-
-                    Image {
-                        id: selectedImage
-                        width: parent.width
-                        height: parent.height
-                        fillMode: Image.PreserveAspectFit
-                        visible: scatterSeries.selectedItem >= 0
-                    }
-                }
-
-                Rectangle {
-                    width: parent.width
-                    height: parent.height * 0.2
-                    color: "#404040"
-
-                    Column {
-                        anchors.centerIn: parent
-                        spacing: 10
-
-                        Text {
-                            id: selectedName
-                            text: "Name: None"
-                            color: "white"
-                            font.pixelSize: 18
-                            visible: scatterSeries.selectedItem >= 0
-                        }
-
-                        Text {
-                            id: selectedCoords
-                            text: "Coordinates: (N/A, N/A, N/A)"
-                            color: "white"
-                            font.pixelSize: 18
-                            visible: scatterSeries.selectedItem >= 0
-                        }
-                    }
-                }
-            }
-        }
-
-        ListModel {
-            id: scatterDataModel
-            ListElement { x: -5; y: 0; z: 5; name: "Point A"; image: "001_fat.png" }
-            ListElement { x: 0; y: 2; z: -3; name: "Point B"; image: "002_fat.png" }
-            ListElement { x: 3; y: 7; z: 2; name: "Point C"; image: "003_fat.png" }
-            ListElement { x: 6; y: 5; z: -6; name: "Point D"; image: "004_fat.png" }
-            ListElement { x: 1; y: -4; z: 8; name: "Point E"; image: "005_fat.png" }
-        }
+        xhr.send();
     }
 }
