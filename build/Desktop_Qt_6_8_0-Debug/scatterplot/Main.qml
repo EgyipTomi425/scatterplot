@@ -43,11 +43,16 @@ ApplicationWindow {
                         width: parent.height
                         height: parent.height
                         onClicked: {
-                            var testData = csvReader.readCsvSample("/path/to/csv/file.csv");
+                            var testData = csvReader.readCsv("/home/kecyke/Letöltések/project/data_filtered_cleaned.csv");
                             scatterDataModel.clear();
-                            testData.forEach(function (item) {
+                            testData.forEach(function (item, index) {
                                 scatterDataModel.append(item);
+                                console.log("Item " + index + ": " + JSON.stringify(item));
                             });
+                            for (var i = 0; i < scatterDataModel.count; i++) {
+                                    var item = scatterDataModel.get(i);
+                                    console.log("Item " + i + ": " + JSON.stringify(item));
+                                }
                         }
                     }
                 }

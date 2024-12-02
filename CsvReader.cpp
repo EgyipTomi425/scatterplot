@@ -1,9 +1,12 @@
 #include "CsvReader.h"
+#include <QFile>
+#include <QTextStream>
+#include <QStringList>
+#include <QDebug>
 
 CsvReader::CsvReader(QObject *parent) : QObject(parent) {}
 
 QList<QVariantMap> CsvReader::readCsvSample(const QString &filepath) {
-    // Tesztadat visszaadása
     QList<QVariantMap> dummyData;
 
     QVariantMap map1;
@@ -23,4 +26,51 @@ QList<QVariantMap> CsvReader::readCsvSample(const QString &filepath) {
     dummyData.append(map2);
 
     return dummyData;
+}
+
+QList<QVariantMap> CsvReader::readCsv(const QString &filepath) {
+    QList<QVariantMap> dataList;
+
+    QFile file(filepath);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        qWarning() << "Failed to open file:" << filepath;
+        return dataList; // Üres lista, ha a fájl nem érhető el
+    }
+
+    QTextStream stream(&file);
+
+    // Fejléc feldolgozása (pl. x, y, z, name, image)
+    QStringList headers;
+    if (!stream.atEnd()) {
+        QString headerLine = stream.readLine();
+        headers = headerLine.split(',');
+    }
+
+    // Adatsorok feldolgozása
+    while (!stream.atEnd()) {
+        QString line = stream.readLine();
+        QStringList values = line.split(',');
+
+        if (values.size() == headers.size()) {
+            QVariantMap map;
+            for (int i = 0; i < headers.size(); ++i) {
+                QString key = headers[i].trimmed();
+                QString value = values[i].trimmed();
+
+                // Ellenőrizni, hogy az érték numerikus-e
+                bool isNumeric = false;
+                double numericValue = value.toDouble(&isNumeric);
+
+                if (isNumeric) {
+                    map[key] = numericValue; // Numerikus érték
+                } else {
+                    map[key] = value; // Szöveges érték
+                }
+            }
+            dataList.append(map);
+        }
+    }
+
+    file.close();
+    return dataList;
 }

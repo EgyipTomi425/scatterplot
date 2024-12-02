@@ -15,6 +15,18 @@
                     "index": 1,
                     "name": "readCsvSample",
                     "returnType": "QList<QVariantMap>"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "filepath",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "readCsv",
+                    "returnType": "QList<QVariantMap>"
                 }
             ],
             "object": true,
