@@ -22,18 +22,23 @@ ApplicationWindow {
                 anchors.fill: parent
                 spacing: 0
 
-                Rectangle {
-                    id: checkboxfieldRect
-                    width: parent.width * 0.9
+                Row {
+                    width: parent.width
                     height: parent.height * 0.1
-                    color: "#303030"
-                }
 
-                Rectangle {
-                    id: filereaderRect
-                    width: parent.width * 0.1
-                    height: parent.height * 0.1
-                    color: "#404040"
+                    Rectangle {
+                        id: checkboxfieldRect
+                        width : parent.width - parent.height
+                        height: parent.height
+                        color: "#303030"
+                    }
+
+                    Rectangle {
+                        id: filereaderRect
+                        width: parent.height
+                        height: parent.height
+                        color: "#404040"
+                    }
                 }
 
                 Scatter3D {
