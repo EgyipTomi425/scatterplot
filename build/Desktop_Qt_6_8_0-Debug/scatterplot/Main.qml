@@ -78,68 +78,86 @@ ApplicationWindow {
                     }
                 }
 
-                Scatter3D {
-                    id: scatter
+                Item {
                     width: parent.width
-                    height: parent.height * 0.9
-                    aspectRatio: 1
-                    horizontalAspectRatio: 1
+                    height: parent.height
 
-                    axisX {
-                        id: xAxis
-                        title: scatterDataProxy.xPosRole || "X-Axis"
-                        titleVisible: true
-                        labelFormat: "%.2f"
-                    }
+                    Scatter3D {
+                        id: scatter
+                        width: parent.width
+                        height: parent.height * 0.9
+                        aspectRatio: 1
+                        horizontalAspectRatio: 1
 
-                    axisY {
-                        id: yAxis
-                        title: scatterDataProxy.yPosRole || "Y-Axis"
-                        titleVisible: true
-                        labelFormat: "%.2f"
-                    }
-
-                    axisZ {
-                        id: zAxis
-                        title: scatterDataProxy.zPosRole || "Z-Axis"
-                        titleVisible: true
-                        labelFormat: "%.2f"
-                    }
-
-                    Scatter3DSeries {
-                        id: scatterSeries
-
-                        ItemModelScatterDataProxy {
-                            id: scatterDataProxy
-                            itemModel: scatterDataModel
-                            xPosRole: "x" // Alapértelmezett attribútum
-                            yPosRole: "y"
-                            zPosRole: "z"
+                        axisX {
+                            id: xAxis
+                            title: scatterDataProxy.xPosRole || "X-Axis"
+                            titleVisible: true
+                            labelFormat: "%.2f"
                         }
 
-                        baseColor: "blue"
-                        itemSize: 0.1
+                        axisY {
+                            id: yAxis
+                            title: scatterDataProxy.yPosRole || "Y-Axis"
+                            titleVisible: true
+                            labelFormat: "%.2f"
+                        }
 
-                        onSelectedItemChanged: {
-                            if (selectedItem >= 0) {
-                                var item = scatterDataModel.get(selectedItem);
-                                var xAttr = scatterDataProxy.xPosRole;
-                                var yAttr = scatterDataProxy.yPosRole;
-                                var zAttr = scatterDataProxy.zPosRole;
+                        axisZ {
+                            id: zAxis
+                            title: scatterDataProxy.zPosRole || "Z-Axis"
+                            titleVisible: true
+                            labelFormat: "%.2f"
+                        }
 
-                                selectedName.text = "Name: " + (item.name || "N/A");
-                                selectedCoords.text = "Coordinates: \n" +
-                                                      xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
-                                                      yAttr + ": " + (item[yAttr] || "N/A") + ", \n" +
-                                                      zAttr + ": " + (item[zAttr] || "N/A");
-                                selectedImage.source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
-                            } else {
-                                selectedName.text = "Name: None";
-                                selectedCoords.text = "Coordinates: (N/A, N/A, N/A)";
-                                selectedImage.source = "";
+                        Scatter3DSeries {
+                            id: scatterSeries
+                            ItemModelScatterDataProxy {
+                                id: scatterDataProxy
+                                itemModel: scatterDataModel
+                                xPosRole: "x"
+                                yPosRole: "y"
+                                zPosRole: "z"
+                            }
+                            baseColor: "blue"
+                            itemSize: 0.1
+
+                            onSelectedItemChanged: {
+                                if (selectedItem >= 0) {
+                                    var item = scatterDataModel.get(selectedItem);
+                                    var xAttr = scatterDataProxy.xPosRole;
+                                    var yAttr = scatterDataProxy.yPosRole;
+                                    var zAttr = scatterDataProxy.zPosRole;
+
+                                    selectedName.text = "Name: " + (item.name || "N/A");
+                                    selectedCoords.text = "Coordinates: \n" +
+                                                          xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
+                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", \n" +
+                                                          zAttr + ": " + (item[zAttr] || "N/A");
+                                    selectedImage.source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
+                                } else {
+                                    selectedName.text = "Name: None";
+                                    selectedCoords.text = "Coordinates: (N/A, N/A, N/A)";
+                                    selectedImage.source = "";
+                                }
                             }
                         }
                     }
+
+                    Slider {
+                        width: 400
+                        height: 50
+                        anchors.top: scatter.top
+                        anchors.right: scatter.right
+                        anchors.margins: 10
+
+                        stepSize: 0.01
+
+                        onValueChanged: {
+                            scatterSeries.itemSize = value;
+                        }
+                    }
+
                 }
             }
         }
