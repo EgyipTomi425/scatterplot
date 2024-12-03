@@ -49,7 +49,7 @@ ApplicationWindow {
                         width: parent.height
                         height: parent.height
                         onClicked: {
-                            var testData = csvReader.readCsv("/home/kecyke/Letöltések/project/data_filtered_cleaned.csv");
+                            var testData = csvReader.readCsv("/home/kecyke/Letöltések/project/data_with_bmi_and_category.csv");
                             scatterDataModel.clear();
                             testData.forEach(function (item, index) {
                                 scatterDataModel.append(item);
@@ -98,6 +98,7 @@ ApplicationWindow {
                         }
 
                         baseColor: "blue"
+                        itemSize: 0.1
 
                         onSelectedItemChanged: {
                             if (selectedItem >= 0) {
