@@ -85,6 +85,26 @@ ApplicationWindow {
                     aspectRatio: 1
                     horizontalAspectRatio: 1
 
+                    axisX {
+                        id: xAxis
+                        title: scatterDataProxy.xPosRole || "X-Axis"
+                        titleVisible: true
+                        labelFormat: "%.2f"
+                    }
+
+                    axisY {
+                        id: yAxis
+                        title: scatterDataProxy.yPosRole || "Y-Axis"
+                        titleVisible: true
+                        labelFormat: "%.2f"
+                    }
+
+                    axisZ {
+                        id: zAxis
+                        title: scatterDataProxy.zPosRole || "Z-Axis"
+                        titleVisible: true
+                        labelFormat: "%.2f"
+                    }
 
                     Scatter3DSeries {
                         id: scatterSeries
