@@ -67,20 +67,19 @@ ApplicationWindow {
                         onClicked: {
                             var selectedAttributes = getSelectedAttributes();
                             if (selectedAttributes.length === 3) {
-                                // Három attribútum esetén
+                                scatter.orthoProjection = false;
                                 scatterDataProxy.xPosRole = selectedAttributes[0];
                                 scatterDataProxy.yPosRole = selectedAttributes[1];
                                 scatterDataProxy.zPosRole = selectedAttributes[2];
                                 console.log("Updated Scatter3D with: " + selectedAttributes);
                             } else if (selectedAttributes.length === 2) {
-                                // Két attribútum esetén a harmadik dimenziót 0-ra állítjuk
+                                scatter.orthoProjection = true;
                                 scatterDataProxy.xPosRole = selectedAttributes[0];
                                 scatterDataProxy.yPosRole = selectedAttributes[1];
                                 scatterDataProxy.zPosRole = "z";
                                 console.log("Updated Scatter3D with two attributes. Z set to 0.");
-                                // Beállítjuk, hogy a harmadik dimenzió értéke mindig 0 legyen
                                 scatterDataProxy.setItemDataFunction = function (index, item) {
-                                    item["z"] = 0; // Minden z érték 0-ra állítása
+                                    item["z"] = 0;
                                 };
                             } else {
                                 console.error("Please select exactly two or three attributes.");
@@ -96,7 +95,7 @@ ApplicationWindow {
                     Scatter3D {
                         id: scatter
                         width: parent.width
-                        height: parent.height * 0.9
+                        height: parent.height
                         aspectRatio: 1
                         horizontalAspectRatio: 1
 

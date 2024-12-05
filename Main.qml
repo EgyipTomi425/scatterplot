@@ -67,11 +67,13 @@ ApplicationWindow {
                         onClicked: {
                             var selectedAttributes = getSelectedAttributes();
                             if (selectedAttributes.length === 3) {
+                                scatter.orthoProjection = false;
                                 scatterDataProxy.xPosRole = selectedAttributes[0];
                                 scatterDataProxy.yPosRole = selectedAttributes[1];
                                 scatterDataProxy.zPosRole = selectedAttributes[2];
                                 console.log("Updated Scatter3D with: " + selectedAttributes);
                             } else if (selectedAttributes.length === 2) {
+                                scatter.orthoProjection = true;
                                 scatterDataProxy.xPosRole = selectedAttributes[0];
                                 scatterDataProxy.yPosRole = selectedAttributes[1];
                                 scatterDataProxy.zPosRole = "z";
@@ -97,7 +99,7 @@ ApplicationWindow {
                         aspectRatio: 1
                         horizontalAspectRatio: 1
 
-                        orthoProjection: true
+                        orthoProjection: false
 
                         axisX {
                             id: xAxis
