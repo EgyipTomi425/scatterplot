@@ -67,12 +67,23 @@ ApplicationWindow {
                         onClicked: {
                             var selectedAttributes = getSelectedAttributes();
                             if (selectedAttributes.length === 3) {
+                                // Három attribútum esetén
                                 scatterDataProxy.xPosRole = selectedAttributes[0];
                                 scatterDataProxy.yPosRole = selectedAttributes[1];
                                 scatterDataProxy.zPosRole = selectedAttributes[2];
                                 console.log("Updated Scatter3D with: " + selectedAttributes);
+                            } else if (selectedAttributes.length === 2) {
+                                // Két attribútum esetén a harmadik dimenziót 0-ra állítjuk
+                                scatterDataProxy.xPosRole = selectedAttributes[0];
+                                scatterDataProxy.yPosRole = selectedAttributes[1];
+                                scatterDataProxy.zPosRole = "z";
+                                console.log("Updated Scatter3D with two attributes. Z set to 0.");
+                                // Beállítjuk, hogy a harmadik dimenzió értéke mindig 0 legyen
+                                scatterDataProxy.setItemDataFunction = function (index, item) {
+                                    item["z"] = 0; // Minden z érték 0-ra állítása
+                                };
                             } else {
-                                console.error("Please select exactly three attributes.");
+                                console.error("Please select exactly two or three attributes.");
                             }
                         }
                     }
@@ -88,6 +99,8 @@ ApplicationWindow {
                         height: parent.height * 0.9
                         aspectRatio: 1
                         horizontalAspectRatio: 1
+
+                        orthoProjection: true
 
                         axisX {
                             id: xAxis
