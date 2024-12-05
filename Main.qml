@@ -32,7 +32,7 @@ ApplicationWindow {
 
                     Rectangle {
                         id: checkboxfieldRect
-                        width: parent.width - 2 * parent.height
+                        width: parent.width - 3 * parent.height
                         height: parent.height
                         color: "#303030"
 
@@ -41,6 +41,18 @@ ApplicationWindow {
                             anchors.fill: parent
                             spacing: 10
                         }
+                    }
+
+                    ComboBox {
+                        id: coloringButton
+                        width: parent.height
+                        height: parent.height
+                        model: ListModel {
+                            ListElement { text: "Banana" }
+                            ListElement { text: "Apple" }
+                            ListElement { text: "Coconut" }
+                        }
+                        onActivated: (index) => { print(textAt(index)) }
                     }
 
                     Button {
