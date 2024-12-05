@@ -99,13 +99,14 @@ ApplicationWindow {
                         aspectRatio: 1
                         horizontalAspectRatio: 1
 
-                        orthoProjection: true
+                        orthoProjection: false
 
                         axisX {
                             id: xAxis
                             title: scatterDataProxy.xPosRole || "X-Axis"
                             titleVisible: true
                             labelFormat: "%.2f"
+                            labelAutoAngle: 90
                         }
 
                         axisY {
@@ -113,6 +114,7 @@ ApplicationWindow {
                             title: scatterDataProxy.yPosRole || "Y-Axis"
                             titleVisible: true
                             labelFormat: "%.2f"
+                            labelAutoAngle: 90
                         }
 
                         axisZ {
@@ -120,6 +122,7 @@ ApplicationWindow {
                             title: scatterDataProxy.zPosRole || "Z-Axis"
                             titleVisible: true
                             labelFormat: "%.2f"
+                            labelAutoAngle: 90
                         }
 
                         Scatter3DSeries {
