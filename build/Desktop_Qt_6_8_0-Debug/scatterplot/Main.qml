@@ -47,12 +47,7 @@ ApplicationWindow {
                         id: coloringButton
                         width: parent.height
                         height: parent.height
-                        model: ListModel {
-                            ListElement { text: "Banana" }
-                            ListElement { text: "Apple" }
-                            ListElement { text: "Coconut" }
-                        }
-                        onActivated: (index) => { print(textAt(index)) }
+                        model: ListModel {}
                     }
 
                     Button {
@@ -68,6 +63,7 @@ ApplicationWindow {
                                 console.log("Item " + index + ": " + JSON.stringify(scatterDataModel.get(index)));
                             });
                             createCheckboxesForNumericAttributes();
+                            updateComboBoxModel();ss
                         }
                     }
 
@@ -285,6 +281,28 @@ ApplicationWindow {
         });
         console.log(selectedAttributes);
         return selectedAttributes;
+    }
+
+    function getNonNumericAttributesFromModel() {
+        var nonNumericAttributes = [];
+        if (scatterDataModel.count > 0) {
+            var firstItem = scatterDataModel.get(0);
+            for (var key in firstItem) {
+                var value = firstItem[key];
+                if (typeof value !== 'number') {
+                    nonNumericAttributes.push(key);
+                }
+            }
+        }
+        return nonNumericAttributes;
+    }
+
+    function updateComboBoxModel() {
+        coloringButton.model.clear();
+        var nonNumericAttributes = getNonNumericAttributesFromModel();
+        nonNumericAttributes.forEach(function (attribute) {
+            coloringButton.model.append({ text: attribute });
+        });
     }
 
     Component {
