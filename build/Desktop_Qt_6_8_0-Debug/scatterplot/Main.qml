@@ -53,7 +53,6 @@ ApplicationWindow {
                             if (currentIndex >= 0) {
                                 var selectedAttribute = coloringButton.model.get(currentIndex).text;
                                 var uniqueValues = getUniqueValuesForAttribute(selectedAttribute);
-                                console.log("Unique values for " + selectedAttribute + ": " + uniqueValues.join(", "));
                             }
                         }
                     }
@@ -319,7 +318,7 @@ ApplicationWindow {
                 uniqueValues.add(item[attributeName]);
             }
         }
-        console.log("Unique values for " + attributeName + ": " + uniqueValues);
+        console.log("Unique values for " + attributeName + ": " + Array.from(uniqueValues).join(", "));
         return Array.from(uniqueValues);
     }
 
