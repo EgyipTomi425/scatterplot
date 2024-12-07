@@ -365,10 +365,10 @@ ApplicationWindow {
                             height: parent.height
                             color: "transparent"
 
-                            Column {
-                                    anchors.fill: parent
+                            Flow {
+                                anchors.fill: parent
 
-                                Row {
+                                Item {
                                     height: parent.height / 2
                                     width: parent.width
 
@@ -377,20 +377,18 @@ ApplicationWindow {
                                         text: modelData
                                         color: "white"
                                         font.pixelSize: 14
-                                        anchors.horizontalCenter: parent.horizontalCenter
                                     }
                                 }
 
-                                Row {
+                                Item {
                                     height: parent.height / 2
                                     width: parent.width
 
                                     Rectangle {
-                                        anchors.centerIn: parent
                                         width: parent.height
                                         height: parent.height
+                                        anchors.centerIn: parent
                                         color: tempColorMappings[modelData] || "gray"
-                                        anchors.horizontalCenter: parent.horizontalCenter
                                         border.color: "white"
                                         border.width: 1
                                         radius: 5
