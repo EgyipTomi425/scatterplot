@@ -351,16 +351,26 @@ ApplicationWindow {
         }
     }
 
+    ListModel {
+        id: tempColorMappingsModel
+    }
+
+    function findColorByName(name) {
+        for (let i = 0; i < tempColorMappingsModel.count; i++) {
+            let item = tempColorMappingsModel.get(i);
+            if (item.name === name) {
+                return item.color;
+            }
+        }
+        return null;
+    }
+
     Popup {
         id: colorPickerPopup
         x: Math.round((parent.width - width) / 2)
         y: Math.round((parent.height - height) / 2)
         width: parent.width / 2
         height: parent.height / 2
-
-        ListModel {
-            id: tempColorMappingsModel
-        }
 
         Rectangle {
             width: parent.width
@@ -406,7 +416,7 @@ ApplicationWindow {
                                         width: parent.height
                                         height: parent.height
                                         anchors.centerIn: parent
-                                        color: tempColorMappingsModel.get(modelData) ? getColorHex(tempColorMappingsModel.get(modelData).color) : "gray"
+                                        property string associatedName : modelData;
                                         border.color: "white"
                                         border.width: 1
                                         radius: 5
@@ -417,6 +427,8 @@ ApplicationWindow {
                                                 colorDialog.open(modelData);
                                             }
                                         }
+
+                                        color: findColorByName(associatedName) || "gray";
                                     }
                                 }
                             }
