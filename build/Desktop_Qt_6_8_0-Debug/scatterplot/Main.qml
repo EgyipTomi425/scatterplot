@@ -32,7 +32,7 @@ ApplicationWindow {
 
                     Rectangle {
                         id: checkboxfieldRect
-                        width: parent.width - 3 * parent.height
+                        width: (parent.parent.width > parent.parent.height ? parent.width - 3 * parent.height : parent.width - 0.5 * parent.height * 3)
                         height: parent.height
                         color: "#303030"
 
@@ -45,7 +45,7 @@ ApplicationWindow {
 
                     ComboBox {
                         id: coloringButton
-                        width: parent.height
+                        width: (parent.parent.width > parent.parent.height ? parent.height : 0.5 * parent.height)
                         height: parent.height
                         model: ListModel {}
 
@@ -61,7 +61,7 @@ ApplicationWindow {
                     Button {
                         id: readerButton
                         text: "Load Test Data"
-                        width: parent.height
+                        width: (parent.parent.width > parent.parent.height ? parent.height : 0.5 * parent.height)
                         height: parent.height
                         onClicked: {
                             var testData = csvReader.readCsv("/home/kecyke/Letöltések/project/data_with_bmi_and_category.csv");
@@ -78,7 +78,7 @@ ApplicationWindow {
                     Button {
                         id: updateButton
                         text: "Update Scatter Plot"
-                        width: parent.height
+                        width: (parent.parent.width > parent.parent.height ? parent.height : 0.5 * parent.height)
                         height: parent.height
                         onClicked: {
                             var selectedAttributes = getSelectedAttributes();
@@ -103,7 +103,7 @@ ApplicationWindow {
 
                 Item {
                     width: parent.width
-                    height: parent.height
+                    height: parent.height * 0.9
 
                     Scatter3D {
                         id: scatter
@@ -158,7 +158,7 @@ ApplicationWindow {
                                     var zAttr = scatterDataProxy.zPosRole;
 
                                     selectedName.text = "Name: " + (item.name || "N/A");
-                                    selectedCoords.text = "Coordinates: \n" +
+                                    selectedCoords.text = //"Coordinates: \n" +
                                                           xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
                                                           yAttr + ": " + (item[yAttr] || "N/A") + ", \n" +
                                                           zAttr + ": " + (item[zAttr] || "N/A");
@@ -336,7 +336,10 @@ ApplicationWindow {
         CheckBox {
             text: "Attribute"
             checked: false
-            font.pixelSize: parent.height / 4
+            font.pixelSize: Math.max(
+                parent.width / 7 / Math.max(checkboxLayout.children.length, 1),
+                parent.height / 7
+            )
         }
     }
 }
