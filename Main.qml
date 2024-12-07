@@ -328,6 +328,17 @@ ApplicationWindow {
         return Array.from(uniqueValues);
     }
 
+    function getColorHex(colorObj) {
+        if (colorObj && colorObj.valid) {
+            var r = Math.round(colorObj.r * 255);
+            var g = Math.round(colorObj.g * 255);
+            var b = Math.round(colorObj.b * 255);
+            return "#" + ((1 << 24) | (r << 16) | (g << 8) | b).toString(16).slice(1).toUpperCase();
+        } else {
+            return "gray"; // Default fallback color
+        }
+    }
+
     Component {
         id: checkboxComponent
         CheckBox {
@@ -395,7 +406,7 @@ ApplicationWindow {
                                         width: parent.height
                                         height: parent.height
                                         anchors.centerIn: parent
-                                        color: tempColorMappingsModel.get(modelData) ? tempColorMappingsModel.get(modelData).color : "gray"
+                                        color: tempColorMappingsModel.get(modelData) ? getColorHex(tempColorMappingsModel.get(modelData).color) : "gray"
                                         border.color: "white"
                                         border.width: 1
                                         radius: 5
@@ -439,10 +450,10 @@ ApplicationWindow {
                         }
 
                         console.log("Name color pairs:");
-                                for (var i = 0; i < colorMappings.count; i++) {
-                                    var item = colorMappings.get(i);
-                                    console.log(item.name + ": " + JSON.stringify(item.color));
-                                }
+                        for (var i = 0; i < colorMappings.count; i++) {
+                            var item = colorMappings.get(i);
+                            console.log(item.name + ": " + getColorHex(item.color));
+                        }
 
                         colorPickerPopup.close();
                     }
