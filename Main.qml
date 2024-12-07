@@ -12,7 +12,7 @@ ApplicationWindow {
 
     property var scatterDataModel: ListModel {}
     property var colorMappings: {}
-    property var uniqueValues: Array
+    property var uniqueValues: []
 
     Flow {
         anchors.fill: parent
@@ -325,21 +325,6 @@ ApplicationWindow {
         return Array.from(uniqueValues);
     }
 
-    Popup {
-        id: colorPickerPopup
-        x: Math.round((parent.width - width) / 2)
-        y: Math.round((parent.height - height) / 2)
-        width: parent.width / 2
-        height: parent.height / 2
-
-        Rectangle {
-            width: parent.width
-            height: parent.height
-
-
-        }
-    }
-
     Component {
         id: checkboxComponent
         CheckBox {
@@ -351,4 +336,129 @@ ApplicationWindow {
             )
         }
     }
+
+    Popup {
+        id: colorPickerPopup
+        x: Math.round((parent.width - width) / 2)
+        y: Math.round((parent.height - height) / 2)
+        width: parent.width / 2
+        height: parent.height / 2
+
+        Rectangle {
+            width: parent.width
+            height: parent.height
+            color: "black"
+
+            Flow {
+                anchors.fill: parent
+                spacing: 10
+
+                Repeater {
+                    model: uniqueValues // Az egyedi értékeket közvetlenül az Array-ből vesszük
+                    delegate: Item {
+                        width: Math.max((parent.width - 20) / 5, 50)
+                        height: Math.max((parent.height - 20) / 5, 100)
+
+                        Rectangle {
+                            width: parent.width
+                            height: parent.height
+                            color: "transparent"
+                            border.color: "white"
+                            border.width: 1
+                            radius: 5
+
+                            Row {
+                                height: parent.height / 2
+                                width: parent.width
+
+                                Text {
+                                    anchors.centerIn: parent
+                                    text: modelData
+                                    color: "white"
+                                    font.pixelSize: 14
+                                    anchors.horizontalCenter: parent.horizontalCenter
+                                }
+                            }
+
+                            Row {
+                                height: parent.height / 2
+                                width: parent.width
+
+                                Rectangle {
+                                    anchors.centerIn: parent
+                                    width: parent.height
+                                    height: parent.height
+                                    color: tempColorMappings[modelData] || "gray"
+                                    anchors.horizontalCenter: parent.horizontalCenter
+                                    border.color: "white"
+                                    border.width: 1
+                                    radius: 5
+
+                                    MouseArea {
+                                        anchors.fill: parent
+                                        onClicked: {
+                                            colorDialog.open(modelData);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            Row {
+                width: parent.width
+                height: 40
+                spacing: 10
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.bottom: parent.bottom
+                anchors.bottomMargin: 10
+
+                Button {
+                    text: "Mentés"
+                    onClicked: {
+                        for (var key in tempColorMappings) {
+                            colorMappings[key] = tempColorMappings[key];
+                        }
+                        colorPickerPopup.close();
+                    }
+                }
+
+                Button {
+                    text: "Mégse"
+                    onClicked: {
+                        tempColorMappings = {};
+                        colorPickerPopup.close();
+                    }
+                }
+            }
+
+            ColorDialog {
+                id: colorDialog
+                property string currentAttribute: ""
+
+                onAccepted: {
+                    if (currentAttribute !== "") {
+                        tempColorMappings[currentAttribute] = selectedColor;
+                    }
+                }
+
+                function open(attribute) {
+                    currentAttribute = attribute;
+                    visible = true;
+                }
+            }
+        }
+
+        Component.onCompleted: {
+            tempColorMappings = {};
+        }
+    }
+
+
+
+
+
+
 }
