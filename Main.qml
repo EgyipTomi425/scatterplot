@@ -355,7 +355,7 @@ ApplicationWindow {
                 spacing: 10
 
                 Repeater {
-                    model: uniqueValues // Az egyedi értékeket közvetlenül az Array-ből vesszük
+                    model: uniqueValues
                     delegate: Item {
                         width: Math.max((parent.width - 20) / 5, 50)
                         height: Math.max((parent.height - 20) / 5, 100)
