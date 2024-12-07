@@ -344,6 +344,9 @@ ApplicationWindow {
         width: parent.width / 2
         height: parent.height / 2
 
+        // Ideiglenes változó a Popup komponensen belül
+        property var tempColorMappings: {}
+
         Rectangle {
             width: parent.width
             height: parent.height
@@ -355,7 +358,7 @@ ApplicationWindow {
                 spacing: 10
 
                 Repeater {
-                    model: uniqueValues // Az egyedi értékeket közvetlenül az Array-ből vesszük
+                    model: uniqueValues
                     delegate: Item {
                         width: Math.max((parent.width - 20) / 5, 50)
                         height: Math.max((parent.height - 20) / 5, 100)
@@ -388,7 +391,7 @@ ApplicationWindow {
                                         width: parent.height
                                         height: parent.height
                                         anchors.centerIn: parent
-                                        color: tempColorMappings[modelData] || "gray"
+                                        color: colorPickerPopup.tempColorMappings[modelData] || "gray"
                                         border.color: "white"
                                         border.width: 1
                                         radius: 5
@@ -425,8 +428,8 @@ ApplicationWindow {
                     id: colorMappingSaveButton
                     text: "Save"
                     onClicked: {
-                        for (var key in tempColorMappings) {
-                            colorMappings[key] = tempColorMappings[key];
+                        for (var key in colorPickerPopup.tempColorMappings) {
+                            colorMappings[key] = colorPickerPopup.tempColorMappings[key];
                         }
                         colorPickerPopup.close();
                     }
@@ -435,7 +438,7 @@ ApplicationWindow {
                 Button {
                     text: "Cancel"
                     onClicked: {
-                        tempColorMappings = {};
+                        colorPickerPopup.tempColorMappings = {};
                         colorPickerPopup.close();
                     }
                 }
@@ -447,7 +450,7 @@ ApplicationWindow {
 
                 onAccepted: {
                     if (currentAttribute !== "") {
-                        tempColorMappings[currentAttribute] = selectedColor;
+                        colorPickerPopup.tempColorMappings[currentAttribute] = selectedColor;
                     }
                 }
 
@@ -459,7 +462,7 @@ ApplicationWindow {
         }
 
         Component.onCompleted: {
-            tempColorMappings = {};
+            colorPickerPopup.tempColorMappings = {};
         }
     }
 
