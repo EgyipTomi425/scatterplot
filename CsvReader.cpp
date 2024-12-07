@@ -34,19 +34,17 @@ QList<QVariantMap> CsvReader::readCsv(const QString &filepath) {
     QFile file(filepath);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         qWarning() << "Failed to open file:" << filepath;
-        return dataList; // Üres lista, ha a fájl nem érhető el
+        return dataList;
     }
 
     QTextStream stream(&file);
 
-    // Fejléc feldolgozása (pl. x, y, z, name, image)
     QStringList headers;
     if (!stream.atEnd()) {
         QString headerLine = stream.readLine();
         headers = headerLine.split(',');
     }
 
-    // Adatsorok feldolgozása
     while (!stream.atEnd()) {
         QString line = stream.readLine();
         QStringList values = line.split(',');
@@ -57,14 +55,13 @@ QList<QVariantMap> CsvReader::readCsv(const QString &filepath) {
                 QString key = headers[i].trimmed();
                 QString value = values[i].trimmed();
 
-                // Ellenőrizni, hogy az érték numerikus-e
                 bool isNumeric = false;
                 double numericValue = value.toDouble(&isNumeric);
 
                 if (isNumeric) {
-                    map[key] = numericValue; // Numerikus érték
+                    map[key] = numericValue;
                 } else {
-                    map[key] = value; // Szöveges érték
+                    map[key] = value;
                 }
             }
             dataList.append(map);

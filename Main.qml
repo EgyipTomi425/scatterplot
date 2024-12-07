@@ -11,6 +11,8 @@ ApplicationWindow {
     color: "black"
 
     property var scatterDataModel: ListModel {}
+    property var colorMappings: {}
+    property var uniqueValues: Array
 
     Flow {
         anchors.fill: parent
@@ -52,7 +54,7 @@ ApplicationWindow {
                         onCurrentIndexChanged: {
                             if (currentIndex >= 0) {
                                 var selectedAttribute = coloringButton.model.get(currentIndex).text;
-                                var uniqueValues = getUniqueValuesForAttribute(selectedAttribute);
+                                uniqueValues = getUniqueValuesForAttribute(selectedAttribute);
                                 colorPickerPopup.open();
                             }
                         }
