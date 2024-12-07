@@ -10,9 +10,20 @@ ApplicationWindow {
     height: 1080
     color: "black"
 
+    CsvReader {
+        id: csvReader
+    }
+
     property var scatterDataModel: ListModel {}
-    property var colorMappings: {}
     property var uniqueValues: []
+
+    ListModel {
+        id: scatterDataModel
+    }
+
+    ListModel {
+        id: colorMappings
+    }
 
     Flow {
         anchors.fill: parent
@@ -246,14 +257,6 @@ ApplicationWindow {
         }
     }
 
-    CsvReader {
-        id: csvReader
-    }
-
-    ListModel {
-        id: scatterDataModel
-    }
-
     function createCheckboxesForNumericAttributes() {
         checkboxLayout.children.forEach(function (child) {
             child.destroy();
@@ -344,8 +347,9 @@ ApplicationWindow {
         width: parent.width / 2
         height: parent.height / 2
 
-        // Ideiglenes változó a Popup komponensen belül
-        property var tempColorMappings: {}
+        ListModel {
+            id: tempColorMappingsModel
+        }
 
         Rectangle {
             width: parent.width
@@ -391,7 +395,7 @@ ApplicationWindow {
                                         width: parent.height
                                         height: parent.height
                                         anchors.centerIn: parent
-                                        color: colorPickerPopup.tempColorMappings[modelData] || "gray"
+                                        color: tempColorMappingsModel.get(modelData) ? tempColorMappingsModel.get(modelData).color : "gray"
                                         border.color: "white"
                                         border.width: 1
                                         radius: 5
@@ -428,9 +432,18 @@ ApplicationWindow {
                     id: colorMappingSaveButton
                     text: "Save"
                     onClicked: {
-                        for (var key in colorPickerPopup.tempColorMappings) {
-                            colorMappings[key] = colorPickerPopup.tempColorMappings[key];
+                        colorMappings.clear();
+                        for (var i = 0; i < tempColorMappingsModel.count; i++) {
+                            var item = tempColorMappingsModel.get(i);
+                            colorMappings.append(item);
                         }
+
+                        console.log("Name color pairs:");
+                                for (var i = 0; i < colorMappings.count; i++) {
+                                    var item = colorMappings.get(i);
+                                    console.log(item.name + ": " + JSON.stringify(item.color));
+                                }
+
                         colorPickerPopup.close();
                     }
                 }
@@ -438,7 +451,7 @@ ApplicationWindow {
                 Button {
                     text: "Cancel"
                     onClicked: {
-                        colorPickerPopup.tempColorMappings = {};
+                        tempColorMappingsModel.clear();
                         colorPickerPopup.close();
                     }
                 }
@@ -450,7 +463,7 @@ ApplicationWindow {
 
                 onAccepted: {
                     if (currentAttribute !== "") {
-                        colorPickerPopup.tempColorMappings[currentAttribute] = selectedColor;
+                        tempColorMappingsModel.append({ name: currentAttribute, color: selectedColor });
                     }
                 }
 
@@ -462,13 +475,7 @@ ApplicationWindow {
         }
 
         Component.onCompleted: {
-            colorPickerPopup.tempColorMappings = {};
+            tempColorMappingsModel.clear();
         }
     }
-
-
-
-
-
-
 }
