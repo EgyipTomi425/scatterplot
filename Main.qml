@@ -350,7 +350,8 @@ ApplicationWindow {
             color: "black"
 
             Flow {
-                anchors.fill: parent
+                width: parent.width
+                height: parent.height * 0.9
                 spacing: 10
 
                 Repeater {
@@ -363,41 +364,42 @@ ApplicationWindow {
                             width: parent.width
                             height: parent.height
                             color: "transparent"
-                            border.color: "white"
-                            border.width: 1
-                            radius: 5
 
-                            Row {
-                                height: parent.height / 2
-                                width: parent.width
+                            Column {
+                                    anchors.fill: parent
 
-                                Text {
-                                    anchors.centerIn: parent
-                                    text: modelData
-                                    color: "white"
-                                    font.pixelSize: 14
-                                    anchors.horizontalCenter: parent.horizontalCenter
+                                Row {
+                                    height: parent.height / 2
+                                    width: parent.width
+
+                                    Text {
+                                        anchors.centerIn: parent
+                                        text: modelData
+                                        color: "white"
+                                        font.pixelSize: 14
+                                        anchors.horizontalCenter: parent.horizontalCenter
+                                    }
                                 }
-                            }
 
-                            Row {
-                                height: parent.height / 2
-                                width: parent.width
+                                Row {
+                                    height: parent.height / 2
+                                    width: parent.width
 
-                                Rectangle {
-                                    anchors.centerIn: parent
-                                    width: parent.height
-                                    height: parent.height
-                                    color: tempColorMappings[modelData] || "gray"
-                                    anchors.horizontalCenter: parent.horizontalCenter
-                                    border.color: "white"
-                                    border.width: 1
-                                    radius: 5
+                                    Rectangle {
+                                        anchors.centerIn: parent
+                                        width: parent.height
+                                        height: parent.height
+                                        color: tempColorMappings[modelData] || "gray"
+                                        anchors.horizontalCenter: parent.horizontalCenter
+                                        border.color: "white"
+                                        border.width: 1
+                                        radius: 5
 
-                                    MouseArea {
-                                        anchors.fill: parent
-                                        onClicked: {
-                                            colorDialog.open(modelData);
+                                        MouseArea {
+                                            anchors.fill: parent
+                                            onClicked: {
+                                                colorDialog.open(modelData);
+                                            }
                                         }
                                     }
                                 }
@@ -407,16 +409,23 @@ ApplicationWindow {
                 }
             }
 
-            Row {
+            Flow {
                 width: parent.width
-                height: 40
+                height: parent.height * 0.1
                 spacing: 10
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.bottom: parent.bottom
                 anchors.bottomMargin: 10
 
+                Rectangle {
+                    width: (parent.width - colorMappingSaveButton.width * 2) / 2
+                    height: parent.height
+                    color: "transparent"
+                }
+
                 Button {
-                    text: "Mentés"
+                    id: colorMappingSaveButton
+                    text: "Save"
                     onClicked: {
                         for (var key in tempColorMappings) {
                             colorMappings[key] = tempColorMappings[key];
@@ -426,7 +435,7 @@ ApplicationWindow {
                 }
 
                 Button {
-                    text: "Mégse"
+                    text: "Cancel"
                     onClicked: {
                         tempColorMappings = {};
                         colorPickerPopup.close();
