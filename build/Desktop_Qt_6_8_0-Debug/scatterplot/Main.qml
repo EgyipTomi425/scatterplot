@@ -53,6 +53,7 @@ ApplicationWindow {
                             if (currentIndex >= 0) {
                                 var selectedAttribute = coloringButton.model.get(currentIndex).text;
                                 var uniqueValues = getUniqueValuesForAttribute(selectedAttribute);
+                                colorPickerPopup.open();
                             }
                         }
                     }
@@ -320,6 +321,14 @@ ApplicationWindow {
         }
         console.log("Unique values for " + attributeName + ": " + Array.from(uniqueValues).join(", "));
         return Array.from(uniqueValues);
+    }
+
+    Popup {
+        id: colorPickerPopup
+        x: Math.round((parent.width - width) / 2)
+        y: Math.round((parent.height - height) / 2)
+        width: parent.width / 2
+        height: parent.height / 2
     }
 
     Component {
