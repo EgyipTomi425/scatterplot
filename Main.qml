@@ -48,6 +48,14 @@ ApplicationWindow {
                         width: parent.height
                         height: parent.height
                         model: ListModel {}
+
+                        onCurrentIndexChanged: {
+                            if (currentIndex >= 0) {
+                                var selectedAttribute = coloringButton.model.get(currentIndex).text;
+                                var uniqueValues = getUniqueValuesForAttribute(selectedAttribute);
+                                console.log("Unique values for " + selectedAttribute + ": " + uniqueValues.join(", "));
+                            }
+                        }
                     }
 
                     Button {
@@ -63,7 +71,7 @@ ApplicationWindow {
                                 console.log("Item " + index + ": " + JSON.stringify(scatterDataModel.get(index)));
                             });
                             createCheckboxesForNumericAttributes();
-                            updateComboBoxModel();ss
+                            updateComboBoxModel();
                         }
                     }
 
@@ -86,9 +94,6 @@ ApplicationWindow {
                                 scatterDataProxy.yPosRole = selectedAttributes[1];
                                 scatterDataProxy.zPosRole = "z";
                                 console.log("Updated Scatter3D with two attributes. Z set to 0.");
-                                scatterDataProxy.setItemDataFunction = function (index, item) {
-                                    item["z"] = 0;
-                                };
                             } else {
                                 console.error("Please select exactly two or three attributes.");
                             }
@@ -294,6 +299,7 @@ ApplicationWindow {
                 }
             }
         }
+        console.log("Non numeric attributes: " + nonNumericAttributes);
         return nonNumericAttributes;
     }
 
@@ -303,6 +309,18 @@ ApplicationWindow {
         nonNumericAttributes.forEach(function (attribute) {
             coloringButton.model.append({ text: attribute });
         });
+    }
+
+    function getUniqueValuesForAttribute(attributeName) {
+        var uniqueValues = new Set();
+        for (var i = 0; i < scatterDataModel.count; i++) {
+            var item = scatterDataModel.get(i);
+            if (item[attributeName] !== undefined) {
+                uniqueValues.add(item[attributeName]);
+            }
+        }
+        console.log("Unique values for " + attributeName + ": " + uniqueValues);
+        return Array.from(uniqueValues);
     }
 
     Component {
