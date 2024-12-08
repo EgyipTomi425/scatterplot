@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 32,
-                        "durationMicroseconds": 101,
+                        "durationMicroseconds": 91,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "uniqueValues",
                         "line": 18
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 31,
-                        "durationMicroseconds": 64,
+                        "durationMicroseconds": 46,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "groupedData",
                         "line": 19
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 1628,
+                        "durationMicroseconds": 1197,
                         "errorMessage": "Cannot generate efficient code for LoadClosure",
                         "functionName": "createCheckboxesForNumericAttributes",
                         "line": 228
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 48,
+                        "durationMicroseconds": 50,
                         "errorMessage": "Cannot load property length from (component in /home/kecyke/qt/scatterplot/build/Desktop_Qt_6_8_0-Debug/Main.qml)::groupedData with type QVariant.",
                         "functionName": "createScatterPlots",
                         "line": 253
@@ -38,26 +38,26 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 9,
+                        "durationMicroseconds": 8,
                         "errorMessage": "Instruction \"generate_StoreLocal\" not implemented",
                         "functionName": "getSelectedAttributes",
-                        "line": 266
+                        "line": 289
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 327,
+                        "durationMicroseconds": 292,
                         "errorMessage": "cannot convert from QVariantList to QString",
                         "functionName": "getNonNumericAttributesFromModel",
-                        "line": 277
+                        "line": 300
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 15,
                         "errorMessage": "Cannot retrieve a non-object type by ID: coloringButton",
                         "functionName": "updateComboBoxModel",
-                        "line": 292
+                        "line": 315
                     },
                     {
                         "codegenSuccessfull": false,
@@ -65,23 +65,23 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Functions without type annotations won't be compiled",
                         "functionName": "getUniqueValuesForAttribute",
-                        "line": 300
+                        "line": 323
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 147,
+                        "durationMicroseconds": 130,
                         "errorMessage": "function without return type annotation returns QString. This may prevent proper compilation to Cpp.",
                         "functionName": "randomColor",
-                        "line": 312
+                        "line": 335
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 957,
+                        "durationMicroseconds": 1030,
                         "errorMessage": "Cannot generate efficient code for lookup in QJSValue",
                         "functionName": "printColorPairs",
-                        "line": 320
+                        "line": 343
                     },
                     {
                         "codegenSuccessfull": false,
@@ -89,7 +89,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Functions without type annotations won't be compiled",
                         "functionName": "groupDataByAttributeWithColors",
-                        "line": 329
+                        "line": 352
                     },
                     {
                         "codegenSuccessfull": false,
@@ -97,44 +97,28 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Functions without type annotations won't be compiled",
                         "functionName": "findColorByName",
-                        "line": 427
+                        "line": 453
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 735,
+                        "durationMicroseconds": 834,
                         "errorMessage": "QJSValue has no property called name",
                         "functionName": "randomizeColors",
-                        "line": 437
+                        "line": 463
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 48,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 30
                     },
                     {
                         "codegenSuccessfull": true,
-                        "column": 20,
-                        "durationMicroseconds": 514,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 36
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 21,
-                        "durationMicroseconds": 503,
-                        "errorMessage": "",
-                        "functionName": "height",
-                        "line": 37
-                    },
-                    {
-                        "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 36,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 40
@@ -142,7 +126,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 28,
-                        "durationMicroseconds": 55,
+                        "durationMicroseconds": 92,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 44
@@ -150,7 +134,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 29,
-                        "durationMicroseconds": 89,
+                        "durationMicroseconds": 102,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 45
@@ -158,7 +142,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 32,
-                        "durationMicroseconds": 619,
+                        "durationMicroseconds": 596,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 49
@@ -166,7 +150,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 33,
-                        "durationMicroseconds": 57,
+                        "durationMicroseconds": 58,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 50
@@ -174,7 +158,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 43,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 36,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 55
@@ -254,7 +238,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 28,
-                        "durationMicroseconds": 57,
+                        "durationMicroseconds": 66,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 119
@@ -262,7 +246,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 29,
-                        "durationMicroseconds": 89,
+                        "durationMicroseconds": 96,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 120
@@ -270,7 +254,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 32,
-                        "durationMicroseconds": 56,
+                        "durationMicroseconds": 58,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 124
@@ -278,34 +262,10 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 33,
-                        "durationMicroseconds": 53,
+                        "durationMicroseconds": 52,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 125
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 36,
-                        "durationMicroseconds": 133,
-                        "errorMessage": "",
-                        "functionName": "title",
-                        "line": 133
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 36,
-                        "durationMicroseconds": 125,
-                        "errorMessage": "",
-                        "functionName": "title",
-                        "line": 141
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 36,
-                        "durationMicroseconds": 123,
-                        "errorMessage": "",
-                        "functionName": "title",
-                        "line": 149
                     },
                     {
                         "codegenSuccessfull": false,
@@ -333,30 +293,6 @@
                     },
                     {
                         "codegenSuccessfull": true,
-                        "column": 20,
-                        "durationMicroseconds": 509,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 177
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 21,
-                        "durationMicroseconds": 451,
-                        "errorMessage": "",
-                        "functionName": "height",
-                        "line": 178
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 22,
-                        "durationMicroseconds": 106,
-                        "errorMessage": "",
-                        "functionName": "visible",
-                        "line": 179
-                    },
-                    {
-                        "codegenSuccessfull": true,
                         "column": 31,
                         "durationMicroseconds": 43,
                         "errorMessage": "",
@@ -366,7 +302,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 28,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 56,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 185
@@ -374,7 +310,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 29,
-                        "durationMicroseconds": 94,
+                        "durationMicroseconds": 104,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 186
@@ -390,7 +326,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 33,
-                        "durationMicroseconds": 54,
+                        "durationMicroseconds": 53,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 192
@@ -398,23 +334,15 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 53,
+                        "durationMicroseconds": 50,
                         "errorMessage": "",
                         "functionName": "fillMode",
                         "line": 193
                     },
                     {
                         "codegenSuccessfull": true,
-                        "column": 34,
-                        "durationMicroseconds": 114,
-                        "errorMessage": "",
-                        "functionName": "visible",
-                        "line": 194
-                    },
-                    {
-                        "codegenSuccessfull": true,
                         "column": 28,
-                        "durationMicroseconds": 57,
+                        "durationMicroseconds": 56,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 199
@@ -422,7 +350,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 29,
-                        "durationMicroseconds": 98,
+                        "durationMicroseconds": 92,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 200
@@ -430,26 +358,10 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 43,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 34,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 204
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 38,
-                        "durationMicroseconds": 117,
-                        "errorMessage": "",
-                        "functionName": "visible",
-                        "line": 212
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 38,
-                        "durationMicroseconds": 110,
-                        "errorMessage": "",
-                        "functionName": "visible",
-                        "line": 220
                     },
                     {
                         "codegenSuccessfull": false,
@@ -457,23 +369,23 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Cannot resolve property type  for binding on pixelSize.",
                         "functionName": "pixelSize",
-                        "line": 383
+                        "line": 406
                     },
                     {
                         "codegenSuccessfull": false,
-                        "column": 32,
-                        "durationMicroseconds": 2836,
-                        "errorMessage": "Cannot generate efficient code for lookup in QJSValue",
+                        "column": 36,
+                        "durationMicroseconds": 73,
+                        "errorMessage": "Cannot access value for name scatterDataModel",
                         "functionName": "onSelectedItemChanged",
-                        "line": 402
+                        "line": 427
                     },
                     {
-                        "codegenSuccessfull": true,
-                        "column": 24,
-                        "durationMicroseconds": 67,
-                        "errorMessage": "",
+                        "codegenSuccessfull": false,
+                        "column": 28,
+                        "durationMicroseconds": 16,
+                        "errorMessage": "Cannot access value for name scatterDataModel",
                         "functionName": "itemModel",
-                        "line": 394
+                        "line": 419
                     },
                     {
                         "codegenSuccessfull": false,
@@ -481,7 +393,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Cannot resolve property type  for binding on x.",
                         "functionName": "x",
-                        "line": 449
+                        "line": 475
                     },
                     {
                         "codegenSuccessfull": false,
@@ -489,7 +401,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Cannot resolve property type  for binding on y.",
                         "functionName": "y",
-                        "line": 450
+                        "line": 476
                     },
                     {
                         "codegenSuccessfull": false,
@@ -497,7 +409,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Cannot resolve property type  for binding on width.",
                         "functionName": "width",
-                        "line": 451
+                        "line": 477
                     },
                     {
                         "codegenSuccessfull": false,
@@ -505,7 +417,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Cannot resolve property type  for binding on height.",
                         "functionName": "height",
-                        "line": 452
+                        "line": 478
                     },
                     {
                         "codegenSuccessfull": false,
@@ -513,23 +425,191 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Cannot resolve property type  for binding on onOpened.",
                         "functionName": "onOpened",
-                        "line": 599
+                        "line": 625
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 20,
-                        "durationMicroseconds": 68,
+                        "durationMicroseconds": 76,
                         "errorMessage": "",
                         "functionName": "width",
-                        "line": 455
+                        "line": 481
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 21,
-                        "durationMicroseconds": 58,
+                        "durationMicroseconds": 54,
                         "errorMessage": "",
                         "functionName": "height",
-                        "line": 456
+                        "line": 482
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 24,
+                        "durationMicroseconds": 53,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 486
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 25,
+                        "durationMicroseconds": 97,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 487
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 28,
+                        "durationMicroseconds": 18,
+                        "errorMessage": "Cannot access value for name uniqueValues",
+                        "functionName": "model",
+                        "line": 491
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 32,
+                        "durationMicroseconds": 255,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 493
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 33,
+                        "durationMicroseconds": 243,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 494
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 36,
+                        "durationMicroseconds": 58,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 497
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 37,
+                        "durationMicroseconds": 50,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 498
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 47,
+                        "durationMicroseconds": 34,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 502
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 45,
+                        "durationMicroseconds": 106,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 505
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 44,
+                        "durationMicroseconds": 70,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 506
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 47,
+                        "durationMicroseconds": 247,
+                        "errorMessage": "Cannot access value for name modelData",
+                        "functionName": "text",
+                        "line": 510
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 59,
+                        "durationMicroseconds": 66,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 509
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 45,
+                        "durationMicroseconds": 107,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 517
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 44,
+                        "durationMicroseconds": 52,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 518
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 48,
+                        "durationMicroseconds": 52,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 521
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 49,
+                        "durationMicroseconds": 49,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 522
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 74,
+                        "durationMicroseconds": 110,
+                        "errorMessage": "Cannot access value for name modelData",
+                        "functionName": "associatedName",
+                        "line": 524
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 48,
+                        "durationMicroseconds": 136,
+                        "errorMessage": "method findColorByName cannot be resolved.",
+                        "functionName": "color",
+                        "line": 536
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 59,
+                        "durationMicroseconds": 40,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 523
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 56,
+                        "durationMicroseconds": 29,
+                        "errorMessage": "Cannot access value for name colorDialog",
+                        "functionName": "onClicked",
+                        "line": 531
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 59,
+                        "durationMicroseconds": 41,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 530
                     },
                     {
                         "codegenSuccessfull": true,
@@ -537,230 +617,46 @@
                         "durationMicroseconds": 59,
                         "errorMessage": "",
                         "functionName": "width",
-                        "line": 460
+                        "line": 546
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 25,
-                        "durationMicroseconds": 98,
+                        "durationMicroseconds": 101,
                         "errorMessage": "",
                         "functionName": "height",
-                        "line": 461
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 28,
-                        "durationMicroseconds": 29,
-                        "errorMessage": "Cannot access value for name uniqueValues",
-                        "functionName": "model",
-                        "line": 465
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 32,
-                        "durationMicroseconds": 244,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 467
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 33,
-                        "durationMicroseconds": 234,
-                        "errorMessage": "",
-                        "functionName": "height",
-                        "line": 468
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 36,
-                        "durationMicroseconds": 61,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 471
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 37,
-                        "durationMicroseconds": 55,
-                        "errorMessage": "",
-                        "functionName": "height",
-                        "line": 472
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 47,
-                        "durationMicroseconds": 36,
-                        "errorMessage": "",
-                        "functionName": "fill",
-                        "line": 476
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 45,
-                        "durationMicroseconds": 174,
-                        "errorMessage": "",
-                        "functionName": "height",
-                        "line": 479
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 44,
-                        "durationMicroseconds": 53,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 480
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 47,
-                        "durationMicroseconds": 197,
-                        "errorMessage": "Cannot access value for name modelData",
-                        "functionName": "text",
-                        "line": 484
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 59,
-                        "durationMicroseconds": 41,
-                        "errorMessage": "",
-                        "functionName": "centerIn",
-                        "line": 483
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 45,
-                        "durationMicroseconds": 102,
-                        "errorMessage": "",
-                        "functionName": "height",
-                        "line": 491
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 44,
-                        "durationMicroseconds": 54,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 492
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 48,
-                        "durationMicroseconds": 54,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 495
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 49,
-                        "durationMicroseconds": 55,
-                        "errorMessage": "",
-                        "functionName": "height",
-                        "line": 496
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 74,
-                        "durationMicroseconds": 140,
-                        "errorMessage": "Cannot access value for name modelData",
-                        "functionName": "associatedName",
-                        "line": 498
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 48,
-                        "durationMicroseconds": 207,
-                        "errorMessage": "method findColorByName cannot be resolved.",
-                        "functionName": "color",
-                        "line": 510
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 59,
-                        "durationMicroseconds": 64,
-                        "errorMessage": "",
-                        "functionName": "centerIn",
-                        "line": 497
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 56,
-                        "durationMicroseconds": 44,
-                        "errorMessage": "Cannot access value for name colorDialog",
-                        "functionName": "onClicked",
-                        "line": 505
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 59,
-                        "durationMicroseconds": 55,
-                        "errorMessage": "",
-                        "functionName": "fill",
-                        "line": 504
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 24,
-                        "durationMicroseconds": 61,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 520
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 25,
-                        "durationMicroseconds": 104,
-                        "errorMessage": "",
-                        "functionName": "height",
-                        "line": 521
+                        "line": 547
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 43,
-                        "durationMicroseconds": 90,
+                        "durationMicroseconds": 86,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
-                        "line": 523
+                        "line": 549
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 33,
-                        "durationMicroseconds": 83,
+                        "durationMicroseconds": 86,
                         "errorMessage": "",
                         "functionName": "bottom",
-                        "line": 524
+                        "line": 550
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 30,
+                        "durationMicroseconds": 37,
                         "errorMessage": "Cannot retrieve a non-object type by ID: colorMappingSaveButton",
                         "functionName": "width",
-                        "line": 528
+                        "line": 554
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 29,
-                        "durationMicroseconds": 56,
+                        "durationMicroseconds": 54,
                         "errorMessage": "",
                         "functionName": "height",
-                        "line": 529
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 32,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on onClicked.",
-                        "functionName": "onClicked",
-                        "line": 536
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 32,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on onClicked.",
-                        "functionName": "onClicked",
                         "line": 555
                     },
                     {
@@ -773,11 +669,27 @@
                     },
                     {
                         "codegenSuccessfull": false,
+                        "column": 32,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Cannot resolve property type  for binding on onClicked.",
+                        "functionName": "onClicked",
+                        "line": 581
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 32,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Cannot resolve property type  for binding on onClicked.",
+                        "functionName": "onClicked",
+                        "line": 588
+                    },
+                    {
+                        "codegenSuccessfull": false,
                         "column": 29,
-                        "durationMicroseconds": 2302,
+                        "durationMicroseconds": 2100,
                         "errorMessage": "QJSValue has no property called name",
                         "functionName": "onAccepted",
-                        "line": 573
+                        "line": 599
                     },
                     {
                         "codegenSuccessfull": false,
@@ -785,7 +697,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Functions without type annotations won't be compiled",
                         "functionName": "open",
-                        "line": 592
+                        "line": 618
                     }
                 ],
                 "filepath": "/home/kecyke/qt/scatterplot/build/Desktop_Qt_6_8_0-Debug/Main.qml"

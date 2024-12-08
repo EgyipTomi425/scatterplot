@@ -33,8 +33,8 @@ ApplicationWindow {
         Rectangle {
             id: diagramRect
             color: "#202020"
-            width: (scatterSeries.selectedItem < 0 ? parent.width : (parent.width > parent.height ? parent.width * 0.6 : parent.width))
-            height: (scatterSeries.selectedItem < 0 ? parent.height : (parent.width > parent.height ? parent.height : parent.height * 0.6))
+            width: 1000//(scatterSeries.selectedItem < 0 ? parent.width : (parent.width > parent.height ? parent.width * 0.6 : parent.width))
+            height: 1000//(scatterSeries.selectedItem < 0 ? parent.height : (parent.width > parent.height ? parent.height : parent.height * 0.6))
 
             Flow {
                 anchors.fill: parent
@@ -130,7 +130,7 @@ ApplicationWindow {
 
                         axisX {
                             id: xAxis
-                            title: scatterDataProxy.xPosRole || "X-Axis"
+                            //title: scatterDataProxy.xPosRole || "X-Axis"
                             titleVisible: true
                             labelFormat: "%.2f"
                             labelAutoAngle: 90
@@ -138,7 +138,7 @@ ApplicationWindow {
 
                         axisY {
                             id: yAxis
-                            title: scatterDataProxy.yPosRole || "Y-Axis"
+                            //title: scatterDataProxy.yPosRole || "Y-Axis"
                             titleVisible: true
                             labelFormat: "%.2f"
                             labelAutoAngle: 90
@@ -146,7 +146,7 @@ ApplicationWindow {
 
                         axisZ {
                             id: zAxis
-                            title: scatterDataProxy.zPosRole || "Z-Axis"
+                            //title: scatterDataProxy.zPosRole || "Z-Axis"
                             titleVisible: true
                             labelFormat: "%.2f"
                             labelAutoAngle: 90
@@ -174,9 +174,9 @@ ApplicationWindow {
         Rectangle {
             id: dataRect
             color: "#303030"
-            width: (scatterSeries.selectedItem < 0 ? 0 : (parent.width > parent.height ? parent.width * 0.4 : parent.width))
-            height: (scatterSeries.selectedItem < 0 ? 0 : (parent.width > parent.height ? parent.height : parent.height * 0.4))
-            visible: scatterSeries.selectedItem >= 0
+            width: 1000//(scatterSeries.selectedItem < 0 ? 0 : (parent.width > parent.height ? parent.width * 0.4 : parent.width))
+            height: 1000//(scatterSeries.selectedItem < 0 ? 0 : (parent.width > parent.height ? parent.height : parent.height * 0.4))
+            //visible: scatterSeries.selectedItem >= 0
 
             Column {
                 anchors.fill: parent
@@ -191,7 +191,7 @@ ApplicationWindow {
                         width: parent.width
                         height: parent.height
                         fillMode: Image.PreserveAspectFit
-                        visible: scatterSeries.selectedItem >= 0
+                        //visible: scatterSeries.selectedItem >= 0
                     }
                 }
 
@@ -209,7 +209,7 @@ ApplicationWindow {
                             text: "Name: None"
                             color: "white"
                             font.pixelSize: 18
-                            visible: scatterSeries.selectedItem >= 0
+                            //visible: scatterSeries.selectedItem >= 0
                         }
 
                         Text {
@@ -217,7 +217,7 @@ ApplicationWindow {
                             text: "Coordinates: (N/A, N/A, N/A)"
                             color: "white"
                             font.pixelSize: 18
-                            visible: scatterSeries.selectedItem >= 0
+                            //visible: scatterSeries.selectedItem >= 0
                         }
                     }
                 }
@@ -257,9 +257,32 @@ ApplicationWindow {
             }
         });
 
-        if (groupedData.length > 0) {
-
+        if (groupedData.length < 1) {
+            console.log("There is no data in groupedData.");
+            return;
         }
+
+        for (let i = 0; i < groupedData.length; i++) {
+            var newScatterPlot = scatterSeriesComponent.createObject(scatter, {
+                baseColor: groupedData[i].color,
+                itemSize: 1
+            });
+
+            if (newScatterPlot) {
+                console.log("Scatter plot created with base color: red");
+
+                newScatterPlot.ItemModelScatterDataProxy.itemModel = scatterDataModel;
+                newScatterPlot.ItemModelScatterDataProxy.xPosRole = "x";
+                newScatterPlot.ItemModelScatterDataProxy.yPosRole = "y";
+                newScatterPlot.ItemModelScatterDataProxy.zPosRole = "z";
+            } else {
+                console.error("Failed to create a new Scatter3DSeries instance.");
+            }
+        }
+
+        scatter.children.forEach(function (child) {
+            console.log(child.baseColor);
+        });
     }
 
     function getSelectedAttributes() {
@@ -386,35 +409,38 @@ ApplicationWindow {
         }
     }
 
-    Scatter3DSeries {
-        id: scatterSeries
-        ItemModelScatterDataProxy {
-            id: scatterDataProxy
-            itemModel: scatterDataModel
-            xPosRole: "x"
-            yPosRole: "y"
-            zPosRole: "z"
-        }
-        baseColor: "blue"
-        itemSize: 0.1
+    Component {
+        id: scatterSeriesComponent
+        Scatter3DSeries {
+            id: scatterSeries
+            ItemModelScatterDataProxy {
+                id: scatterDataProxy
+                itemModel: scatterDataModel
+                xPosRole: "x"
+                yPosRole: "y"
+                zPosRole: "z"
+            }
+            baseColor: "blue"
+            itemSize: 0.1
 
-        onSelectedItemChanged: {
-            if (selectedItem >= 0) {
-                var item = scatterDataModel.get(selectedItem);
-                var xAttr = scatterDataProxy.xPosRole;
-                var yAttr = scatterDataProxy.yPosRole;
-                var zAttr = scatterDataProxy.zPosRole;
+            onSelectedItemChanged: {
+                if (selectedItem >= 0) {
+                    var item = scatterDataModel.get(selectedItem);
+                    var xAttr = scatterDataProxy.xPosRole;
+                    var yAttr = scatterDataProxy.yPosRole;
+                    var zAttr = scatterDataProxy.zPosRole;
 
-                selectedName.text = "Name: " + (item.name || "N/A");
-                selectedCoords.text = //"Coordinates: \n" +
-                                      xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
-                                      yAttr + ": " + (item[yAttr] || "N/A") + ", \n" +
-                                      zAttr + ": " + (item[zAttr] || "N/A");
-                selectedImage.source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
-            } else {
-                selectedName.text = "Name: None";
-                selectedCoords.text = "Coordinates: (N/A, N/A, N/A)";
-                selectedImage.source = "";
+                    selectedName.text = "Name: " + (item.name || "N/A");
+                    selectedCoords.text = //"Coordinates: \n" +
+                                          xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
+                                          yAttr + ": " + (item[yAttr] || "N/A") + ", \n" +
+                                          zAttr + ": " + (item[zAttr] || "N/A");
+                    selectedImage.source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
+                } else {
+                    selectedName.text = "Name: None";
+                    selectedCoords.text = "Coordinates: (N/A, N/A, N/A)";
+                    selectedImage.source = "";
+                }
             }
         }
     }
