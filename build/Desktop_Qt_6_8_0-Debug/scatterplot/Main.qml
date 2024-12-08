@@ -328,17 +328,6 @@ ApplicationWindow {
         return Array.from(uniqueValues);
     }
 
-    function getColorHex(colorObj) {
-        if (colorObj && colorObj.valid) {
-            var r = Math.round(colorObj.r * 255);
-            var g = Math.round(colorObj.g * 255);
-            var b = Math.round(colorObj.b * 255);
-            return "#" + ((1 << 24) | (r << 16) | (g << 8) | b).toString(16).slice(1).toUpperCase();
-        } else {
-            return "gray"; // Default fallback color
-        }
-    }
-
     function randomColor() {
         // Generál egy véletlenszerű színt hexadecimális formában
         let r = Math.round(Math.random() * 256);
@@ -352,7 +341,7 @@ ApplicationWindow {
         console.log("Name color pairs:");
         for (var i = 0; i < tempColorMappingsModel.count; i++) {
             var item = tempColorMappingsModel.get(i);
-            console.log(item.name + ": " + getColorHex(item.color));
+            console.log(item.name + ": " + item.color);
         }
     }
 
@@ -390,7 +379,6 @@ ApplicationWindow {
                 color: randomColor()
             });
         }
-        printColorPairs();
     }
 
     Popup {
@@ -490,6 +478,7 @@ ApplicationWindow {
                         }
 
                         printColorPairs();
+                        tempColorMappingsModel.clear();
                         colorPickerPopup.close();
                     }
                 }
@@ -521,14 +510,14 @@ ApplicationWindow {
                         for (let i = 0; i < tempColorMappingsModel.count; i++) {
                             let item = tempColorMappingsModel.get(i);
                             if (item.name === currentAttribute) {
-                                tempColorMappingsModel.set(i, { name: currentAttribute, color: selectedColor.toString() });
+                                tempColorMappingsModel.set(i, { name: currentAttribute, color: selectedColor.toString().toUpperCase() });
                                 found = true;
                                 break;
                             }
                         }
 
                         if (!found) {
-                            tempColorMappingsModel.append({ name: currentAttribute, color: selectedColor.toString() });
+                            tempColorMappingsModel.append({ name: currentAttribute, color: selectedColor.toString().toUpperCase() });
                         }
                     }
                 }
@@ -546,7 +535,7 @@ ApplicationWindow {
                 let name = uniqueValues[i];
                 tempColorMappingsModel.append({ name: name, color: "gray" });
             }
-            console.log("Colorpicker opened" + uniqueValues.length);
+            console.log("Colorpicker opened. Number of unique values:" + uniqueValues.length);
         }
     }
 }
