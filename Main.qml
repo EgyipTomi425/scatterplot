@@ -16,9 +16,14 @@ ApplicationWindow {
 
     property var scatterDataModel: ListModel {}
     property var uniqueValues: []
+    property var groupedData: ListModel {}
 
     ListModel {
         id: scatterDataModel
+    }
+
+    ListModel {
+        id: groupedData
     }
 
     ListModel {
@@ -345,6 +350,53 @@ ApplicationWindow {
         }
     }
 
+    function groupDataByAttributeWithColors(attributeName) {
+        console.log("Selected attribute for grouping: " + attributeName);
+
+        if (scatterDataModel.count === 0) {
+            console.error("scatterDataModel is empty.");
+            return [];
+        }
+        if (colorMappings.count === 0) {
+            console.error("colorMappings is empty.");
+            return [];
+        }
+
+        var groupedData = [];
+
+        for (var i = 0; i < colorMappings.count; i++) {
+            var colorMapping = colorMappings.get(i);
+            var group = {
+                name: colorMapping.name,
+                color: colorMapping.color,
+                model: new Listmodel()
+            };
+            groupedData.push(group);
+        }
+
+        for (var j = 0; j < scatterDataModel.count; j++) {
+            var item = scatterDataModel.get(j);
+            var attributeValue = item[attributeName];
+
+            for (var k = 0; k < groupedData.length; k++) {
+                if (groupedData[k].name === attributeValue) {
+                    groupedData[k].model.append(item);
+                    break;
+                }
+            }
+        }
+
+        groupedData.forEach(function(group, index) {
+            console.log("Group: " + group.name + " (Color: " + group.color + ")");
+            for (var i = 0; i < group.model.count; i++) {
+                var item = group.model.get(i);
+                console.log("Item " + i + ": " + JSON.stringify(item));
+            }
+        });
+
+        return groupedData;
+    }
+
     Component {
         id: checkboxComponent
         CheckBox {
@@ -478,6 +530,10 @@ ApplicationWindow {
                         }
 
                         printColorPairs();
+
+                        // Grouping scatterDataModel's data
+                        groupDataByAttributeWithColors(coloringButton.currentText);
+
                         tempColorMappingsModel.clear();
                         colorPickerPopup.close();
                     }
