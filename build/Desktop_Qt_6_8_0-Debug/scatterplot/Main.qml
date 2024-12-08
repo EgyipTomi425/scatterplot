@@ -151,39 +151,6 @@ ApplicationWindow {
                             labelFormat: "%.2f"
                             labelAutoAngle: 90
                         }
-
-                        Scatter3DSeries {
-                            id: scatterSeries
-                            ItemModelScatterDataProxy {
-                                id: scatterDataProxy
-                                itemModel: scatterDataModel
-                                xPosRole: "x"
-                                yPosRole: "y"
-                                zPosRole: "z"
-                            }
-                            baseColor: "blue"
-                            itemSize: 0.1
-
-                            onSelectedItemChanged: {
-                                if (selectedItem >= 0) {
-                                    var item = scatterDataModel.get(selectedItem);
-                                    var xAttr = scatterDataProxy.xPosRole;
-                                    var yAttr = scatterDataProxy.yPosRole;
-                                    var zAttr = scatterDataProxy.zPosRole;
-
-                                    selectedName.text = "Name: " + (item.name || "N/A");
-                                    selectedCoords.text = //"Coordinates: \n" +
-                                                          xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
-                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", \n" +
-                                                          zAttr + ": " + (item[zAttr] || "N/A");
-                                    selectedImage.source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
-                                } else {
-                                    selectedName.text = "Name: None";
-                                    selectedCoords.text = "Coordinates: (N/A, N/A, N/A)";
-                                    selectedImage.source = "";
-                                }
-                            }
-                        }
                     }
 
                     Slider {
@@ -281,6 +248,19 @@ ApplicationWindow {
                 }
             });
         }
+    }
+
+    function createScatterPlots() {
+        scatter.children.forEach(function (child) {
+            if (child.constructor === Scatter3DSeries) {
+                child.destroy();
+            }
+        });
+
+        if (groupedData.length > 0) {
+            console.log("Szia");
+        }
+        console.log("Szia2" + groupedData.length);
     }
 
     function getSelectedAttributes() {
@@ -389,6 +369,9 @@ ApplicationWindow {
         console.log(JSON.stringify(groupedData, null, 2));
 
         console.log("Number of categories: " + groupedData.length);
+
+        // Making visual plots
+        createScatterPlots();
     }
 
 
@@ -401,6 +384,39 @@ ApplicationWindow {
                 parent.width / 7 / Math.max(checkboxLayout.children.length, 1),
                 parent.height / 7
             )
+        }
+    }
+
+    Scatter3DSeries {
+        id: scatterSeries
+        ItemModelScatterDataProxy {
+            id: scatterDataProxy
+            itemModel: scatterDataModel
+            xPosRole: "x"
+            yPosRole: "y"
+            zPosRole: "z"
+        }
+        baseColor: "blue"
+        itemSize: 0.1
+
+        onSelectedItemChanged: {
+            if (selectedItem >= 0) {
+                var item = scatterDataModel.get(selectedItem);
+                var xAttr = scatterDataProxy.xPosRole;
+                var yAttr = scatterDataProxy.yPosRole;
+                var zAttr = scatterDataProxy.zPosRole;
+
+                selectedName.text = "Name: " + (item.name || "N/A");
+                selectedCoords.text = //"Coordinates: \n" +
+                                      xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
+                                      yAttr + ": " + (item[yAttr] || "N/A") + ", \n" +
+                                      zAttr + ": " + (item[zAttr] || "N/A");
+                selectedImage.source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
+            } else {
+                selectedName.text = "Name: None";
+                selectedCoords.text = "Coordinates: (N/A, N/A, N/A)";
+                selectedImage.source = "";
+            }
         }
     }
 
