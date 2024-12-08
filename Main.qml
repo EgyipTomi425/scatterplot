@@ -16,14 +16,10 @@ ApplicationWindow {
 
     property var scatterDataModel: ListModel {}
     property var uniqueValues: []
-    property var groupedData: ListModel {}
+    property var groupedData: []
 
     ListModel {
         id: scatterDataModel
-    }
-
-    ListModel {
-        id: groupedData
     }
 
     ListModel {
@@ -351,51 +347,33 @@ ApplicationWindow {
     }
 
     function groupDataByAttributeWithColors(attributeName) {
-        console.log("Selected attribute for grouping: " + attributeName);
+        console.log("\nSelected attribute for grouping: " + attributeName);
 
         if (scatterDataModel.count === 0) {
             console.error("scatterDataModel is empty.");
-            return [];
+            return;
         }
         if (colorMappings.count === 0) {
             console.error("colorMappings is empty.");
-            return [];
+            return;
         }
 
-        var groupedData = [];
+        groupedData = [];
 
-        for (var i = 0; i < colorMappings.count; i++) {
-            var colorMapping = colorMappings.get(i);
-            var group = {
-                name: colorMapping.name,
-                color: colorMapping.color,
-                model: new Listmodel()
-            };
-            groupedData.push(group);
-        }
-
-        for (var j = 0; j < scatterDataModel.count; j++) {
-            var item = scatterDataModel.get(j);
-            var attributeValue = item[attributeName];
-
-            for (var k = 0; k < groupedData.length; k++) {
-                if (groupedData[k].name === attributeValue) {
-                    groupedData[k].model.append(item);
-                    break;
-                }
+        for (let i=0; i < colorMappings.count; i++)
+        {
+            for (let i = 0; i < colorMappings.count; i++) {
+                let item = colorMappings.get(i);
+                groupedData.push({
+                    name: item.name,
+                    color: item.color,
+                    data: []
+                });
             }
+            console.log(groupedData[0].data);
         }
-
-        groupedData.forEach(function(group, index) {
-            console.log("Group: " + group.name + " (Color: " + group.color + ")");
-            for (var i = 0; i < group.model.count; i++) {
-                var item = group.model.get(i);
-                console.log("Item " + i + ": " + JSON.stringify(item));
-            }
-        });
-
-        return groupedData;
     }
+
 
     Component {
         id: checkboxComponent
