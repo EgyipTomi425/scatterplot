@@ -344,7 +344,7 @@ ApplicationWindow {
         let r = Math.floor(Math.random() * 256);
         let g = Math.floor(Math.random() * 256);
         let b = Math.floor(Math.random() * 256);
-        return Qt.rgba(r / 255, g / 255, b / 255);
+        return "#" + ((1 << 24) | (r << 16) | (g << 8) | b).toString(16).slice(1).toUpperCase();
     }
 
     Component {
@@ -486,6 +486,13 @@ ApplicationWindow {
                         }
 
                         colorPickerPopup.close();
+                    }
+                }
+
+                Button {
+                    text: "Randomize"
+                    onClicked: {
+                        randomizeColors();
                     }
                 }
 
