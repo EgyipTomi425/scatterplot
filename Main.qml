@@ -486,7 +486,20 @@ ApplicationWindow {
 
                 onAccepted: {
                     if (currentAttribute !== "") {
-                        tempColorMappingsModel.append({ name: currentAttribute, color: selectedColor });
+                        let found = false;
+
+                        for (let i = 0; i < tempColorMappingsModel.count; i++) {
+                            let item = tempColorMappingsModel.get(i);
+                            if (item.name === currentAttribute) {
+                                tempColorMappingsModel.set(i, { name: currentAttribute, color: selectedColor });
+                                found = true;
+                                break;
+                            }
+                        }
+
+                        if (!found) {
+                            tempColorMappingsModel.append({ name: currentAttribute, color: selectedColor });
+                        }
                     }
                 }
 
