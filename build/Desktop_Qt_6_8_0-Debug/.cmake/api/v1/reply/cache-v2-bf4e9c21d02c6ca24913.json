@@ -835,7 +835,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/ld"
+			"value" : "/usr/bin/ld.lld-18"
 		},
 		{
 			"name" : "CMAKE_MAKE_PROGRAM",

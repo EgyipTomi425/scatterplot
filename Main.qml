@@ -264,12 +264,12 @@ ApplicationWindow {
 
         for (let i = 0; i < groupedData.length; i++) {
             var newScatterPlot = scatterSeriesComponent.createObject(scatter, {
-                baseColor: groupedData[i].color,
+                baseColor: groupedData[i].color.toString(),
                 itemSize: 1
             });
 
             if (newScatterPlot) {
-                console.log("Scatter plot created with base color: red");
+                console.log("Scatter plot created with base color: " + newScatterPlot.baseColor);
 
                 newScatterPlot.ItemModelScatterDataProxy.itemModel = scatterDataModel;
                 newScatterPlot.ItemModelScatterDataProxy.xPosRole = "x";
