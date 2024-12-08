@@ -341,17 +341,17 @@ ApplicationWindow {
 
     function randomColor() {
         // Generál egy véletlenszerű színt hexadecimális formában
-        let r = Math.floor(Math.random() * 256);
-        let g = Math.floor(Math.random() * 256);
-        let b = Math.floor(Math.random() * 256);
+        let r = Math.round(Math.random() * 256);
+        let g = Math.round(Math.random() * 256);
+        let b = Math.round(Math.random() * 256);
         return "#" + ((1 << 24) | (r << 16) | (g << 8) | b).toString(16).slice(1).toUpperCase();
     }
 
     function printColorPairs()
     {
         console.log("Name color pairs:");
-        for (var i = 0; i < colorMappings.count; i++) {
-            var item = colorMappings.get(i);
+        for (var i = 0; i < tempColorMappingsModel.count; i++) {
+            var item = tempColorMappingsModel.get(i);
             console.log(item.name + ": " + getColorHex(item.color));
         }
     }
@@ -390,6 +390,7 @@ ApplicationWindow {
                 color: randomColor()
             });
         }
+        printColorPairs();
     }
 
     Popup {
@@ -520,14 +521,14 @@ ApplicationWindow {
                         for (let i = 0; i < tempColorMappingsModel.count; i++) {
                             let item = tempColorMappingsModel.get(i);
                             if (item.name === currentAttribute) {
-                                tempColorMappingsModel.set(i, { name: currentAttribute, color: selectedColor });
+                                tempColorMappingsModel.set(i, { name: currentAttribute, color: selectedColor.toString() });
                                 found = true;
                                 break;
                             }
                         }
 
                         if (!found) {
-                            tempColorMappingsModel.append({ name: currentAttribute, color: selectedColor });
+                            tempColorMappingsModel.append({ name: currentAttribute, color: selectedColor.toString() });
                         }
                     }
                 }
