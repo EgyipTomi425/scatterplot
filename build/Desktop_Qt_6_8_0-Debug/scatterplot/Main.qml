@@ -370,8 +370,25 @@ ApplicationWindow {
                     data: []
                 });
             }
-            console.log(groupedData[0].data);
         }
+
+        for (let j = 0; j < scatterDataModel.count; j++) {
+            let dataItem = scatterDataModel.get(j);
+            let value = dataItem[attributeName];
+            if (value === undefined) {
+                console.warn("Attribute not found in data item:", dataItem);
+                continue;
+            }
+
+            let group = groupedData.find(group => group.name === value);
+            if (group) {
+                group.data.push(dataItem);
+            } else {
+                console.warn("No group found for value:", value);
+            }
+        }
+
+        console.log(groupedData[1].data[1].sat_area);
     }
 
 
