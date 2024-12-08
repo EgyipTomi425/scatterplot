@@ -360,16 +360,13 @@ ApplicationWindow {
 
         groupedData = [];
 
-        for (let i=0; i < colorMappings.count; i++)
-        {
-            for (let i = 0; i < colorMappings.count; i++) {
-                let item = colorMappings.get(i);
-                groupedData.push({
-                    name: item.name,
-                    color: item.color,
-                    data: []
-                });
-            }
+        for (let i = 0; i < colorMappings.count; i++) {
+            let item = colorMappings.get(i);
+            groupedData.push({
+                name: item.name,
+                color: item.color,
+                data: []
+            });
         }
 
         for (let j = 0; j < scatterDataModel.count; j++) {
@@ -388,7 +385,10 @@ ApplicationWindow {
             }
         }
 
-        console.log(groupedData[1].data[1].sat_area);
+        console.log("Grouped data updated:");
+        console.log(JSON.stringify(groupedData, null, 2));
+
+        console.log("Number of categories: " + groupedData.length);
     }
 
 
