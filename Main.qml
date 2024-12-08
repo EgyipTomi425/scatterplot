@@ -347,6 +347,15 @@ ApplicationWindow {
         return "#" + ((1 << 24) | (r << 16) | (g << 8) | b).toString(16).slice(1).toUpperCase();
     }
 
+    function printColorPairs()
+    {
+        console.log("Name color pairs:");
+        for (var i = 0; i < colorMappings.count; i++) {
+            var item = colorMappings.get(i);
+            console.log(item.name + ": " + getColorHex(item.color));
+        }
+    }
+
     Component {
         id: checkboxComponent
         CheckBox {
@@ -479,12 +488,7 @@ ApplicationWindow {
                             colorMappings.append(item);
                         }
 
-                        console.log("Name color pairs:");
-                        for (var i = 0; i < colorMappings.count; i++) {
-                            var item = colorMappings.get(i);
-                            console.log(item.name + ": " + getColorHex(item.color));
-                        }
-
+                        printColorPairs();
                         colorPickerPopup.close();
                     }
                 }
