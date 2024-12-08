@@ -339,6 +339,14 @@ ApplicationWindow {
         }
     }
 
+    function randomColor() {
+        // Generál egy véletlenszerű színt hexadecimális formában
+        let r = Math.floor(Math.random() * 256);
+        let g = Math.floor(Math.random() * 256);
+        let b = Math.floor(Math.random() * 256);
+        return Qt.rgba(r / 255, g / 255, b / 255);
+    }
+
     Component {
         id: checkboxComponent
         CheckBox {
@@ -363,6 +371,16 @@ ApplicationWindow {
             }
         }
         return null;
+    }
+
+    function randomizeColors() {
+        for (let i = 0; i < tempColorMappingsModel.count; i++) {
+            let item = tempColorMappingsModel.get(i);
+            tempColorMappingsModel.set(i, {
+                name: item.name,
+                color: randomColor()
+            });
+        }
     }
 
     Popup {
@@ -445,8 +463,8 @@ ApplicationWindow {
                 anchors.bottom: parent.bottom
                 anchors.bottomMargin: 10
 
-                Rectangle {
-                    width: (parent.width - colorMappingSaveButton.width * 2) / 2
+                Rectangle { // Just for center the Buttons
+                    width: (parent.width - colorMappingSaveButton.width * 3) / 2
                     height: parent.height
                     color: "transparent"
                 }
@@ -510,8 +528,13 @@ ApplicationWindow {
             }
         }
 
-        Component.onCompleted: {
+        onOpened: {
             tempColorMappingsModel.clear();
+            for (let i = 0; i < uniqueValues.length; i++) {
+                let name = uniqueValues[i];
+                tempColorMappingsModel.append({ name: name, color: "gray" });
+            }
+            console.log("Colorpicker opened" + uniqueValues.length);
         }
     }
 }
