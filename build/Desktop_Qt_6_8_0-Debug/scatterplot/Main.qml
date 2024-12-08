@@ -535,7 +535,7 @@ ApplicationWindow {
                 let name = uniqueValues[i];
                 tempColorMappingsModel.append({ name: name, color: "gray" });
             }
-            console.log("Colorpicker opened. Number of unique values:" + uniqueValues.length);
+            console.log("Colorpicker opened. Number of unique values: " + uniqueValues.length);
         }
     }
 }

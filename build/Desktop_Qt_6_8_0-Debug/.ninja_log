@@ -103,3 +103,16 @@
 142	164	1733662788467068442	CMakeFiles/appscatterplot.dir/build/Desktop_Qt_6_8_0-Debug/.qt/rcc/qrc_appscatterplot_raw_qml_0.cpp.o	5cd8467b2abf9228
 142	1275	1733662788467068442	CMakeFiles/appscatterplot.dir/build/Desktop_Qt_6_8_0-Debug/.rcc/qmlcache/appscatterplot_Main_qml.cpp.o	c31d95f6a3c6e42
 1275	1487	1733662789600065492	appscatterplot	6857abc7b0e9e6c3
+3	8	1733662951260662169	scatterplot/Main.qml	5ee40aaac97a1e6b
+3	8	1733662951260662169	/home/kecyke/qt/scatterplot/build/Desktop_Qt_6_8_0-Debug/scatterplot/Main.qml	5ee40aaac97a1e6b
+4	54	1733662951305662061	.qt/qml_imports/appscatterplot_build.cmake	b3e8ff96826774ad
+4	54	1733662951305662061	/home/kecyke/qt/scatterplot/build/Desktop_Qt_6_8_0-Debug/.qt/qml_imports/appscatterplot_build.cmake	b3e8ff96826774ad
+55	65	1733662951316662035	.qt/rcc/qrc_appscatterplot_raw_qml_0.cpp	e07c30e72bcf93a1
+55	65	1733662951316662035	/home/kecyke/qt/scatterplot/build/Desktop_Qt_6_8_0-Debug/.qt/rcc/qrc_appscatterplot_raw_qml_0.cpp	e07c30e72bcf93a1
+54	145	1733662951392661853	.rcc/qmlcache/appscatterplot_Main_qml.cpp	5cc05d855ecf73e3
+54	145	1733662951392661853	.rcc/qmlcache/appscatterplot_Main_qml.cpp.aotstats	5cc05d855ecf73e3
+54	145	1733662951392661853	/home/kecyke/qt/scatterplot/build/Desktop_Qt_6_8_0-Debug/.rcc/qmlcache/appscatterplot_Main_qml.cpp	5cc05d855ecf73e3
+54	145	1733662951392661853	/home/kecyke/qt/scatterplot/build/Desktop_Qt_6_8_0-Debug/.rcc/qmlcache/appscatterplot_Main_qml.cpp.aotstats	5cc05d855ecf73e3
+145	165	1733662951397661841	CMakeFiles/appscatterplot.dir/build/Desktop_Qt_6_8_0-Debug/.qt/rcc/qrc_appscatterplot_raw_qml_0.cpp.o	5cd8467b2abf9228
+145	1259	1733662951397661841	CMakeFiles/appscatterplot.dir/build/Desktop_Qt_6_8_0-Debug/.rcc/qmlcache/appscatterplot_Main_qml.cpp.o	c31d95f6a3c6e42
+1259	1468	1733662952511659171	appscatterplot	6857abc7b0e9e6c3
