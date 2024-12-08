@@ -97,17 +97,20 @@ ApplicationWindow {
                         onClicked: {
                             var selectedAttributes = getSelectedAttributes();
                             if (selectedAttributes.length === 3) {
-                                scatter.orthoProjection = false;
-                                scatterDataProxy.xPosRole = selectedAttributes[0];
-                                scatterDataProxy.yPosRole = selectedAttributes[1];
-                                scatterDataProxy.zPosRole = selectedAttributes[2];
-                                console.log("Updated Scatter3D with: " + selectedAttributes);
+                                console.log(scatter.children.length);
+                                scatter.children.forEach(function (child) {
+                                    child.ItemModelScatterDataProxy.xPosRole = selectedAttributes[0];
+                                    child.ItemModelScatterDataProxy.yPosRole = selectedAttributes[1];
+                                    child.ItemModelScatterDataProxy.zPosRole = selectedAttributes[2];
+                                });
+                                console.log("Updated all Scatter3DSeries with: " + selectedAttributes);
                             } else if (selectedAttributes.length === 2) {
-                                scatter.orthoProjection = true;
-                                scatterDataProxy.xPosRole = selectedAttributes[0];
-                                scatterDataProxy.yPosRole = selectedAttributes[1];
-                                scatterDataProxy.zPosRole = "z";
-                                console.log("Updated Scatter3D with two attributes. Z set to 0.");
+                                scatter.children.forEach(function (child) {
+                                    child.ItemModelScatterDataProxy.xPosRole = selectedAttributes[0];
+                                    child.ItemModelScatterDataProxy.yPosRole = selectedAttributes[1];
+                                    child.ItemModelScatterDataProxy.zPosRole = "z";
+                                });
+                                console.log("Updated all Scatter3DSeries with two attributes. Z set to 0.");
                             } else {
                                 console.error("Please select exactly two or three attributes.");
                             }
@@ -279,10 +282,6 @@ ApplicationWindow {
                 console.error("Failed to create a new Scatter3DSeries instance.");
             }
         }
-
-        scatter.children.forEach(function (child) {
-            console.log(child.baseColor);
-        });
     }
 
     function getSelectedAttributes() {
