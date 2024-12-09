@@ -589,7 +589,7 @@ ApplicationWindow {
                         stepSize: 0.01
 
                         onValueChanged: {
-                            scatterSeries.itemSize = value*0.99;scatterSeries0.itemSize = value;scatterSeries1.itemSize = value;
+                            scatterSeries.itemSize = value*0.95;scatterSeries0.itemSize = value;scatterSeries1.itemSize = value;
                             scatterSeries2.itemSize = value;scatterSeries3.itemSize = value;scatterSeries4.itemSize = value;
                             scatterSeries5.itemSize = value;scatterSeries6.itemSize = value;scatterSeries7.itemSize = value;
                             scatterSeries8.itemSize = value;scatterSeries9.itemSize = value;
@@ -729,8 +729,8 @@ ApplicationWindow {
             `import QtQuick 2.15;
              Rectangle {
                  id: summaryBox;
-                 width: parent.width / 4;
-                 height: parent.height / 4;
+                 width: parent.width / 5;
+                 height: parent.height / 4.5;
                  color: "black";
                  anchors.right: parent.right;
                  anchors.bottom: parent.bottom;

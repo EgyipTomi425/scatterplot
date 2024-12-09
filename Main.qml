@@ -729,8 +729,8 @@ ApplicationWindow {
             `import QtQuick 2.15;
              Rectangle {
                  id: summaryBox;
-                 width: parent.width / 4;
-                 height: parent.height / 4;
+                 width: parent.width / 5;
+                 height: parent.height / 4.5;
                  color: "black";
                  anchors.right: parent.right;
                  anchors.bottom: parent.bottom;
