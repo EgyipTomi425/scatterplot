@@ -33,8 +33,8 @@ ApplicationWindow {
         Rectangle {
             id: diagramRect
             color: "#202020"
-            width: (scatterSeries.selectedItem < 0 ? parent.width : (parent.width > parent.height ? parent.width * 0.6 : parent.width))
-            height: (scatterSeries.selectedItem < 0 ? parent.height : (parent.width > parent.height ? parent.height : parent.height * 0.6))
+            width: (/*scatterSeries.selectedItem < 0 ? parent.width : */(parent.width > parent.height ? parent.width * 0.6 : parent.width))
+            height: (/*scatterSeries.selectedItem < 0 ? parent.height : */(parent.width > parent.height ? parent.height : parent.height * 0.6))
 
             Flow {
                 anchors.fill: parent
@@ -198,7 +198,7 @@ ApplicationWindow {
                             id: scatterSeries0
                             ItemModelScatterDataProxy {
                                 id: scatterDataProxy0
-                                itemModel: scatterListModel
+                                itemModel: scatterListModel0
                                 xPosRole: "x"
                                 yPosRole: "y"
                                 zPosRole: "z"
@@ -208,7 +208,7 @@ ApplicationWindow {
 
                             onSelectedItemChanged: {
                                 if (selectedItem >= 0) {
-                                    var item = scatterListModel.get(selectedItem);
+                                    var item = scatterListModel0.get(selectedItem);
                                     var xAttr = scatterDataProxy0.xPosRole;
                                     var yAttr = scatterDataProxy0.yPosRole;
                                     var zAttr = scatterDataProxy0.zPosRole;
@@ -240,10 +240,10 @@ ApplicationWindow {
                         stepSize: 0.01
 
                         onValueChanged: {
-                            scatterSeries.itemSize = value*0.90;scatterSeries0.itemSize = value*0.99;scatterSeries1.itemSize = value*0.99;
-                            scatterSeries2.itemSize = value*0.99;scatterSeries3.itemSize = value*0.99;scatterSeries4.itemSize = value*0.99;
-                            scatterSeries5.itemSize = value*0.99;scatterSeries6.itemSize = value*0.99;scatterSeries7.itemSize = value*0.99;
-                            scatterSeries8.itemSize = value*0.99;scatterSeries9.itemSize = value*0.99;
+                            scatterSeries.itemSize = value*0.99;scatterSeries0.itemSize = value;scatterSeries1.itemSize = value;
+                            scatterSeries2.itemSize = value;scatterSeries3.itemSize = value;scatterSeries4.itemSize = value;
+                            scatterSeries5.itemSize = value;scatterSeries6.itemSize = value;scatterSeries7.itemSize = value;
+                            scatterSeries8.itemSize = value;scatterSeries9.itemSize = value;
                         }
                     }
 
@@ -254,9 +254,9 @@ ApplicationWindow {
         Rectangle {
             id: dataRect
             color: "#303030"
-            width: (scatterSeries.selectedItem < 0 ? 0 : (parent.width > parent.height ? parent.width * 0.4 : parent.width))
-            height: (scatterSeries.selectedItem < 0 ? 0 : (parent.width > parent.height ? parent.height : parent.height * 0.4))
-            visible: scatterSeries.selectedItem >= 0
+            width: (/*scatterSeries.selectedItem < 0 ? 0 : */(parent.width > parent.height ? parent.width * 0.4 : parent.width))
+            height: (/*scatterSeries.selectedItem < 0 ? 0 : */(parent.width > parent.height ? parent.height : parent.height * 0.4))
+            visible: true//scatterSeries.selectedItem >= 0
 
             Column {
                 anchors.fill: parent
@@ -271,7 +271,7 @@ ApplicationWindow {
                         width: parent.width
                         height: parent.height
                         fillMode: Image.PreserveAspectFit
-                        visible: scatterSeries.selectedItem >= 0
+                        visible: true//scatterSeries.selectedItem >= 0
                     }
                 }
 
@@ -289,7 +289,7 @@ ApplicationWindow {
                             text: "Name: None"
                             color: "white"
                             font.pixelSize: 18
-                            visible: scatterSeries.selectedItem >= 0
+                            visible: true//scatterSeries.selectedItem >= 0
                         }
 
                         Text {
@@ -297,7 +297,7 @@ ApplicationWindow {
                             text: "Coordinates: (N/A, N/A, N/A)"
                             color: "white"
                             font.pixelSize: 18
-                            visible: scatterSeries.selectedItem >= 0
+                            visible: true//scatterSeries.selectedItem >= 0
                         }
                     }
                 }
@@ -305,7 +305,6 @@ ApplicationWindow {
         }
     }
 
-    ListModel {id: scatterListModel}
     ListModel {id: scatterListModel0}
     ListModel {id: scatterListModel1}
     ListModel {id: scatterListModel2}
@@ -363,7 +362,16 @@ ApplicationWindow {
     }
 
     function setupScatterPlots() {
-        convertToListModel(groupedData[0].data, scatterListModel);
+        convertToListModel(groupedData[0].data, scatterListModel0);
+        convertToListModel(groupedData[0].data, scatterListModel1);
+        convertToListModel(groupedData[0].data, scatterListModel2);
+        convertToListModel(groupedData[0].data, scatterListModel3);
+        convertToListModel(groupedData[0].data, scatterListModel4);
+        convertToListModel(groupedData[0].data, scatterListModel5);
+        convertToListModel(groupedData[0].data, scatterListModel6);
+        convertToListModel(groupedData[0].data, scatterListModel7);
+        convertToListModel(groupedData[0].data, scatterListModel8);
+        convertToListModel(groupedData[0].data, scatterListModel9);
     }
 
     function getSelectedAttributes() {
