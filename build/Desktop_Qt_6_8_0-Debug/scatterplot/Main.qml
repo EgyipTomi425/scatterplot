@@ -16,7 +16,7 @@ ApplicationWindow {
 
     property var scatterDataModel: ListModel {}
     property var uniqueValues: []
-    property var groupedData: []
+    property var groupedData: ["3","2"]
 
     ListModel {
         id: scatterDataModel
@@ -92,25 +92,25 @@ ApplicationWindow {
                     Button {
                         id: updateButton
                         text: "Update Scatter Plot"
-                        width: (parent.parent.width > parent.parent.height ? parent.height : 0.5 * parent.height)
+                        width: parent.height
                         height: parent.height
                         onClicked: {
                             var selectedAttributes = getSelectedAttributes();
                             if (selectedAttributes.length === 3) {
-                                console.log(scatter.children.length);
-                                scatter.children.forEach(function (child) {
-                                    child.ItemModelScatterDataProxy.xPosRole = selectedAttributes[0];
-                                    child.ItemModelScatterDataProxy.yPosRole = selectedAttributes[1];
-                                    child.ItemModelScatterDataProxy.zPosRole = selectedAttributes[2];
-                                });
-                                console.log("Updated all Scatter3DSeries with: " + selectedAttributes);
+                                scatter.orthoProjection = false;
+                                scatterDataProxy.xPosRole = selectedAttributes[0];
+                                scatterDataProxy.yPosRole = selectedAttributes[1];
+                                scatterDataProxy.zPosRole = selectedAttributes[2];
+                                console.log("Updated Scatter3D with: " + selectedAttributes);
                             } else if (selectedAttributes.length === 2) {
-                                scatter.children.forEach(function (child) {
-                                    child.ItemModelScatterDataProxy.xPosRole = selectedAttributes[0];
-                                    child.ItemModelScatterDataProxy.yPosRole = selectedAttributes[1];
-                                    child.ItemModelScatterDataProxy.zPosRole = "z";
-                                });
-                                console.log("Updated all Scatter3DSeries with two attributes. Z set to 0.");
+                                scatter.orthoProjection = true;
+                                scatterDataProxy.xPosRole = selectedAttributes[0];
+                                scatterDataProxy.yPosRole = selectedAttributes[1];
+                                scatterDataProxy.zPosRole = "z";
+                                console.log("Updated Scatter3D with two attributes. Z set to 0.");
+                                scatterDataProxy.setItemDataFunction = function (index, item) {
+                                    item["z"] = 0;
+                                };
                             } else {
                                 console.error("Please select exactly two or three attributes.");
                             }
@@ -128,12 +128,10 @@ ApplicationWindow {
                         height: parent.height
                         aspectRatio: 1
                         horizontalAspectRatio: 1
-
                         orthoProjection: false
 
                         axisX {
                             id: xAxis
-                            //title: scatterDataProxy.xPosRole || "X-Axis"
                             titleVisible: true
                             labelFormat: "%.2f"
                             labelAutoAngle: 90
@@ -141,7 +139,6 @@ ApplicationWindow {
 
                         axisY {
                             id: yAxis
-                            //title: scatterDataProxy.yPosRole || "Y-Axis"
                             titleVisible: true
                             labelFormat: "%.2f"
                             labelAutoAngle: 90
@@ -149,10 +146,44 @@ ApplicationWindow {
 
                         axisZ {
                             id: zAxis
-                            //title: scatterDataProxy.zPosRole || "Z-Axis"
                             titleVisible: true
                             labelFormat: "%.2f"
                             labelAutoAngle: 90
+                        }
+
+                        // Már nincs jobb ötletem, mert se dinamikusan, sem repeaterrel nem engedi kretálni...
+
+                        Scatter3DSeries {
+                            id: scatterSeries
+                            ItemModelScatterDataProxy {
+                                id: scatterDataProxy
+                                itemModel: scatterDataModel
+                                xPosRole: "x"
+                                yPosRole: "y"
+                                zPosRole: "z"
+                            }
+                            baseColor: "blue"
+                            itemSize: 0.1
+
+                            onSelectedItemChanged: {
+                                if (selectedItem >= 0) {
+                                    var item = scatterDataModel.get(selectedItem);
+                                    var xAttr = scatterDataProxy.xPosRole;
+                                    var yAttr = scatterDataProxy.yPosRole;
+                                    var zAttr = scatterDataProxy.zPosRole;
+
+                                    selectedName.text = "Name: " + (item.name || "N/A");
+                                    selectedCoords.text = "Coordinates: \n" +
+                                                          xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
+                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", \n" +
+                                                          zAttr + ": " + (item[zAttr] || "N/A");
+                                    selectedImage.source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
+                                } else {
+                                    selectedName.text = "Name: None";
+                                    selectedCoords.text = "Coordinates: (N/A, N/A, N/A)";
+                                    selectedImage.source = "";
+                                }
+                            }
                         }
                     }
 
@@ -253,35 +284,8 @@ ApplicationWindow {
         }
     }
 
-    function createScatterPlots() {
-        scatter.children.forEach(function (child) {
-            if (child.constructor === Scatter3DSeries) {
-                child.destroy();
-            }
-        });
+    function setupScatterPlots() {
 
-        if (groupedData.length < 1) {
-            console.log("There is no data in groupedData.");
-            return;
-        }
-
-        for (let i = 0; i < groupedData.length; i++) {
-            var newScatterPlot = scatterSeriesComponent.createObject(scatter, {
-                baseColor: groupedData[i].color.toString(),
-                itemSize: 1
-            });
-
-            if (newScatterPlot) {
-                console.log("Scatter plot created with base color: " + newScatterPlot.baseColor);
-
-                newScatterPlot.ItemModelScatterDataProxy.itemModel = scatterDataModel;
-                newScatterPlot.ItemModelScatterDataProxy.xPosRole = "x";
-                newScatterPlot.ItemModelScatterDataProxy.yPosRole = "y";
-                newScatterPlot.ItemModelScatterDataProxy.zPosRole = "z";
-            } else {
-                console.error("Failed to create a new Scatter3DSeries instance.");
-            }
-        }
     }
 
     function getSelectedAttributes() {
@@ -392,7 +396,7 @@ ApplicationWindow {
         console.log("Number of categories: " + groupedData.length);
 
         // Making visual plots
-        createScatterPlots();
+        setupScatterPlots();
     }
 
 
@@ -405,42 +409,6 @@ ApplicationWindow {
                 parent.width / 7 / Math.max(checkboxLayout.children.length, 1),
                 parent.height / 7
             )
-        }
-    }
-
-    Component {
-        id: scatterSeriesComponent
-        Scatter3DSeries {
-            id: scatterSeries
-            ItemModelScatterDataProxy {
-                id: scatterDataProxy
-                itemModel: scatterDataModel
-                xPosRole: "x"
-                yPosRole: "y"
-                zPosRole: "z"
-            }
-            baseColor: "blue"
-            itemSize: 0.1
-
-            onSelectedItemChanged: {
-                if (selectedItem >= 0) {
-                    var item = scatterDataModel.get(selectedItem);
-                    var xAttr = scatterDataProxy.xPosRole;
-                    var yAttr = scatterDataProxy.yPosRole;
-                    var zAttr = scatterDataProxy.zPosRole;
-
-                    selectedName.text = "Name: " + (item.name || "N/A");
-                    selectedCoords.text = //"Coordinates: \n" +
-                                          xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
-                                          yAttr + ": " + (item[yAttr] || "N/A") + ", \n" +
-                                          zAttr + ": " + (item[zAttr] || "N/A");
-                    selectedImage.source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
-                } else {
-                    selectedName.text = "Name: None";
-                    selectedCoords.text = "Coordinates: (N/A, N/A, N/A)";
-                    selectedImage.source = "";
-                }
-            }
         }
     }
 
