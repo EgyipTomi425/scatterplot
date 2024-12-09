@@ -240,7 +240,10 @@ ApplicationWindow {
                         stepSize: 0.01
 
                         onValueChanged: {
-                            scatterSeries.itemSize = value;
+                            scatterSeries.itemSize = value*0.90;scatterSeries0.itemSize = value*0.99;scatterSeries1.itemSize = value*0.99;
+                            scatterSeries2.itemSize = value*0.99;scatterSeries3.itemSize = value*0.99;scatterSeries4.itemSize = value*0.99;
+                            scatterSeries5.itemSize = value*0.99;scatterSeries6.itemSize = value*0.99;scatterSeries7.itemSize = value*0.99;
+                            scatterSeries8.itemSize = value*0.99;scatterSeries9.itemSize = value*0.99;
                         }
                     }
 
