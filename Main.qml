@@ -239,7 +239,6 @@ ApplicationWindow {
                                 yPosRole: "y"
                                 zPosRole: "z"
                             }
-                            baseColor: groupedData[0].color || "red"
                             itemSize: 0.1
 
                             onSelectedItemChanged: {
@@ -272,7 +271,6 @@ ApplicationWindow {
                                 yPosRole: "y"
                                 zPosRole: "z"
                             }
-                            baseColor: groupedData[1].color || "red"
                             itemSize: 0.1
 
                             onSelectedItemChanged: {
@@ -305,7 +303,6 @@ ApplicationWindow {
                                 yPosRole: "y"
                                 zPosRole: "z"
                             }
-                            baseColor: groupedData[2].color || "red"
                             itemSize: 0.1
 
                             onSelectedItemChanged: {
@@ -338,7 +335,6 @@ ApplicationWindow {
                                 yPosRole: "y"
                                 zPosRole: "z"
                             }
-                            baseColor: groupedData[3].color || "red"
                             itemSize: 0.1
 
                             onSelectedItemChanged: {
@@ -371,7 +367,6 @@ ApplicationWindow {
                                 yPosRole: "y"
                                 zPosRole: "z"
                             }
-                            baseColor: groupedData[4].color || "red"
                             itemSize: 0.1
 
                             onSelectedItemChanged: {
@@ -404,7 +399,6 @@ ApplicationWindow {
                                 yPosRole: "y"
                                 zPosRole: "z"
                             }
-                            baseColor: groupedData[5].color || "red"
                             itemSize: 0.1
 
                             onSelectedItemChanged: {
@@ -432,7 +426,6 @@ ApplicationWindow {
                             id: scatterSeries6
                             ItemModelScatterDataProxy {
                                 id: scatterDataProxy6
-                                itemModel: scatterListModel6
                                 xPosRole: "x"
                                 yPosRole: "y"
                                 zPosRole: "z"
@@ -470,7 +463,6 @@ ApplicationWindow {
                                 yPosRole: "y"
                                 zPosRole: "z"
                             }
-                            baseColor: groupedData[7].color || "red"
                             itemSize: 0.1
 
                             onSelectedItemChanged: {
@@ -503,7 +495,6 @@ ApplicationWindow {
                                 yPosRole: "y"
                                 zPosRole: "z"
                             }
-                            baseColor: groupedData[8].color || "red"
                             itemSize: 0.1
 
                             onSelectedItemChanged: {
@@ -536,7 +527,6 @@ ApplicationWindow {
                                 yPosRole: "y"
                                 zPosRole: "z"
                             }
-                            baseColor: groupedData[9].color || "red"
                             itemSize: 0.1
 
                             onSelectedItemChanged: {
@@ -695,16 +685,16 @@ ApplicationWindow {
     }
 
     function setupScatterPlots() {
-        try { convertToListModel(groupedData[0].data, scatterListModel0); } catch (e) {}
-        try { convertToListModel(groupedData[1].data, scatterListModel1); } catch (e) {}
-        try { convertToListModel(groupedData[2].data, scatterListModel2); } catch (e) {}
-        try { convertToListModel(groupedData[3].data, scatterListModel3); } catch (e) {}
-        try { convertToListModel(groupedData[4].data, scatterListModel4); } catch (e) {}
-        try { convertToListModel(groupedData[5].data, scatterListModel5); } catch (e) {}
-        try { convertToListModel(groupedData[6].data, scatterListModel6); } catch (e) {}
-        try { convertToListModel(groupedData[7].data, scatterListModel7); } catch (e) {}
-        try { convertToListModel(groupedData[8].data, scatterListModel8); } catch (e) {}
-        try { convertToListModel(groupedData[9].data, scatterListModel9); } catch (e) {}
+        try { convertToListModel(groupedData[0].data, scatterListModel0); scatterSeries0.baseColor=groupedData[0].color} catch (e) {}
+        try { convertToListModel(groupedData[1].data, scatterListModel1); scatterSeries1.baseColor=groupedData[1].color} catch (e) {}
+        try { convertToListModel(groupedData[2].data, scatterListModel2); scatterSeries2.baseColor=groupedData[2].color} catch (e) {}
+        try { convertToListModel(groupedData[3].data, scatterListModel3); scatterSeries3.baseColor=groupedData[3].color} catch (e) {}
+        try { convertToListModel(groupedData[4].data, scatterListModel4); scatterSeries4.baseColor=groupedData[4].color} catch (e) {}
+        try { convertToListModel(groupedData[5].data, scatterListModel5); scatterSeries5.baseColor=groupedData[5].color} catch (e) {}
+        try { convertToListModel(groupedData[6].data, scatterListModel6); scatterSeries6.baseColor=groupedData[6].color} catch (e) {}
+        try { convertToListModel(groupedData[7].data, scatterListModel7); scatterSeries7.baseColor=groupedData[7].color} catch (e) {}
+        try { convertToListModel(groupedData[8].data, scatterListModel8); scatterSeries8.baseColor=groupedData[8].color} catch (e) {}
+        try { convertToListModel(groupedData[9].data, scatterListModel9); scatterSeries9.baseColor=groupedData[9].color} catch (e) {}
     }
 
     function getSelectedAttributes() {
