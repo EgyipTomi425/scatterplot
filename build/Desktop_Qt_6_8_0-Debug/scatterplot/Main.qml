@@ -149,12 +149,38 @@ ApplicationWindow {
 
                                 scatterDataProxy.xPosRole = selectedAttributes[0];
                                 scatterDataProxy.yPosRole = selectedAttributes[1];
-                                scatterDataProxy.zPosRole = "z";
 
-                                console.log("Updated Scatter3D with two attributes. Z set to 0.");
-                                scatterDataProxy.setItemDataFunction = function (index, item) {
-                                    item["z"] = 0;
-                                };
+                                scatterDataProxy0.xPosRole = selectedAttributes[0];
+                                scatterDataProxy0.yPosRole = selectedAttributes[1];
+
+                                scatterDataProxy1.xPosRole = selectedAttributes[0];
+                                scatterDataProxy1.yPosRole = selectedAttributes[1];
+
+                                scatterDataProxy2.xPosRole = selectedAttributes[0];
+                                scatterDataProxy2.yPosRole = selectedAttributes[1];
+
+                                scatterDataProxy3.xPosRole = selectedAttributes[0];
+                                scatterDataProxy3.yPosRole = selectedAttributes[1];
+
+                                scatterDataProxy4.xPosRole = selectedAttributes[0];
+                                scatterDataProxy4.yPosRole = selectedAttributes[1];
+
+                                scatterDataProxy5.xPosRole = selectedAttributes[0];
+                                scatterDataProxy5.yPosRole = selectedAttributes[1];
+
+                                scatterDataProxy6.xPosRole = selectedAttributes[0];
+                                scatterDataProxy6.yPosRole = selectedAttributes[1];
+
+                                scatterDataProxy7.xPosRole = selectedAttributes[0];
+                                scatterDataProxy7.yPosRole = selectedAttributes[1];
+
+                                scatterDataProxy8.xPosRole = selectedAttributes[0];
+                                scatterDataProxy8.yPosRole = selectedAttributes[1];
+
+                                scatterDataProxy9.xPosRole = selectedAttributes[0];
+                                scatterDataProxy9.yPosRole = selectedAttributes[1];
+
+                                console.log("Updated Scatter3D with two attributes.");
                             } else {
                                 console.error("Please select exactly two or three attributes.");
                             }
@@ -760,10 +786,6 @@ ApplicationWindow {
             'summaryBox'
         );
     }
-
-
-
-
 
     function getSelectedAttributes() {
         var selectedAttributes = [];
