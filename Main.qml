@@ -699,20 +699,67 @@ ApplicationWindow {
     }
 
     function createSummaryBox() {
-        var summaryBox = Qt.createQmlObject(
-                'import QtQuick 2.15; Rectangle { width: parent.width/4; height: parent.height/4; color: "black"; anchors.right: parent.right; anchors.bottom: parent.bottom; }',
-                scatter,
-                'summaryBox'
-            );
+        Qt.createQmlObject(
+            `import QtQuick 2.15;
+             Rectangle {
+                 id: summaryBox;
+                 width: parent.width / 4;
+                 height: parent.height / 4;
+                 color: "black";
+                 anchors.right: parent.right;
+                 anchors.bottom: parent.bottom;
+                 border.color: "white";
+                 border.width: 1;
+                 clip: true;
 
-            for (var i = 0; i < groupedData.length; i++) {
-                var itemData = groupedData[i];
-                var color = itemData.color;
-                var name = itemData.name;
-                var itemCount = itemData.data.length;
-            }
+                 ListModel {
+                     id: summaryModel;
+                     Component.onCompleted: {
+                         groupedData.forEach((item) => {
+                             append({
+                                 name: item.name,
+                                 color: item.color,
+                                 itemCount: item.data.length
+                             });
+                         });
+                     }
+                 }
+
+                 Column {
+                     id: summaryContent;
+                     spacing: 5;
+                     anchors.fill: parent;
+                     anchors.margins: 10;
+
+                     Repeater {
+                         model: summaryModel;
+
+                         Row {
+                             spacing: 10;
+                             width: parent.width;
+
+                             Rectangle {
+                                 width: 20;
+                                 height: 20;
+                                 color: model.color;
+                                 border.color: "white";
+                                 border.width: 1;
+                             }
+
+                             Text {
+                                 text: model.name + " (" + model.itemCount + ")";
+                                 color: "white";
+                                 font.pixelSize: 12;
+                                 verticalAlignment: Text.AlignVCenter;
+                             }
+                         }
+                     }
+                 }
+             }`,
+            scatter,
+            'summaryBox'
+        );
     }
-
 
     function getSelectedAttributes() {
         var selectedAttributes = [];
