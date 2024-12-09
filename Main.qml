@@ -695,7 +695,24 @@ ApplicationWindow {
         try { convertToListModel(groupedData[7].data, scatterListModel7); scatterSeries7.baseColor=groupedData[7].color} catch (e) {}
         try { convertToListModel(groupedData[8].data, scatterListModel8); scatterSeries8.baseColor=groupedData[8].color} catch (e) {}
         try { convertToListModel(groupedData[9].data, scatterListModel9); scatterSeries9.baseColor=groupedData[9].color} catch (e) {}
+        createSummaryBox();
     }
+
+    function createSummaryBox() {
+        var summaryBox = Qt.createQmlObject(
+                'import QtQuick 2.15; Rectangle { width: parent.width/4; height: parent.height/4; color: "black"; anchors.right: parent.right; anchors.bottom: parent.bottom; }',
+                scatter,
+                'summaryBox'
+            );
+
+            for (var i = 0; i < groupedData.length; i++) {
+                var itemData = groupedData[i];
+                var color = itemData.color;
+                var name = itemData.name;
+                var itemCount = itemData.data.length;
+            }
+    }
+
 
     function getSelectedAttributes() {
         var selectedAttributes = [];
