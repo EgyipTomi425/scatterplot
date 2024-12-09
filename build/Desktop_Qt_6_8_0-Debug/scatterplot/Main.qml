@@ -99,6 +99,10 @@ ApplicationWindow {
                             if (selectedAttributes.length === 3) {
                                 scatter.orthoProjection = false;
 
+                                scatterDataProxy.xPosRole = selectedAttributes[0];
+                                scatterDataProxy.yPosRole = selectedAttributes[1];
+                                scatterDataProxy.zPosRole = selectedAttributes[2];
+
                                 scatterDataProxy0.xPosRole = selectedAttributes[0];
                                 scatterDataProxy0.yPosRole = selectedAttributes[1];
                                 scatterDataProxy0.zPosRole = selectedAttributes[2];
@@ -268,7 +272,7 @@ ApplicationWindow {
                                 yPosRole: "y"
                                 zPosRole: "z"
                             }
-                            baseColor: groupedData[0].color || "red"
+                            baseColor: groupedData[1].color || "red"
                             itemSize: 0.1
 
                             onSelectedItemChanged: {
@@ -301,7 +305,7 @@ ApplicationWindow {
                                 yPosRole: "y"
                                 zPosRole: "z"
                             }
-                            baseColor: groupedData[0].color || "red"
+                            baseColor: groupedData[2].color || "red"
                             itemSize: 0.1
 
                             onSelectedItemChanged: {
@@ -334,7 +338,7 @@ ApplicationWindow {
                                 yPosRole: "y"
                                 zPosRole: "z"
                             }
-                            baseColor: groupedData[0].color || "red"
+                            baseColor: groupedData[3].color || "red"
                             itemSize: 0.1
 
                             onSelectedItemChanged: {
@@ -367,7 +371,7 @@ ApplicationWindow {
                                 yPosRole: "y"
                                 zPosRole: "z"
                             }
-                            baseColor: groupedData[0].color || "red"
+                            baseColor: groupedData[4].color || "red"
                             itemSize: 0.1
 
                             onSelectedItemChanged: {
@@ -400,7 +404,7 @@ ApplicationWindow {
                                 yPosRole: "y"
                                 zPosRole: "z"
                             }
-                            baseColor: groupedData[0].color || "red"
+                            baseColor: groupedData[5].color || "red"
                             itemSize: 0.1
 
                             onSelectedItemChanged: {
@@ -433,7 +437,7 @@ ApplicationWindow {
                                 yPosRole: "y"
                                 zPosRole: "z"
                             }
-                            baseColor: groupedData[0].color || "red"
+                            baseColor: groupedData[6].color || "red"
                             itemSize: 0.1
 
                             onSelectedItemChanged: {
@@ -466,7 +470,7 @@ ApplicationWindow {
                                 yPosRole: "y"
                                 zPosRole: "z"
                             }
-                            baseColor: groupedData[0].color || "red"
+                            baseColor: groupedData[7].color || "red"
                             itemSize: 0.1
 
                             onSelectedItemChanged: {
@@ -499,7 +503,7 @@ ApplicationWindow {
                                 yPosRole: "y"
                                 zPosRole: "z"
                             }
-                            baseColor: groupedData[0].color || "red"
+                            baseColor: groupedData[8].color || "red"
                             itemSize: 0.1
 
                             onSelectedItemChanged: {
@@ -532,7 +536,7 @@ ApplicationWindow {
                                 yPosRole: "y"
                                 zPosRole: "z"
                             }
-                            baseColor: groupedData[0].color || "red"
+                            baseColor: groupedData[9].color || "red"
                             itemSize: 0.1
 
                             onSelectedItemChanged: {
@@ -691,16 +695,16 @@ ApplicationWindow {
     }
 
     function setupScatterPlots() {
-        convertToListModel(groupedData[0].data, scatterListModel0);
-        convertToListModel(groupedData[0].data, scatterListModel1);
-        convertToListModel(groupedData[0].data, scatterListModel2);
-        convertToListModel(groupedData[0].data, scatterListModel3);
-        convertToListModel(groupedData[0].data, scatterListModel4);
-        convertToListModel(groupedData[0].data, scatterListModel5);
-        convertToListModel(groupedData[0].data, scatterListModel6);
-        convertToListModel(groupedData[0].data, scatterListModel7);
-        convertToListModel(groupedData[0].data, scatterListModel8);
-        convertToListModel(groupedData[0].data, scatterListModel9);
+        try { convertToListModel(groupedData[0].data, scatterListModel0); } catch (e) {}
+        try { convertToListModel(groupedData[1].data, scatterListModel1); } catch (e) {}
+        try { convertToListModel(groupedData[2].data, scatterListModel2); } catch (e) {}
+        try { convertToListModel(groupedData[3].data, scatterListModel3); } catch (e) {}
+        try { convertToListModel(groupedData[4].data, scatterListModel4); } catch (e) {}
+        try { convertToListModel(groupedData[5].data, scatterListModel5); } catch (e) {}
+        try { convertToListModel(groupedData[6].data, scatterListModel6); } catch (e) {}
+        try { convertToListModel(groupedData[7].data, scatterListModel7); } catch (e) {}
+        try { convertToListModel(groupedData[8].data, scatterListModel8); } catch (e) {}
+        try { convertToListModel(groupedData[9].data, scatterListModel9); } catch (e) {}
     }
 
     function getSelectedAttributes() {
