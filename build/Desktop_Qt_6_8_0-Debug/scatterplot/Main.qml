@@ -33,8 +33,8 @@ ApplicationWindow {
         Rectangle {
             id: diagramRect
             color: "#202020"
-            width: 1000//(scatterSeries.selectedItem < 0 ? parent.width : (parent.width > parent.height ? parent.width * 0.6 : parent.width))
-            height: 1000//(scatterSeries.selectedItem < 0 ? parent.height : (parent.width > parent.height ? parent.height : parent.height * 0.6))
+            width: (scatterSeries.selectedItem < 0 ? parent.width : (parent.width > parent.height ? parent.width * 0.6 : parent.width))
+            height: (scatterSeries.selectedItem < 0 ? parent.height : (parent.width > parent.height ? parent.height : parent.height * 0.6))
 
             Flow {
                 anchors.fill: parent
@@ -251,9 +251,9 @@ ApplicationWindow {
         Rectangle {
             id: dataRect
             color: "#303030"
-            width: 1000//(scatterSeries.selectedItem < 0 ? 0 : (parent.width > parent.height ? parent.width * 0.4 : parent.width))
-            height: 1000//(scatterSeries.selectedItem < 0 ? 0 : (parent.width > parent.height ? parent.height : parent.height * 0.4))
-            //visible: scatterSeries.selectedItem >= 0
+            width: (scatterSeries.selectedItem < 0 ? 0 : (parent.width > parent.height ? parent.width * 0.4 : parent.width))
+            height: (scatterSeries.selectedItem < 0 ? 0 : (parent.width > parent.height ? parent.height : parent.height * 0.4))
+            visible: scatterSeries.selectedItem >= 0
 
             Column {
                 anchors.fill: parent
@@ -268,7 +268,7 @@ ApplicationWindow {
                         width: parent.width
                         height: parent.height
                         fillMode: Image.PreserveAspectFit
-                        //visible: scatterSeries.selectedItem >= 0
+                        visible: scatterSeries.selectedItem >= 0
                     }
                 }
 
@@ -286,7 +286,7 @@ ApplicationWindow {
                             text: "Name: None"
                             color: "white"
                             font.pixelSize: 18
-                            //visible: scatterSeries.selectedItem >= 0
+                            visible: scatterSeries.selectedItem >= 0
                         }
 
                         Text {
@@ -294,7 +294,7 @@ ApplicationWindow {
                             text: "Coordinates: (N/A, N/A, N/A)"
                             color: "white"
                             font.pixelSize: 18
-                            //visible: scatterSeries.selectedItem >= 0
+                            visible: scatterSeries.selectedItem >= 0
                         }
                     }
                 }
