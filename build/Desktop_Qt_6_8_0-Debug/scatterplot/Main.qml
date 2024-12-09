@@ -99,13 +99,45 @@ ApplicationWindow {
                             if (selectedAttributes.length === 3) {
                                 scatter.orthoProjection = false;
 
-                                scatterDataProxy.xPosRole = selectedAttributes[0];
-                                scatterDataProxy.yPosRole = selectedAttributes[1];
-                                scatterDataProxy.zPosRole = selectedAttributes[2];
-
                                 scatterDataProxy0.xPosRole = selectedAttributes[0];
                                 scatterDataProxy0.yPosRole = selectedAttributes[1];
                                 scatterDataProxy0.zPosRole = selectedAttributes[2];
+
+                                scatterDataProxy1.xPosRole = selectedAttributes[0];
+                                scatterDataProxy1.yPosRole = selectedAttributes[1];
+                                scatterDataProxy1.zPosRole = selectedAttributes[2];
+
+                                scatterDataProxy2.xPosRole = selectedAttributes[0];
+                                scatterDataProxy2.yPosRole = selectedAttributes[1];
+                                scatterDataProxy2.zPosRole = selectedAttributes[2];
+
+                                scatterDataProxy3.xPosRole = selectedAttributes[0];
+                                scatterDataProxy3.yPosRole = selectedAttributes[1];
+                                scatterDataProxy3.zPosRole = selectedAttributes[2];
+
+                                scatterDataProxy4.xPosRole = selectedAttributes[0];
+                                scatterDataProxy4.yPosRole = selectedAttributes[1];
+                                scatterDataProxy4.zPosRole = selectedAttributes[2];
+
+                                scatterDataProxy5.xPosRole = selectedAttributes[0];
+                                scatterDataProxy5.yPosRole = selectedAttributes[1];
+                                scatterDataProxy5.zPosRole = selectedAttributes[2];
+
+                                scatterDataProxy6.xPosRole = selectedAttributes[0];
+                                scatterDataProxy6.yPosRole = selectedAttributes[1];
+                                scatterDataProxy6.zPosRole = selectedAttributes[2];
+
+                                scatterDataProxy7.xPosRole = selectedAttributes[0];
+                                scatterDataProxy7.yPosRole = selectedAttributes[1];
+                                scatterDataProxy7.zPosRole = selectedAttributes[2];
+
+                                scatterDataProxy8.xPosRole = selectedAttributes[0];
+                                scatterDataProxy8.yPosRole = selectedAttributes[1];
+                                scatterDataProxy8.zPosRole = selectedAttributes[2];
+
+                                scatterDataProxy9.xPosRole = selectedAttributes[0];
+                                scatterDataProxy9.yPosRole = selectedAttributes[1];
+                                scatterDataProxy9.zPosRole = selectedAttributes[2];
 
                                 console.log("Updated Scatter3D with: " + selectedAttributes);
                             } else if (selectedAttributes.length === 2) {
@@ -212,6 +244,303 @@ ApplicationWindow {
                                     var xAttr = scatterDataProxy0.xPosRole;
                                     var yAttr = scatterDataProxy0.yPosRole;
                                     var zAttr = scatterDataProxy0.zPosRole;
+
+                                    selectedName.text = "Name: " + (item.name || "N/A");
+                                    selectedCoords.text = "Coordinates: \n" +
+                                                          xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
+                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", \n" +
+                                                          zAttr + ": " + (item[zAttr] || "N/A");
+                                    selectedImage.source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
+                                } else {
+                                    selectedName.text = "Name: None";
+                                    selectedCoords.text = "Coordinates: (N/A, N/A, N/A)";
+                                    selectedImage.source = "";
+                                }
+                            }
+                        }
+
+                        Scatter3DSeries {
+                            id: scatterSeries1
+                            ItemModelScatterDataProxy {
+                                id: scatterDataProxy1
+                                itemModel: scatterListModel1
+                                xPosRole: "x"
+                                yPosRole: "y"
+                                zPosRole: "z"
+                            }
+                            baseColor: groupedData[0].color || "red"
+                            itemSize: 0.1
+
+                            onSelectedItemChanged: {
+                                if (selectedItem >= 0) {
+                                    var item = scatterListModel1.get(selectedItem);
+                                    var xAttr = scatterDataProxy1.xPosRole;
+                                    var yAttr = scatterDataProxy1.yPosRole;
+                                    var zAttr = scatterDataProxy1.zPosRole;
+
+                                    selectedName.text = "Name: " + (item.name || "N/A");
+                                    selectedCoords.text = "Coordinates: \n" +
+                                                          xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
+                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", \n" +
+                                                          zAttr + ": " + (item[zAttr] || "N/A");
+                                    selectedImage.source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
+                                } else {
+                                    selectedName.text = "Name: None";
+                                    selectedCoords.text = "Coordinates: (N/A, N/A, N/A)";
+                                    selectedImage.source = "";
+                                }
+                            }
+                        }
+
+                        Scatter3DSeries {
+                            id: scatterSeries2
+                            ItemModelScatterDataProxy {
+                                id: scatterDataProxy2
+                                itemModel: scatterListModel2
+                                xPosRole: "x"
+                                yPosRole: "y"
+                                zPosRole: "z"
+                            }
+                            baseColor: groupedData[0].color || "red"
+                            itemSize: 0.1
+
+                            onSelectedItemChanged: {
+                                if (selectedItem >= 0) {
+                                    var item = scatterListModel2.get(selectedItem);
+                                    var xAttr = scatterDataProxy2.xPosRole;
+                                    var yAttr = scatterDataProxy2.yPosRole;
+                                    var zAttr = scatterDataProxy2.zPosRole;
+
+                                    selectedName.text = "Name: " + (item.name || "N/A");
+                                    selectedCoords.text = "Coordinates: \n" +
+                                                          xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
+                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", \n" +
+                                                          zAttr + ": " + (item[zAttr] || "N/A");
+                                    selectedImage.source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
+                                } else {
+                                    selectedName.text = "Name: None";
+                                    selectedCoords.text = "Coordinates: (N/A, N/A, N/A)";
+                                    selectedImage.source = "";
+                                }
+                            }
+                        }
+
+                        Scatter3DSeries {
+                            id: scatterSeries3
+                            ItemModelScatterDataProxy {
+                                id: scatterDataProxy3
+                                itemModel: scatterListModel3
+                                xPosRole: "x"
+                                yPosRole: "y"
+                                zPosRole: "z"
+                            }
+                            baseColor: groupedData[0].color || "red"
+                            itemSize: 0.1
+
+                            onSelectedItemChanged: {
+                                if (selectedItem >= 0) {
+                                    var item = scatterListModel3.get(selectedItem);
+                                    var xAttr = scatterDataProxy3.xPosRole;
+                                    var yAttr = scatterDataProxy3.yPosRole;
+                                    var zAttr = scatterDataProxy3.zPosRole;
+
+                                    selectedName.text = "Name: " + (item.name || "N/A");
+                                    selectedCoords.text = "Coordinates: \n" +
+                                                          xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
+                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", \n" +
+                                                          zAttr + ": " + (item[zAttr] || "N/A");
+                                    selectedImage.source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
+                                } else {
+                                    selectedName.text = "Name: None";
+                                    selectedCoords.text = "Coordinates: (N/A, N/A, N/A)";
+                                    selectedImage.source = "";
+                                }
+                            }
+                        }
+
+                        Scatter3DSeries {
+                            id: scatterSeries4
+                            ItemModelScatterDataProxy {
+                                id: scatterDataProxy4
+                                itemModel: scatterListModel4
+                                xPosRole: "x"
+                                yPosRole: "y"
+                                zPosRole: "z"
+                            }
+                            baseColor: groupedData[0].color || "red"
+                            itemSize: 0.1
+
+                            onSelectedItemChanged: {
+                                if (selectedItem >= 0) {
+                                    var item = scatterListModel4.get(selectedItem);
+                                    var xAttr = scatterDataProxy4.xPosRole;
+                                    var yAttr = scatterDataProxy4.yPosRole;
+                                    var zAttr = scatterDataProxy4.zPosRole;
+
+                                    selectedName.text = "Name: " + (item.name || "N/A");
+                                    selectedCoords.text = "Coordinates: \n" +
+                                                          xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
+                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", \n" +
+                                                          zAttr + ": " + (item[zAttr] || "N/A");
+                                    selectedImage.source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
+                                } else {
+                                    selectedName.text = "Name: None";
+                                    selectedCoords.text = "Coordinates: (N/A, N/A, N/A)";
+                                    selectedImage.source = "";
+                                }
+                            }
+                        }
+
+                        Scatter3DSeries {
+                            id: scatterSeries5
+                            ItemModelScatterDataProxy {
+                                id: scatterDataProxy5
+                                itemModel: scatterListModel5
+                                xPosRole: "x"
+                                yPosRole: "y"
+                                zPosRole: "z"
+                            }
+                            baseColor: groupedData[0].color || "red"
+                            itemSize: 0.1
+
+                            onSelectedItemChanged: {
+                                if (selectedItem >= 0) {
+                                    var item = scatterListModel0.get(selectedItem);
+                                    var xAttr = scatterDataProxy5.xPosRole;
+                                    var yAttr = scatterDataProxy5.yPosRole;
+                                    var zAttr = scatterDataProxy5.zPosRole;
+
+                                    selectedName.text = "Name: " + (item.name || "N/A");
+                                    selectedCoords.text = "Coordinates: \n" +
+                                                          xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
+                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", \n" +
+                                                          zAttr + ": " + (item[zAttr] || "N/A");
+                                    selectedImage.source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
+                                } else {
+                                    selectedName.text = "Name: None";
+                                    selectedCoords.text = "Coordinates: (N/A, N/A, N/A)";
+                                    selectedImage.source = "";
+                                }
+                            }
+                        }
+
+                        Scatter3DSeries {
+                            id: scatterSeries6
+                            ItemModelScatterDataProxy {
+                                id: scatterDataProxy6
+                                itemModel: scatterListModel6
+                                xPosRole: "x"
+                                yPosRole: "y"
+                                zPosRole: "z"
+                            }
+                            baseColor: groupedData[0].color || "red"
+                            itemSize: 0.1
+
+                            onSelectedItemChanged: {
+                                if (selectedItem >= 0) {
+                                    var item = scatterListModel6.get(selectedItem);
+                                    var xAttr = scatterDataProxy6.xPosRole;
+                                    var yAttr = scatterDataProxy6.yPosRole;
+                                    var zAttr = scatterDataProxy6.zPosRole;
+
+                                    selectedName.text = "Name: " + (item.name || "N/A");
+                                    selectedCoords.text = "Coordinates: \n" +
+                                                          xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
+                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", \n" +
+                                                          zAttr + ": " + (item[zAttr] || "N/A");
+                                    selectedImage.source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
+                                } else {
+                                    selectedName.text = "Name: None";
+                                    selectedCoords.text = "Coordinates: (N/A, N/A, N/A)";
+                                    selectedImage.source = "";
+                                }
+                            }
+                        }
+
+                        Scatter3DSeries {
+                            id: scatterSeries7
+                            ItemModelScatterDataProxy {
+                                id: scatterDataProxy7
+                                itemModel: scatterListModel7
+                                xPosRole: "x"
+                                yPosRole: "y"
+                                zPosRole: "z"
+                            }
+                            baseColor: groupedData[0].color || "red"
+                            itemSize: 0.1
+
+                            onSelectedItemChanged: {
+                                if (selectedItem >= 0) {
+                                    var item = scatterListModel7.get(selectedItem);
+                                    var xAttr = scatterDataProxy7.xPosRole;
+                                    var yAttr = scatterDataProxy7.yPosRole;
+                                    var zAttr = scatterDataProxy7.zPosRole;
+
+                                    selectedName.text = "Name: " + (item.name || "N/A");
+                                    selectedCoords.text = "Coordinates: \n" +
+                                                          xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
+                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", \n" +
+                                                          zAttr + ": " + (item[zAttr] || "N/A");
+                                    selectedImage.source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
+                                } else {
+                                    selectedName.text = "Name: None";
+                                    selectedCoords.text = "Coordinates: (N/A, N/A, N/A)";
+                                    selectedImage.source = "";
+                                }
+                            }
+                        }
+
+                        Scatter3DSeries {
+                            id: scatterSeries8
+                            ItemModelScatterDataProxy {
+                                id: scatterDataProxy8
+                                itemModel: scatterListModel8
+                                xPosRole: "x"
+                                yPosRole: "y"
+                                zPosRole: "z"
+                            }
+                            baseColor: groupedData[0].color || "red"
+                            itemSize: 0.1
+
+                            onSelectedItemChanged: {
+                                if (selectedItem >= 0) {
+                                    var item = scatterListModel8.get(selectedItem);
+                                    var xAttr = scatterDataProxy8.xPosRole;
+                                    var yAttr = scatterDataProxy8.yPosRole;
+                                    var zAttr = scatterDataProxy8.zPosRole;
+
+                                    selectedName.text = "Name: " + (item.name || "N/A");
+                                    selectedCoords.text = "Coordinates: \n" +
+                                                          xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
+                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", \n" +
+                                                          zAttr + ": " + (item[zAttr] || "N/A");
+                                    selectedImage.source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
+                                } else {
+                                    selectedName.text = "Name: None";
+                                    selectedCoords.text = "Coordinates: (N/A, N/A, N/A)";
+                                    selectedImage.source = "";
+                                }
+                            }
+                        }
+
+                        Scatter3DSeries {
+                            id: scatterSeries9
+                            ItemModelScatterDataProxy {
+                                id: scatterDataProxy9
+                                itemModel: scatterListModel9
+                                xPosRole: "x"
+                                yPosRole: "y"
+                                zPosRole: "z"
+                            }
+                            baseColor: groupedData[0].color || "red"
+                            itemSize: 0.1
+
+                            onSelectedItemChanged: {
+                                if (selectedItem >= 0) {
+                                    var item = scatterListModel9.get(selectedItem);
+                                    var xAttr = scatterDataProxy9.xPosRole;
+                                    var yAttr = scatterDataProxy9.yPosRole;
+                                    var zAttr = scatterDataProxy9.zPosRole;
 
                                     selectedName.text = "Name: " + (item.name || "N/A");
                                     selectedCoords.text = "Coordinates: \n" +
