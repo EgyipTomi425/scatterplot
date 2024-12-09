@@ -16,7 +16,7 @@ ApplicationWindow {
 
     property var scatterDataModel: ListModel {}
     property var uniqueValues: []
-    property var groupedData: ["3","2"]
+    property var groupedData: []
 
     ListModel {
         id: scatterDataModel
@@ -98,15 +98,23 @@ ApplicationWindow {
                             var selectedAttributes = getSelectedAttributes();
                             if (selectedAttributes.length === 3) {
                                 scatter.orthoProjection = false;
+
                                 scatterDataProxy.xPosRole = selectedAttributes[0];
                                 scatterDataProxy.yPosRole = selectedAttributes[1];
                                 scatterDataProxy.zPosRole = selectedAttributes[2];
+
+                                scatterDataProxy0.xPosRole = selectedAttributes[0];
+                                scatterDataProxy0.yPosRole = selectedAttributes[1];
+                                scatterDataProxy0.zPosRole = selectedAttributes[2];
+
                                 console.log("Updated Scatter3D with: " + selectedAttributes);
                             } else if (selectedAttributes.length === 2) {
                                 scatter.orthoProjection = true;
+
                                 scatterDataProxy.xPosRole = selectedAttributes[0];
                                 scatterDataProxy.yPosRole = selectedAttributes[1];
                                 scatterDataProxy.zPosRole = "z";
+
                                 console.log("Updated Scatter3D with two attributes. Z set to 0.");
                                 scatterDataProxy.setItemDataFunction = function (index, item) {
                                     item["z"] = 0;
@@ -163,7 +171,7 @@ ApplicationWindow {
                                 zPosRole: "z"
                             }
                             baseColor: "blue"
-                            itemSize: 0.1
+                            itemSize: 0.09
 
                             onSelectedItemChanged: {
                                 if (selectedItem >= 0) {
@@ -185,6 +193,41 @@ ApplicationWindow {
                                 }
                             }
                         }
+
+                        Scatter3DSeries {
+                            id: scatterSeries0
+                            ItemModelScatterDataProxy {
+                                id: scatterDataProxy0
+                                itemModel: scatterListModel
+                                xPosRole: "x"
+                                yPosRole: "y"
+                                zPosRole: "z"
+                            }
+                            baseColor: groupedData[0].color || "red"
+                            itemSize: 0.1
+
+                            onSelectedItemChanged: {
+                                if (selectedItem >= 0) {
+                                    var item = scatterListModel.get(selectedItem);
+                                    var xAttr = scatterDataProxy0.xPosRole;
+                                    var yAttr = scatterDataProxy0.yPosRole;
+                                    var zAttr = scatterDataProxy0.zPosRole;
+
+                                    selectedName.text = "Name: " + (item.name || "N/A");
+                                    selectedCoords.text = "Coordinates: \n" +
+                                                          xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
+                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", \n" +
+                                                          zAttr + ": " + (item[zAttr] || "N/A");
+                                    selectedImage.source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
+                                } else {
+                                    selectedName.text = "Name: None";
+                                    selectedCoords.text = "Coordinates: (N/A, N/A, N/A)";
+                                    selectedImage.source = "";
+                                }
+                            }
+                        }
+
+                        // Már nincs jobb ötletem, mert se dinamikusan, sem repeaterrel nem engedi kretálni...
                     }
 
                     Slider {
@@ -259,6 +302,38 @@ ApplicationWindow {
         }
     }
 
+    ListModel {id: scatterListModel}
+    ListModel {id: scatterListModel0}
+    ListModel {id: scatterListModel1}
+    ListModel {id: scatterListModel2}
+    ListModel {id: scatterListModel3}
+    ListModel {id: scatterListModel4}
+    ListModel {id: scatterListModel5}
+    ListModel {id: scatterListModel6}
+    ListModel {id: scatterListModel7}
+    ListModel {id: scatterListModel8}
+    ListModel {id: scatterListModel9}
+
+    function convertToListModel(dataArray, targetModel) {
+        for (var i = 0; i < dataArray.length; i++) {
+            var item = dataArray[i];
+
+            var element = {};
+            for (var key in item) {
+                if (item[key] !== undefined) {
+                    element[key] = item[key];
+                }
+            }
+
+            targetModel.append(element);
+        }
+
+        for (var i = 0; i < targetModel.count; i++) {
+            var element = targetModel.get(i);
+            console.log("Elem " + i + ": " + JSON.stringify(element));
+        }
+    }
+
     function createCheckboxesForNumericAttributes() {
         checkboxLayout.children.forEach(function (child) {
             child.destroy();
@@ -285,7 +360,7 @@ ApplicationWindow {
     }
 
     function setupScatterPlots() {
-
+        convertToListModel(groupedData[0].data, scatterListModel);
     }
 
     function getSelectedAttributes() {
