@@ -704,46 +704,60 @@ ApplicationWindow {
             height: (/*scatterSeries.selectedItem < 0 ? 0 : */(parent.width > parent.height ? parent.height : parent.height * 0.4))
             visible: true//scatterSeries.selectedItem >= 0
 
-            Column {
+            Flow {
+                id: dataRectFlow
                 anchors.fill: parent
 
-                Rectangle {
-                    width: parent.width
-                    height: parent.height * 0.8
-                    color: "#000000"
 
-                    Image {
-                        id: selectedImage
-                        width: parent.width
-                        height: parent.height
-                        fillMode: Image.PreserveAspectFit
-                        visible: true//scatterSeries.selectedItem >= 0
-                    }
-                }
+                Repeater {
+                    model: [1,2,3,4]
+                    delegate: Item {
+                        width: 350
+                        height: 350
 
-                Rectangle {
-                    width: parent.width
-                    height: parent.height * 0.2
-                    color: "#404040"
+                        Column {
+                            anchors.fill: parent
 
-                    Column {
-                        anchors.centerIn: parent
-                        spacing: 10
+                            Rectangle {
+                                width: parent.width
+                                height: parent.height * 0.8
+                                color: "#000000"
 
-                        Text {
-                            id: selectedName
-                            text: "Name: None"
-                            color: "white"
-                            font.pixelSize: 18
-                            visible: true//scatterSeries.selectedItem >= 0
-                        }
+                                Image {
+                                    id: selectedImage
+                                    width: parent.width
+                                    height: parent.height
+                                    fillMode: Image.PreserveAspectFit
+                                    visible: true//scatterSeries.selectedItem >= 0
+                                }
+                            }
 
-                        Text {
-                            id: selectedCoords
-                            text: "Coordinates: (N/A, N/A, N/A)"
-                            color: "white"
-                            font.pixelSize: 18
-                            visible: true//scatterSeries.selectedItem >= 0
+                            Rectangle {
+                                width: parent.width
+                                height: parent.height * 0.2
+                                color: "#404040"
+
+                                Column {
+                                    anchors.centerIn: parent
+                                    spacing: 10
+
+                                    Text {
+                                        id: selectedName
+                                        text: "Name: None"
+                                        color: "white"
+                                        font.pixelSize: 12
+                                        visible: true//scatterSeries.selectedItem >= 0
+                                    }
+
+                                    Text {
+                                        id: selectedCoords
+                                        text: "Coordinates: (N/A, N/A, N/A)"
+                                        color: "white"
+                                        font.pixelSize: 12
+                                        visible: true//scatterSeries.selectedItem >= 0
+                                    }
+                                }
+                            }
                         }
                     }
                 }
