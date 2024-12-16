@@ -19,6 +19,8 @@ ApplicationWindow {
     property var groupedData: []
 
     property var scatterPlotMask: [1,1,1,1,1,1,1,1,1,1]
+    property var plotPictureIndexes: [0]
+
 
     ListModel {
         id: scatterDataModel
@@ -637,8 +639,9 @@ ApplicationWindow {
                     }
 
                     Slider {
-                        width: 400
-                        height: 50
+                        id: scatterSizeSlider
+                        width: parent.width / 3
+                        height: parent.height / 15
                         anchors.top: scatter.top
                         anchors.right: scatter.right
                         anchors.margins: 10
@@ -661,8 +664,35 @@ ApplicationWindow {
                             scatterPlotMask[8] === 0 ? scatterSeries8.itemSize = 0.000001 : scatterSeries8.itemSize = value;
                             scatterPlotMask[9] === 0 ? scatterSeries9.itemSize = 0.000001 : scatterSeries9.itemSize = value;
                         }
-                    }
 
+                        ComboBox {
+                            id: numberSelectionComboBox
+                            width: parent.parent.width / 30
+                            height: parent.parent.width / 25
+                            x: parent.width - parent.parent.width / 30
+                            y: parent.height
+
+                            model: ListModel {
+                                ListElement { number: 1 }
+                                ListElement { number: 2 }
+                                ListElement { number: 3 }
+                                ListElement { number: 4 }
+                                ListElement { number: 5 }
+                                ListElement { number: 6 }
+                                ListElement { number: 7 }
+                                ListElement { number: 8 }
+                            }
+
+                            onCurrentIndexChanged: {
+                                var selectedNumber = model.get(numberSelectionComboBox.currentIndex).number;
+                                plotPictureIndexes = []
+                                for (var i = 0; i < selectedNumber; i++) {
+                                    plotPictureIndexes.push(-1);
+                                }
+                                console.log("Updated size of picture indexes: " + plotPictureIndexes.length);
+                            }
+                        }
+                    }
                 }
             }
         }
