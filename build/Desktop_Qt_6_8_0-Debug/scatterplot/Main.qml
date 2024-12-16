@@ -19,7 +19,7 @@ ApplicationWindow {
     property var groupedData: []
 
     property var scatterPlotMask: [1,1,1,1,1,1,1,1,1,1]
-    property var plotPictureIndexes: [0]
+    property var plotPictureIndexes: [1,2,3,4]
 
 
     ListModel {
@@ -689,6 +689,7 @@ ApplicationWindow {
                                 for (var i = 0; i < selectedNumber; i++) {
                                     plotPictureIndexes.push(-1);
                                 }
+                                plotPictureIndexes = plotPictureIndexes.slice();
                                 console.log("Updated size of picture indexes: " + plotPictureIndexes.length);
                             }
                         }
@@ -706,14 +707,24 @@ ApplicationWindow {
 
             Flow {
                 id: dataRectFlow
-                anchors.fill: parent
+                    anchors.fill: parent
 
+                    // Sorok számának meghatározása (felfelé kerekített négyzetgyök)
+                    property int rows: Math.ceil(Math.sqrt(plotPictureIndexes.length))
 
-                Repeater {
-                    model: [1,2,3,4]
-                    delegate: Item {
-                        width: 350
-                        height: 350
+                    // Oszlopok számának meghatározása az oszlopok számára szükséges hely elosztásával
+                    property int columns: Math.ceil(plotPictureIndexes.length / rows)
+
+                    // Kiszámítjuk a téglalapok maximális szélességét és magasságát
+                    property real rectangleWidth: parent.width / columns
+                    property real rectangleHeight: parent.height / rows
+
+                    Repeater {
+                        model: plotPictureIndexes
+
+                        delegate: Item {
+                            width: dataRectFlow.rectangleWidth
+                            height: dataRectFlow.rectangleHeight
 
                         Column {
                             anchors.fill: parent
