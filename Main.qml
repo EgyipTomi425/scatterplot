@@ -18,6 +18,8 @@ ApplicationWindow {
     property var uniqueValues: []
     property var groupedData: []
 
+    property var scatterPlotMask: [1,1,1,1,1,1,1,1,1,1]
+
     ListModel {
         id: scatterDataModel
     }
@@ -763,6 +765,7 @@ ApplicationWindow {
                          Row {
                              spacing: 10;
                              width: parent.width;
+                             property int rowIndex: index
 
                              Rectangle {
                                  width: 20;
@@ -770,13 +773,35 @@ ApplicationWindow {
                                  color: model.color;
                                  border.color: "white";
                                  border.width: 1;
+
+                                 MouseArea {
+                                     id: rowClickAreaRect;
+                                     width: parent.width;
+                                     height: parent.height;
+
+                                     onClicked: {
+                                         scatterPlotMask[rowIndex] = scatterPlotMask[rowIndex] === 1 ? 0 : 1;
+                                         console.log(\`Row clicked: Index \${parent.parent.rowIndex} toggled to \${scatterPlotMask[parent.parent.rowIndex]}\`);
+                                     }
+                                 }
                              }
 
                              Text {
-                                 text: model.name + " (" + model.itemCount + ")";
+                                 text: model.name + " (" + model.itemCount + ") ";
                                  color: "white";
                                  font.pixelSize: 12;
                                  verticalAlignment: Text.AlignVCenter;
+
+                                 MouseArea {
+                                     id: rowClickAreaText;
+                                     width: parent.width;
+                                     height: parent.height;
+
+                                     onClicked: {
+                                         scatterPlotMask[rowIndex] = scatterPlotMask[rowIndex] === 1 ? 0 : 1;
+                                         console.log(\`Row clicked: Index \${parent.parent.rowIndex} toggled to \${scatterPlotMask[parent.parent.rowIndex]}\`);
+                                     }
+                                 }
                              }
                          }
                      }
