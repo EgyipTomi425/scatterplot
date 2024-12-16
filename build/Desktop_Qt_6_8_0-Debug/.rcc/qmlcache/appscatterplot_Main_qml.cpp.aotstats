@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 32,
-                        "durationMicroseconds": 226,
+                        "durationMicroseconds": 288,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "uniqueValues",
                         "line": 18
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 31,
-                        "durationMicroseconds": 130,
+                        "durationMicroseconds": 162,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "groupedData",
                         "line": 19
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 35,
-                        "durationMicroseconds": 722,
+                        "durationMicroseconds": 946,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "scatterPlotMask",
                         "line": 21
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 35,
-                        "durationMicroseconds": 188,
+                        "durationMicroseconds": 229,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "plotPictureMask",
                         "line": 22
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 3283,
+                        "durationMicroseconds": 5513,
                         "errorMessage": "Cannot generate efficient code for LoadClosure",
                         "functionName": "createCheckboxesForNumericAttributes",
                         "line": 783
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 13063,
+                        "durationMicroseconds": 21431,
                         "errorMessage": "Cannot generate efficient code for SetUnwindHandlerh",
                         "functionName": "setupScatterPlots",
                         "line": 808
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 5,
-                        "durationMicroseconds": 594,
+                        "durationMicroseconds": 1109,
                         "errorMessage": "",
                         "functionName": "createSummaryBox",
                         "line": 822
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 23,
+                        "durationMicroseconds": 42,
                         "errorMessage": "Instruction \"generate_StoreLocal\" not implemented",
                         "functionName": "getSelectedAttributes",
                         "line": 908
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 777,
+                        "durationMicroseconds": 1251,
                         "errorMessage": "cannot convert from QVariantList to QString",
                         "functionName": "getNonNumericAttributesFromModel",
                         "line": 919
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 81,
                         "errorMessage": "Cannot retrieve a non-object type by ID: coloringButton",
                         "functionName": "updateComboBoxModel",
                         "line": 934
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 297,
+                        "durationMicroseconds": 485,
                         "errorMessage": "function without return type annotation returns QString. This may prevent proper compilation to Cpp.",
                         "functionName": "randomColor",
                         "line": 954
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 2451,
+                        "durationMicroseconds": 3882,
                         "errorMessage": "Cannot generate efficient code for lookup in QJSValue",
                         "functionName": "printColorPairs",
                         "line": 962
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 101,
+                        "durationMicroseconds": 151,
                         "errorMessage": "function without return type annotation returns QJSValue. This may prevent proper compilation to Cpp.",
                         "functionName": "handlePlotPictureMask",
                         "line": 1019
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 1715,
+                        "durationMicroseconds": 2543,
                         "errorMessage": "QJSValue has no property called name",
                         "functionName": "randomizeColors",
                         "line": 1058
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 121,
+                        "durationMicroseconds": 183,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 34
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 20,
-                        "durationMicroseconds": 737,
+                        "durationMicroseconds": 1167,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 40
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 21,
-                        "durationMicroseconds": 714,
+                        "durationMicroseconds": 1210,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 41
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 102,
+                        "durationMicroseconds": 175,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 44
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 28,
-                        "durationMicroseconds": 150,
+                        "durationMicroseconds": 248,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 48
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 29,
-                        "durationMicroseconds": 242,
+                        "durationMicroseconds": 411,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 49
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 32,
-                        "durationMicroseconds": 1761,
+                        "durationMicroseconds": 2678,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 53
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 33,
-                        "durationMicroseconds": 193,
+                        "durationMicroseconds": 253,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 54
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 43,
-                        "durationMicroseconds": 112,
+                        "durationMicroseconds": 153,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 59
@@ -294,7 +294,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 28,
-                        "durationMicroseconds": 218,
+                        "durationMicroseconds": 264,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 251
@@ -302,7 +302,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 29,
-                        "durationMicroseconds": 336,
+                        "durationMicroseconds": 354,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 252
@@ -310,7 +310,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 32,
-                        "durationMicroseconds": 187,
+                        "durationMicroseconds": 211,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 256
@@ -318,7 +318,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 33,
-                        "durationMicroseconds": 170,
+                        "durationMicroseconds": 205,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 257
@@ -326,7 +326,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 52,
-                        "durationMicroseconds": 772,
+                        "durationMicroseconds": 875,
                         "errorMessage": "method handlePlotPictureMask cannot be resolved.",
                         "functionName": "onSelectedItemChanged",
                         "line": 297
@@ -334,7 +334,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 44,
-                        "durationMicroseconds": 186,
+                        "durationMicroseconds": 227,
                         "errorMessage": "",
                         "functionName": "itemModel",
                         "line": 289
@@ -342,7 +342,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 52,
-                        "durationMicroseconds": 668,
+                        "durationMicroseconds": 785,
                         "errorMessage": "method handlePlotPictureMask cannot be resolved.",
                         "functionName": "onSelectedItemChanged",
                         "line": 327
@@ -350,7 +350,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 44,
-                        "durationMicroseconds": 178,
+                        "durationMicroseconds": 193,
                         "errorMessage": "",
                         "functionName": "itemModel",
                         "line": 320
@@ -358,7 +358,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 52,
-                        "durationMicroseconds": 666,
+                        "durationMicroseconds": 722,
                         "errorMessage": "method handlePlotPictureMask cannot be resolved.",
                         "functionName": "onSelectedItemChanged",
                         "line": 357
@@ -374,7 +374,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 52,
-                        "durationMicroseconds": 704,
+                        "durationMicroseconds": 693,
                         "errorMessage": "method handlePlotPictureMask cannot be resolved.",
                         "functionName": "onSelectedItemChanged",
                         "line": 387
@@ -382,7 +382,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 44,
-                        "durationMicroseconds": 168,
+                        "durationMicroseconds": 187,
                         "errorMessage": "",
                         "functionName": "itemModel",
                         "line": 380
@@ -390,7 +390,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 52,
-                        "durationMicroseconds": 695,
+                        "durationMicroseconds": 746,
                         "errorMessage": "method handlePlotPictureMask cannot be resolved.",
                         "functionName": "onSelectedItemChanged",
                         "line": 417
@@ -398,7 +398,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 44,
-                        "durationMicroseconds": 186,
+                        "durationMicroseconds": 194,
                         "errorMessage": "",
                         "functionName": "itemModel",
                         "line": 410
@@ -406,7 +406,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 52,
-                        "durationMicroseconds": 625,
+                        "durationMicroseconds": 657,
                         "errorMessage": "method handlePlotPictureMask cannot be resolved.",
                         "functionName": "onSelectedItemChanged",
                         "line": 447
@@ -414,7 +414,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 44,
-                        "durationMicroseconds": 177,
+                        "durationMicroseconds": 185,
                         "errorMessage": "",
                         "functionName": "itemModel",
                         "line": 440
@@ -422,7 +422,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 52,
-                        "durationMicroseconds": 667,
+                        "durationMicroseconds": 704,
                         "errorMessage": "method handlePlotPictureMask cannot be resolved.",
                         "functionName": "onSelectedItemChanged",
                         "line": 477
@@ -430,7 +430,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 44,
-                        "durationMicroseconds": 190,
+                        "durationMicroseconds": 179,
                         "errorMessage": "",
                         "functionName": "itemModel",
                         "line": 470
@@ -446,7 +446,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 52,
-                        "durationMicroseconds": 730,
+                        "durationMicroseconds": 731,
                         "errorMessage": "method handlePlotPictureMask cannot be resolved.",
                         "functionName": "onSelectedItemChanged",
                         "line": 507
@@ -454,7 +454,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 52,
-                        "durationMicroseconds": 639,
+                        "durationMicroseconds": 730,
                         "errorMessage": "method handlePlotPictureMask cannot be resolved.",
                         "functionName": "onSelectedItemChanged",
                         "line": 537
@@ -462,7 +462,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 44,
-                        "durationMicroseconds": 175,
+                        "durationMicroseconds": 264,
                         "errorMessage": "",
                         "functionName": "itemModel",
                         "line": 530
@@ -470,7 +470,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 52,
-                        "durationMicroseconds": 609,
+                        "durationMicroseconds": 768,
                         "errorMessage": "method handlePlotPictureMask cannot be resolved.",
                         "functionName": "onSelectedItemChanged",
                         "line": 567
@@ -478,7 +478,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 44,
-                        "durationMicroseconds": 160,
+                        "durationMicroseconds": 208,
                         "errorMessage": "",
                         "functionName": "itemModel",
                         "line": 560
@@ -486,7 +486,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 52,
-                        "durationMicroseconds": 633,
+                        "durationMicroseconds": 728,
                         "errorMessage": "method handlePlotPictureMask cannot be resolved.",
                         "functionName": "onSelectedItemChanged",
                         "line": 597
@@ -494,7 +494,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 44,
-                        "durationMicroseconds": 166,
+                        "durationMicroseconds": 226,
                         "errorMessage": "",
                         "functionName": "itemModel",
                         "line": 590
@@ -582,7 +582,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 20,
-                        "durationMicroseconds": 941,
+                        "durationMicroseconds": 1352,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 682
@@ -590,7 +590,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 21,
-                        "durationMicroseconds": 847,
+                        "durationMicroseconds": 1316,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 683
@@ -598,7 +598,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 36,
-                        "durationMicroseconds": 121,
+                        "durationMicroseconds": 211,
                         "errorMessage": "Cannot access value for name plotPictureMask",
                         "functionName": "rows",
                         "line": 690
@@ -606,7 +606,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 39,
-                        "durationMicroseconds": 70,
+                        "durationMicroseconds": 118,
                         "errorMessage": "Cannot access value for name plotPictureMask",
                         "functionName": "columns",
                         "line": 691
@@ -614,7 +614,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 47,
-                        "durationMicroseconds": 346,
+                        "durationMicroseconds": 555,
                         "errorMessage": "",
                         "functionName": "rectangleWidth",
                         "line": 692
@@ -622,7 +622,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 48,
-                        "durationMicroseconds": 305,
+                        "durationMicroseconds": 509,
                         "errorMessage": "",
                         "functionName": "rectangleHeight",
                         "line": 693
@@ -630,7 +630,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 126,
+                        "durationMicroseconds": 195,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 688
@@ -638,7 +638,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 49,
+                        "durationMicroseconds": 94,
                         "errorMessage": "Cannot access value for name plotPictureMask",
                         "functionName": "model",
                         "line": 696
@@ -646,7 +646,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 32,
-                        "durationMicroseconds": 41,
+                        "durationMicroseconds": 77,
                         "errorMessage": "Cannot access value for name dataRectFlow",
                         "functionName": "width",
                         "line": 699
@@ -654,7 +654,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 33,
-                        "durationMicroseconds": 33,
+                        "durationMicroseconds": 61,
                         "errorMessage": "Cannot access value for name dataRectFlow",
                         "functionName": "height",
                         "line": 700
@@ -662,7 +662,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 43,
-                        "durationMicroseconds": 110,
+                        "durationMicroseconds": 186,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 703
@@ -670,7 +670,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 40,
-                        "durationMicroseconds": 168,
+                        "durationMicroseconds": 310,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 706
@@ -678,7 +678,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 41,
-                        "durationMicroseconds": 273,
+                        "durationMicroseconds": 549,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 707
@@ -686,7 +686,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 44,
-                        "durationMicroseconds": 152,
+                        "durationMicroseconds": 302,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 712
@@ -694,7 +694,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 45,
-                        "durationMicroseconds": 145,
+                        "durationMicroseconds": 234,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 713
@@ -702,7 +702,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 47,
-                        "durationMicroseconds": 137,
+                        "durationMicroseconds": 213,
                         "errorMessage": "",
                         "functionName": "fillMode",
                         "line": 714
@@ -710,7 +710,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 40,
-                        "durationMicroseconds": 153,
+                        "durationMicroseconds": 425,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 720
@@ -718,7 +718,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 41,
-                        "durationMicroseconds": 278,
+                        "durationMicroseconds": 654,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 721
@@ -726,7 +726,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 55,
-                        "durationMicroseconds": 99,
+                        "durationMicroseconds": 269,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 725
@@ -782,7 +782,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 20,
-                        "durationMicroseconds": 175,
+                        "durationMicroseconds": 369,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 1076
@@ -790,7 +790,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 21,
-                        "durationMicroseconds": 144,
+                        "durationMicroseconds": 273,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 1077
@@ -798,7 +798,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 24,
-                        "durationMicroseconds": 163,
+                        "durationMicroseconds": 254,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 1081
@@ -806,7 +806,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 25,
-                        "durationMicroseconds": 269,
+                        "durationMicroseconds": 444,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 1082
@@ -814,7 +814,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 54,
+                        "durationMicroseconds": 108,
                         "errorMessage": "Cannot access value for name uniqueValues",
                         "functionName": "model",
                         "line": 1086
@@ -822,7 +822,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 32,
-                        "durationMicroseconds": 699,
+                        "durationMicroseconds": 985,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 1088
@@ -830,7 +830,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 33,
-                        "durationMicroseconds": 646,
+                        "durationMicroseconds": 846,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 1089
@@ -838,7 +838,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 36,
-                        "durationMicroseconds": 157,
+                        "durationMicroseconds": 207,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 1092
@@ -846,7 +846,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 37,
-                        "durationMicroseconds": 140,
+                        "durationMicroseconds": 184,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 1093
@@ -854,7 +854,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 47,
-                        "durationMicroseconds": 95,
+                        "durationMicroseconds": 133,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 1097
@@ -862,7 +862,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 45,
-                        "durationMicroseconds": 277,
+                        "durationMicroseconds": 350,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 1100
@@ -870,7 +870,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 44,
-                        "durationMicroseconds": 159,
+                        "durationMicroseconds": 185,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 1101
@@ -878,7 +878,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 47,
-                        "durationMicroseconds": 496,
+                        "durationMicroseconds": 641,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "text",
                         "line": 1105
@@ -886,7 +886,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 59,
-                        "durationMicroseconds": 109,
+                        "durationMicroseconds": 139,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 1104
@@ -894,7 +894,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 45,
-                        "durationMicroseconds": 278,
+                        "durationMicroseconds": 355,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 1112
@@ -902,7 +902,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 44,
-                        "durationMicroseconds": 146,
+                        "durationMicroseconds": 185,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 1113
@@ -910,7 +910,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 48,
-                        "durationMicroseconds": 157,
+                        "durationMicroseconds": 188,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 1116
@@ -918,7 +918,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 49,
-                        "durationMicroseconds": 147,
+                        "durationMicroseconds": 185,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 1117
@@ -926,7 +926,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 74,
-                        "durationMicroseconds": 336,
+                        "durationMicroseconds": 381,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "associatedName",
                         "line": 1119
@@ -934,7 +934,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 48,
-                        "durationMicroseconds": 374,
+                        "durationMicroseconds": 443,
                         "errorMessage": "method findColorByName cannot be resolved.",
                         "functionName": "color",
                         "line": 1131
@@ -942,7 +942,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 59,
-                        "durationMicroseconds": 106,
+                        "durationMicroseconds": 125,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 1118
@@ -950,7 +950,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 56,
-                        "durationMicroseconds": 91,
+                        "durationMicroseconds": 137,
                         "errorMessage": "Cannot access value for name colorDialog",
                         "functionName": "onClicked",
                         "line": 1126
@@ -958,7 +958,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 59,
-                        "durationMicroseconds": 104,
+                        "durationMicroseconds": 133,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 1125
@@ -966,7 +966,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 24,
-                        "durationMicroseconds": 163,
+                        "durationMicroseconds": 212,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 1141
@@ -974,7 +974,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 25,
-                        "durationMicroseconds": 294,
+                        "durationMicroseconds": 372,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 1142
@@ -982,7 +982,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 43,
-                        "durationMicroseconds": 248,
+                        "durationMicroseconds": 327,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 1144
@@ -990,7 +990,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 33,
-                        "durationMicroseconds": 248,
+                        "durationMicroseconds": 307,
                         "errorMessage": "",
                         "functionName": "bottom",
                         "line": 1145
@@ -998,7 +998,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 88,
+                        "durationMicroseconds": 125,
                         "errorMessage": "Cannot retrieve a non-object type by ID: colorMappingSaveButton",
                         "functionName": "width",
                         "line": 1149
@@ -1006,7 +1006,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 29,
-                        "durationMicroseconds": 160,
+                        "durationMicroseconds": 229,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 1150
@@ -1038,7 +1038,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 29,
-                        "durationMicroseconds": 5637,
+                        "durationMicroseconds": 7742,
                         "errorMessage": "QJSValue has no property called name",
                         "functionName": "onAccepted",
                         "line": 1194

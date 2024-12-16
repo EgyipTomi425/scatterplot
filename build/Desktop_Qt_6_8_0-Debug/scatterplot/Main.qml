@@ -82,7 +82,7 @@ ApplicationWindow {
                         width: (parent.parent.width > parent.parent.height ? parent.height : 0.5 * parent.height)
                         height: parent.height
                         onClicked: {
-                            var testData = csvReader.readCsv("/home/kecyke/Letöltések/project/data_with_bmi_and_category.csv");
+                            var testData = csvReader.readCsv("/home/kecyke/qt/scatterplot/project/data_with_bmi_and_category.csv");
                             scatterDataModel.clear();
                             testData.forEach(function (item, index) {
                                 scatterDataModel.append(item);
@@ -308,7 +308,7 @@ ApplicationWindow {
                                                           xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
                                                           yAttr + ": " + (item[yAttr] || "N/A") + ", " +
                                                           zAttr + ": " + (item[zAttr] || "N/A");
-                                    dataRectFlow.children[indexToModify].children[0].children[0].children[0].source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
+                                    dataRectFlow.children[indexToModify].children[0].children[0].children[0].source = "file:///home/kecyke/qt/scatterplot/project/data/images/" + (item.id + "_fat.png" || "");
                                 }
                             }
                         }
@@ -338,7 +338,7 @@ ApplicationWindow {
                                                           xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
                                                           yAttr + ": " + (item[yAttr] || "N/A") + ", " +
                                                           zAttr + ": " + (item[zAttr] || "N/A");
-                                    dataRectFlow.children[indexToModify].children[0].children[0].children[0].source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
+                                    dataRectFlow.children[indexToModify].children[0].children[0].children[0].source = "file:///home/kecyke/qt/scatterplot/project/data/images/" + (item.id + "_fat.png" || "");
                                 }
                             }
                         }
@@ -368,7 +368,7 @@ ApplicationWindow {
                                                           xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
                                                           yAttr + ": " + (item[yAttr] || "N/A") + ", " +
                                                           zAttr + ": " + (item[zAttr] || "N/A");
-                                    dataRectFlow.children[indexToModify].children[0].children[0].children[0].source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
+                                    dataRectFlow.children[indexToModify].children[0].children[0].children[0].source = "file:///home/kecyke/qt/scatterplot/project/data/images/" + (item.id + "_fat.png" || "");
                                 }
                             }
                         }
@@ -398,7 +398,7 @@ ApplicationWindow {
                                                           xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
                                                           yAttr + ": " + (item[yAttr] || "N/A") + ", " +
                                                           zAttr + ": " + (item[zAttr] || "N/A");
-                                    dataRectFlow.children[indexToModify].children[0].children[0].children[0].source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
+                                    dataRectFlow.children[indexToModify].children[0].children[0].children[0].source = "file:///home/kecyke/qt/scatterplot/project/data/images/" + (item.id + "_fat.png" || "");
                                 }
                             }
                         }
@@ -428,7 +428,7 @@ ApplicationWindow {
                                                           xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
                                                           yAttr + ": " + (item[yAttr] || "N/A") + ", " +
                                                           zAttr + ": " + (item[zAttr] || "N/A");
-                                    dataRectFlow.children[indexToModify].children[0].children[0].children[0].source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
+                                    dataRectFlow.children[indexToModify].children[0].children[0].children[0].source = "file:///home/kecyke/qt/scatterplot/project/data/images/" + (item.id + "_fat.png" || "");
                                 }
                             }
                         }
@@ -458,7 +458,7 @@ ApplicationWindow {
                                                           xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
                                                           yAttr + ": " + (item[yAttr] || "N/A") + ", " +
                                                           zAttr + ": " + (item[zAttr] || "N/A");
-                                    dataRectFlow.children[indexToModify].children[0].children[0].children[0].source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
+                                    dataRectFlow.children[indexToModify].children[0].children[0].children[0].source = "file:///home/kecyke/qt/scatterplot/project/data/images/" + (item.id + "_fat.png" || "");
                                 }
                             }
                         }
@@ -488,7 +488,7 @@ ApplicationWindow {
                                                           xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
                                                           yAttr + ": " + (item[yAttr] || "N/A") + ", " +
                                                           zAttr + ": " + (item[zAttr] || "N/A");
-                                    dataRectFlow.children[indexToModify].children[0].children[0].children[0].source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
+                                    dataRectFlow.children[indexToModify].children[0].children[0].children[0].source = "file:///home/kecyke/qt/scatterplot/project/data/images/" + (item.id + "_fat.png" || "");
                                 }
                             }
                         }
@@ -518,7 +518,7 @@ ApplicationWindow {
                                                           xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
                                                           yAttr + ": " + (item[yAttr] || "N/A") + ", " +
                                                           zAttr + ": " + (item[zAttr] || "N/A");
-                                    dataRectFlow.children[indexToModify].children[0].children[0].children[0].source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
+                                    dataRectFlow.children[indexToModify].children[0].children[0].children[0].source = "file:///home/kecyke/qt/scatterplot/project/data/images/" + (item.id + "_fat.png" || "");
                                 }
                             }
                         }
@@ -548,7 +548,7 @@ ApplicationWindow {
                                                           xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
                                                           yAttr + ": " + (item[yAttr] || "N/A") + ", " +
                                                           zAttr + ": " + (item[zAttr] || "N/A");
-                                    dataRectFlow.children[indexToModify].children[0].children[0].children[0].source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
+                                    dataRectFlow.children[indexToModify].children[0].children[0].children[0].source = "file:///home/kecyke/qt/scatterplot/project/data/images/" + (item.id + "_fat.png" || "");
                                 }
                             }
                         }
@@ -578,7 +578,7 @@ ApplicationWindow {
                                                           xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
                                                           yAttr + ": " + (item[yAttr] || "N/A") + ", " +
                                                           zAttr + ": " + (item[zAttr] || "N/A");
-                                    dataRectFlow.children[indexToModify].children[0].children[0].children[0].source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
+                                    dataRectFlow.children[indexToModify].children[0].children[0].children[0].source = "file:///home/kecyke/qt/scatterplot/project/data/images/" + (item.id + "_fat.png" || "");
                                 }
                             }
                         }
@@ -608,7 +608,7 @@ ApplicationWindow {
                                                           xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
                                                           yAttr + ": " + (item[yAttr] || "N/A") + ", " +
                                                           zAttr + ": " + (item[zAttr] || "N/A");
-                                    dataRectFlow.children[indexToModify].children[0].children[0].children[0].source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
+                                    dataRectFlow.children[indexToModify].children[0].children[0].children[0].source = "file:///home/kecyke/qt/scatterplot/project/data/images/" + (item.id + "_fat.png" || "");
                                 }
                             }
                         }
