@@ -168,41 +168,62 @@ ApplicationWindow {
                                 }
 
                                 console.log("Updated Scatter3D with: " + selectedAttributes);
+
                             } else if (selectedAttributes.length === 2) {
                                 scatter.orthoProjection = true;
 
-                                scatterDataProxy.xPosRole = selectedAttributes[0];
-                                scatterDataProxy.yPosRole = selectedAttributes[1];
+                                if (allSelected) {
+                                    scatterDataProxy.xPosRole = selectedAttributes[0];
+                                    scatterDataProxy.yPosRole = selectedAttributes[1];
+                                    scatterDataProxy.zPosRole = selectedAttributes[2];
+                                }
 
-                                scatterDataProxy0.xPosRole = selectedAttributes[0];
-                                scatterDataProxy0.yPosRole = selectedAttributes[1];
-
-                                scatterDataProxy1.xPosRole = selectedAttributes[0];
-                                scatterDataProxy1.yPosRole = selectedAttributes[1];
-
-                                scatterDataProxy2.xPosRole = selectedAttributes[0];
-                                scatterDataProxy2.yPosRole = selectedAttributes[1];
-
-                                scatterDataProxy3.xPosRole = selectedAttributes[0];
-                                scatterDataProxy3.yPosRole = selectedAttributes[1];
-
-                                scatterDataProxy4.xPosRole = selectedAttributes[0];
-                                scatterDataProxy4.yPosRole = selectedAttributes[1];
-
-                                scatterDataProxy5.xPosRole = selectedAttributes[0];
-                                scatterDataProxy5.yPosRole = selectedAttributes[1];
-
-                                scatterDataProxy6.xPosRole = selectedAttributes[0];
-                                scatterDataProxy6.yPosRole = selectedAttributes[1];
-
-                                scatterDataProxy7.xPosRole = selectedAttributes[0];
-                                scatterDataProxy7.yPosRole = selectedAttributes[1];
-
-                                scatterDataProxy8.xPosRole = selectedAttributes[0];
-                                scatterDataProxy8.yPosRole = selectedAttributes[1];
-
-                                scatterDataProxy9.xPosRole = selectedAttributes[0];
-                                scatterDataProxy9.yPosRole = selectedAttributes[1];
+                                for (var i = 0; i < scatterPlotMask.length; i++) {
+                                    if (scatterPlotMask[i] === 1) {
+                                        switch(i) {
+                                            case 0:
+                                                scatterDataProxy0.xPosRole = selectedAttributes[0];
+                                                scatterDataProxy0.yPosRole = selectedAttributes[1];
+                                                break;
+                                            case 1:
+                                                scatterDataProxy1.xPosRole = selectedAttributes[0];
+                                                scatterDataProxy1.yPosRole = selectedAttributes[1];
+                                                break;
+                                            case 2:
+                                                scatterDataProxy2.xPosRole = selectedAttributes[0];
+                                                scatterDataProxy2.yPosRole = selectedAttributes[1];
+                                                break;
+                                            case 3:
+                                                scatterDataProxy3.xPosRole = selectedAttributes[0];
+                                                scatterDataProxy3.yPosRole = selectedAttributes[1];
+                                                break;
+                                            case 4:
+                                                scatterDataProxy4.xPosRole = selectedAttributes[0];
+                                                scatterDataProxy4.yPosRole = selectedAttributes[1];
+                                                break;
+                                            case 5:
+                                                scatterDataProxy5.xPosRole = selectedAttributes[0];
+                                                scatterDataProxy5.yPosRole = selectedAttributes[1];
+                                                break;
+                                            case 6:
+                                                scatterDataProxy6.xPosRole = selectedAttributes[0];
+                                                scatterDataProxy6.yPosRole = selectedAttributes[1];
+                                                break;
+                                            case 7:
+                                                scatterDataProxy7.xPosRole = selectedAttributes[0];
+                                                scatterDataProxy7.yPosRole = selectedAttributes[1];
+                                                break;
+                                            case 8:
+                                                scatterDataProxy8.xPosRole = selectedAttributes[0];
+                                                scatterDataProxy8.yPosRole = selectedAttributes[1];
+                                                break;
+                                            case 9:
+                                                scatterDataProxy9.xPosRole = selectedAttributes[0];
+                                                scatterDataProxy9.yPosRole = selectedAttributes[1];
+                                                break;
+                                        }
+                                    }
+                                }
 
                                 console.log("Updated Scatter3D with two attributes.");
                             } else {
