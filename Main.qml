@@ -333,16 +333,12 @@ ApplicationWindow {
                                     var yAttr = scatterDataProxy0.yPosRole;
                                     var zAttr = scatterDataProxy0.zPosRole;
 
-                                    selectedName.text = "Name: " + (item.name || "N/A");
-                                    selectedCoords.text = "Coordinates: \n" +
+                                    dataRectFlow.children[0].children[0].children[1].children[0].children[0].text = "Name: " + (item.name || "N/A");
+                                    dataRectFlow.children[0].children[0].children[1].children[0].children[1].text = "Coordinates: " +
                                                           xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
-                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", \n" +
+                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", " +
                                                           zAttr + ": " + (item[zAttr] || "N/A");
-                                    selectedImage.source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
-                                } else {
-                                    selectedName.text = "Name: None";
-                                    selectedCoords.text = "Coordinates: (N/A, N/A, N/A)";
-                                    selectedImage.source = "";
+                                    dataRectFlow.children[0].children[0].children[0].children[0].source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
                                 }
                             }
                         }
@@ -365,16 +361,10 @@ ApplicationWindow {
                                     var yAttr = scatterDataProxy1.yPosRole;
                                     var zAttr = scatterDataProxy1.zPosRole;
 
-                                    selectedName.text = "Name: " + (item.name || "N/A");
-                                    selectedCoords.text = "Coordinates: \n" +
-                                                          xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
-                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", \n" +
-                                                          zAttr + ": " + (item[zAttr] || "N/A");
-                                    selectedImage.source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
-                                } else {
-                                    selectedName.text = "Name: None";
-                                    selectedCoords.text = "Coordinates: (N/A, N/A, N/A)";
-                                    selectedImage.source = "";
+                                    console.log(dataRectFlow.itemAt(0).children[1].children[0].text + "Szia");
+
+
+
                                 }
                             }
                         }
@@ -500,7 +490,7 @@ ApplicationWindow {
                                                           zAttr + ": " + (item[zAttr] || "N/A");
                                     selectedImage.source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
                                 } else {
-                                    selectedName.text = "Name: None";
+                                    dataRectFlow.children[0].children[0].children[1].children[0].children[0].text = "Name: None";
                                     selectedCoords.text = "Coordinates: (N/A, N/A, N/A)";
                                     selectedImage.source = "";
                                 }
@@ -621,16 +611,13 @@ ApplicationWindow {
                                     var yAttr = scatterDataProxy9.yPosRole;
                                     var zAttr = scatterDataProxy9.zPosRole;
 
-                                    selectedName.text = "Name: " + (item.name || "N/A");
-                                    selectedCoords.text = "Coordinates: \n" +
-                                                          xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
-                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", \n" +
-                                                          zAttr + ": " + (item[zAttr] || "N/A");
-                                    selectedImage.source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
-                                } else {
-                                    selectedName.text = "Name: None";
-                                    selectedCoords.text = "Coordinates: (N/A, N/A, N/A)";
-                                    selectedImage.source = "";
+                                    // Az első (nulladik) elem beállítása
+                                    dataRectFlow.itemAt(0).children[1].children[0].text = "Name: " + (item.name || "N/A");
+                                    dataRectFlow.itemAt(0).children[1].children[1].text = "Coordinates: \n" +
+                                                                                          xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
+                                                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", \n" +
+                                                                                          zAttr + ": " + (item[zAttr] || "N/A");
+                                    dataRectFlow.itemAt(0).children[0].children[0].source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
                                 }
                             }
                         }
@@ -707,29 +694,29 @@ ApplicationWindow {
 
             Flow {
                 id: dataRectFlow
-                    anchors.fill: parent
+                anchors.fill: parent
 
-                    property int rows: Math.ceil(Math.sqrt(plotPictureIndexes.length))
-                    property int columns: Math.ceil(plotPictureIndexes.length / rows)
-                    property real rectangleWidth: parent.width / columns
-                    property real rectangleHeight: parent.height / rows
+                property int rows: Math.ceil(Math.sqrt(plotPictureIndexes.length))
+                property int columns: Math.ceil(plotPictureIndexes.length / rows)
+                property real rectangleWidth: parent.width / columns
+                property real rectangleHeight: parent.height / rows
 
-                    Repeater {
-                        model: plotPictureIndexes
+                Repeater {
+                    model: plotPictureIndexes
 
-                        delegate: Item {
-                            width: dataRectFlow.rectangleWidth
-                            height: dataRectFlow.rectangleHeight
+                    delegate: Item {
+                        width: dataRectFlow.rectangleWidth
+                        height: dataRectFlow.rectangleHeight
 
                         Column {
                             anchors.fill: parent
 
-                            Rectangle {
+                            Rectangle { // dataRectFlow.children[0].children[0].children[0]
                                 width: parent.width
                                 height: parent.height * 0.8
                                 color: "#000000"
 
-                                Image {
+                                Image { // dataRectFlow.children[0].children[0].children[0].children[0]
                                     id: selectedImage
                                     width: parent.width
                                     height: parent.height
@@ -738,16 +725,16 @@ ApplicationWindow {
                                 }
                             }
 
-                            Rectangle {
+                            Rectangle { // dataRectFlow.children[0].children[0].children[1]
                                 width: parent.width
                                 height: parent.height * 0.2
                                 color: "#404040"
 
-                                Column {
+                                Column { // dataRectFlow.children[0].children[0].children[1].children[0]
                                     anchors.centerIn: parent
                                     spacing: 10
 
-                                    Text {
+                                    Text { // dataRectFlow.children[0].children[0].children[1].children[0].children[0]
                                         id: selectedName
                                         text: "Name: None"
                                         color: "white"
@@ -755,7 +742,7 @@ ApplicationWindow {
                                         visible: true//scatterSeries.selectedItem >= 0
                                     }
 
-                                    Text {
+                                    Text { // dataRectFlow.children[0].children[0].children[1].children[0].children[1]
                                         id: selectedCoords
                                         text: "Coordinates: (N/A, N/A, N/A)"
                                         color: "white"
