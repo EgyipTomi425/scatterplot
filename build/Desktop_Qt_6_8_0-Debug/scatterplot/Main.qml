@@ -19,7 +19,7 @@ ApplicationWindow {
     property var groupedData: []
 
     property var scatterPlotMask: [1,1,1,1,1,1,1,1,1,1]
-    property var plotPictureIndexes: [1,2,3,4]
+    property var plotPictureMask: [-1]
 
 
     ListModel {
@@ -301,16 +301,14 @@ ApplicationWindow {
                                     var yAttr = scatterDataProxy.yPosRole;
                                     var zAttr = scatterDataProxy.zPosRole;
 
-                                    selectedName.text = "Name: " + (item.name || "N/A");
-                                    selectedCoords.text = "Coordinates: \n" +
+                                    var indexToModify = handlePlotPictureMask();
+
+                                    dataRectFlow.children[indexToModify].children[0].children[1].children[0].children[0].text = "Name: " + (item.name || "N/A");
+                                    dataRectFlow.children[indexToModify].children[0].children[1].children[0].children[1].text = "Coordinates: " +
                                                           xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
-                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", \n" +
+                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", " +
                                                           zAttr + ": " + (item[zAttr] || "N/A");
-                                    selectedImage.source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
-                                } else {
-                                    selectedName.text = "Name: None";
-                                    selectedCoords.text = "Coordinates: (N/A, N/A, N/A)";
-                                    selectedImage.source = "";
+                                    dataRectFlow.children[indexToModify].children[0].children[0].children[0].source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
                                 }
                             }
                         }
@@ -333,12 +331,14 @@ ApplicationWindow {
                                     var yAttr = scatterDataProxy0.yPosRole;
                                     var zAttr = scatterDataProxy0.zPosRole;
 
-                                    dataRectFlow.children[0].children[0].children[1].children[0].children[0].text = "Name: " + (item.name || "N/A");
-                                    dataRectFlow.children[0].children[0].children[1].children[0].children[1].text = "Coordinates: " +
+                                    var indexToModify = handlePlotPictureMask();
+
+                                    dataRectFlow.children[indexToModify].children[0].children[1].children[0].children[0].text = "Name: " + (item.name || "N/A");
+                                    dataRectFlow.children[indexToModify].children[0].children[1].children[0].children[1].text = "Coordinates: " +
                                                           xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
                                                           yAttr + ": " + (item[yAttr] || "N/A") + ", " +
                                                           zAttr + ": " + (item[zAttr] || "N/A");
-                                    dataRectFlow.children[0].children[0].children[0].children[0].source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
+                                    dataRectFlow.children[indexToModify].children[0].children[0].children[0].source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
                                 }
                             }
                         }
@@ -361,10 +361,14 @@ ApplicationWindow {
                                     var yAttr = scatterDataProxy1.yPosRole;
                                     var zAttr = scatterDataProxy1.zPosRole;
 
-                                    console.log(dataRectFlow.itemAt(0).children[1].children[0].text + "Szia");
+                                    var indexToModify = handlePlotPictureMask();
 
-
-
+                                    dataRectFlow.children[indexToModify].children[0].children[1].children[0].children[0].text = "Name: " + (item.name || "N/A");
+                                    dataRectFlow.children[indexToModify].children[0].children[1].children[0].children[1].text = "Coordinates: " +
+                                                          xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
+                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", " +
+                                                          zAttr + ": " + (item[zAttr] || "N/A");
+                                    dataRectFlow.children[indexToModify].children[0].children[0].children[0].source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
                                 }
                             }
                         }
@@ -387,16 +391,14 @@ ApplicationWindow {
                                     var yAttr = scatterDataProxy2.yPosRole;
                                     var zAttr = scatterDataProxy2.zPosRole;
 
-                                    selectedName.text = "Name: " + (item.name || "N/A");
-                                    selectedCoords.text = "Coordinates: \n" +
+                                    var indexToModify = handlePlotPictureMask();
+
+                                    dataRectFlow.children[indexToModify].children[0].children[1].children[0].children[0].text = "Name: " + (item.name || "N/A");
+                                    dataRectFlow.children[indexToModify].children[0].children[1].children[0].children[1].text = "Coordinates: " +
                                                           xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
-                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", \n" +
+                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", " +
                                                           zAttr + ": " + (item[zAttr] || "N/A");
-                                    selectedImage.source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
-                                } else {
-                                    selectedName.text = "Name: None";
-                                    selectedCoords.text = "Coordinates: (N/A, N/A, N/A)";
-                                    selectedImage.source = "";
+                                    dataRectFlow.children[indexToModify].children[0].children[0].children[0].source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
                                 }
                             }
                         }
@@ -419,16 +421,14 @@ ApplicationWindow {
                                     var yAttr = scatterDataProxy3.yPosRole;
                                     var zAttr = scatterDataProxy3.zPosRole;
 
-                                    selectedName.text = "Name: " + (item.name || "N/A");
-                                    selectedCoords.text = "Coordinates: \n" +
+                                    var indexToModify = handlePlotPictureMask();
+
+                                    dataRectFlow.children[indexToModify].children[0].children[1].children[0].children[0].text = "Name: " + (item.name || "N/A");
+                                    dataRectFlow.children[indexToModify].children[0].children[1].children[0].children[1].text = "Coordinates: " +
                                                           xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
-                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", \n" +
+                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", " +
                                                           zAttr + ": " + (item[zAttr] || "N/A");
-                                    selectedImage.source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
-                                } else {
-                                    selectedName.text = "Name: None";
-                                    selectedCoords.text = "Coordinates: (N/A, N/A, N/A)";
-                                    selectedImage.source = "";
+                                    dataRectFlow.children[indexToModify].children[0].children[0].children[0].source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
                                 }
                             }
                         }
@@ -451,16 +451,14 @@ ApplicationWindow {
                                     var yAttr = scatterDataProxy4.yPosRole;
                                     var zAttr = scatterDataProxy4.zPosRole;
 
-                                    selectedName.text = "Name: " + (item.name || "N/A");
-                                    selectedCoords.text = "Coordinates: \n" +
+                                    var indexToModify = handlePlotPictureMask();
+
+                                    dataRectFlow.children[indexToModify].children[0].children[1].children[0].children[0].text = "Name: " + (item.name || "N/A");
+                                    dataRectFlow.children[indexToModify].children[0].children[1].children[0].children[1].text = "Coordinates: " +
                                                           xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
-                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", \n" +
+                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", " +
                                                           zAttr + ": " + (item[zAttr] || "N/A");
-                                    selectedImage.source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
-                                } else {
-                                    selectedName.text = "Name: None";
-                                    selectedCoords.text = "Coordinates: (N/A, N/A, N/A)";
-                                    selectedImage.source = "";
+                                    dataRectFlow.children[indexToModify].children[0].children[0].children[0].source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
                                 }
                             }
                         }
@@ -483,16 +481,14 @@ ApplicationWindow {
                                     var yAttr = scatterDataProxy5.yPosRole;
                                     var zAttr = scatterDataProxy5.zPosRole;
 
-                                    selectedName.text = "Name: " + (item.name || "N/A");
-                                    selectedCoords.text = "Coordinates: \n" +
+                                    var indexToModify = handlePlotPictureMask();
+
+                                    dataRectFlow.children[indexToModify].children[0].children[1].children[0].children[0].text = "Name: " + (item.name || "N/A");
+                                    dataRectFlow.children[indexToModify].children[0].children[1].children[0].children[1].text = "Coordinates: " +
                                                           xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
-                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", \n" +
+                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", " +
                                                           zAttr + ": " + (item[zAttr] || "N/A");
-                                    selectedImage.source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
-                                } else {
-                                    dataRectFlow.children[0].children[0].children[1].children[0].children[0].text = "Name: None";
-                                    selectedCoords.text = "Coordinates: (N/A, N/A, N/A)";
-                                    selectedImage.source = "";
+                                    dataRectFlow.children[indexToModify].children[0].children[0].children[0].source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
                                 }
                             }
                         }
@@ -515,16 +511,14 @@ ApplicationWindow {
                                     var yAttr = scatterDataProxy6.yPosRole;
                                     var zAttr = scatterDataProxy6.zPosRole;
 
-                                    selectedName.text = "Name: " + (item.name || "N/A");
-                                    selectedCoords.text = "Coordinates: \n" +
+                                    var indexToModify = handlePlotPictureMask();
+
+                                    dataRectFlow.children[indexToModify].children[0].children[1].children[0].children[0].text = "Name: " + (item.name || "N/A");
+                                    dataRectFlow.children[indexToModify].children[0].children[1].children[0].children[1].text = "Coordinates: " +
                                                           xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
-                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", \n" +
+                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", " +
                                                           zAttr + ": " + (item[zAttr] || "N/A");
-                                    selectedImage.source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
-                                } else {
-                                    selectedName.text = "Name: None";
-                                    selectedCoords.text = "Coordinates: (N/A, N/A, N/A)";
-                                    selectedImage.source = "";
+                                    dataRectFlow.children[indexToModify].children[0].children[0].children[0].source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
                                 }
                             }
                         }
@@ -547,16 +541,14 @@ ApplicationWindow {
                                     var yAttr = scatterDataProxy7.yPosRole;
                                     var zAttr = scatterDataProxy7.zPosRole;
 
-                                    selectedName.text = "Name: " + (item.name || "N/A");
-                                    selectedCoords.text = "Coordinates: \n" +
+                                    var indexToModify = handlePlotPictureMask();
+
+                                    dataRectFlow.children[indexToModify].children[0].children[1].children[0].children[0].text = "Name: " + (item.name || "N/A");
+                                    dataRectFlow.children[indexToModify].children[0].children[1].children[0].children[1].text = "Coordinates: " +
                                                           xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
-                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", \n" +
+                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", " +
                                                           zAttr + ": " + (item[zAttr] || "N/A");
-                                    selectedImage.source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
-                                } else {
-                                    selectedName.text = "Name: None";
-                                    selectedCoords.text = "Coordinates: (N/A, N/A, N/A)";
-                                    selectedImage.source = "";
+                                    dataRectFlow.children[indexToModify].children[0].children[0].children[0].source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
                                 }
                             }
                         }
@@ -579,16 +571,14 @@ ApplicationWindow {
                                     var yAttr = scatterDataProxy8.yPosRole;
                                     var zAttr = scatterDataProxy8.zPosRole;
 
-                                    selectedName.text = "Name: " + (item.name || "N/A");
-                                    selectedCoords.text = "Coordinates: \n" +
+                                    var indexToModify = handlePlotPictureMask();
+
+                                    dataRectFlow.children[indexToModify].children[0].children[1].children[0].children[0].text = "Name: " + (item.name || "N/A");
+                                    dataRectFlow.children[indexToModify].children[0].children[1].children[0].children[1].text = "Coordinates: " +
                                                           xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
-                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", \n" +
+                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", " +
                                                           zAttr + ": " + (item[zAttr] || "N/A");
-                                    selectedImage.source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
-                                } else {
-                                    selectedName.text = "Name: None";
-                                    selectedCoords.text = "Coordinates: (N/A, N/A, N/A)";
-                                    selectedImage.source = "";
+                                    dataRectFlow.children[indexToModify].children[0].children[0].children[0].source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
                                 }
                             }
                         }
@@ -611,13 +601,14 @@ ApplicationWindow {
                                     var yAttr = scatterDataProxy9.yPosRole;
                                     var zAttr = scatterDataProxy9.zPosRole;
 
-                                    // Az első (nulladik) elem beállítása
-                                    dataRectFlow.itemAt(0).children[1].children[0].text = "Name: " + (item.name || "N/A");
-                                    dataRectFlow.itemAt(0).children[1].children[1].text = "Coordinates: \n" +
-                                                                                          xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
-                                                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", \n" +
-                                                                                          zAttr + ": " + (item[zAttr] || "N/A");
-                                    dataRectFlow.itemAt(0).children[0].children[0].source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
+                                    var indexToModify = handlePlotPictureMask();
+
+                                    dataRectFlow.children[indexToModify].children[0].children[1].children[0].children[0].text = "Name: " + (item.name || "N/A");
+                                    dataRectFlow.children[indexToModify].children[0].children[1].children[0].children[1].text = "Coordinates: " +
+                                                          xAttr + ": " + (item[xAttr] || "N/A") + ", \n" +
+                                                          yAttr + ": " + (item[yAttr] || "N/A") + ", " +
+                                                          zAttr + ": " + (item[zAttr] || "N/A");
+                                    dataRectFlow.children[indexToModify].children[0].children[0].children[0].source = "file:///home/kecyke/Letöltések/images/" + (item.id + "_fat.png" || "");
                                 }
                             }
                         }
@@ -672,12 +663,12 @@ ApplicationWindow {
 
                             onCurrentIndexChanged: {
                                 var selectedNumber = model.get(numberSelectionComboBox.currentIndex).number;
-                                plotPictureIndexes = []
+                                plotPictureMask = []
                                 for (var i = 0; i < selectedNumber; i++) {
-                                    plotPictureIndexes.push(-1);
+                                    plotPictureMask.push(-1);
                                 }
-                                plotPictureIndexes = plotPictureIndexes.slice();
-                                console.log("Updated size of picture indexes: " + plotPictureIndexes.length);
+                                plotPictureMask = plotPictureMask.slice();
+                                console.log("Updated size of picture indexes: " + plotPictureMask.length);
                             }
                         }
                     }
@@ -696,13 +687,13 @@ ApplicationWindow {
                 id: dataRectFlow
                 anchors.fill: parent
 
-                property int rows: Math.ceil(Math.sqrt(plotPictureIndexes.length))
-                property int columns: Math.ceil(plotPictureIndexes.length / rows)
+                property int rows: Math.ceil(Math.sqrt(plotPictureMask.length))
+                property int columns: Math.ceil(plotPictureMask.length / rows)
                 property real rectangleWidth: parent.width / columns
                 property real rectangleHeight: parent.height / rows
 
                 Repeater {
-                    model: plotPictureIndexes
+                    model: plotPictureMask
 
                     delegate: Item {
                         width: dataRectFlow.rectangleWidth
@@ -1025,6 +1016,18 @@ ApplicationWindow {
         setupScatterPlots();
     }
 
+    function handlePlotPictureMask() {
+        var indexToModify = plotPictureMask.indexOf(-1);
+
+        if (indexToModify !== -1) {
+            plotPictureMask[indexToModify] = -2;
+            return indexToModify;
+        } else {
+            plotPictureMask.fill(-1);
+            plotPictureMask[0] = -2;
+            return 0;
+        }
+    }
 
     Component {
         id: checkboxComponent
