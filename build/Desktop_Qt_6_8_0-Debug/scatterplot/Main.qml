@@ -97,10 +97,23 @@ ApplicationWindow {
                         width: parent.height
                         height: parent.height
                         onClicked: {
-                            var selectedAttributes = getSelectedAttributes();
                             var allSelected = scatterPlotMask.every(function(value) {
                                     return value === 1;
                                 });
+                            scatterDataProxy.xPosRole = null; scatterDataProxy.yPosRole = null; scatterDataProxy.zPosRole = null;
+                            scatterDataProxy0.xPosRole = null; scatterDataProxy0.yPosRole = null; scatterDataProxy0.zPosRole = null;
+                            scatterDataProxy1.xPosRole = null; scatterDataProxy1.yPosRole = null; scatterDataProxy1.zPosRole = null;
+                            scatterDataProxy2.xPosRole = null; scatterDataProxy2.yPosRole = null; scatterDataProxy2.zPosRole = null;
+                            scatterDataProxy3.xPosRole = null; scatterDataProxy3.yPosRole = null; scatterDataProxy3.zPosRole = null;
+                            scatterDataProxy4.xPosRole = null; scatterDataProxy4.yPosRole = null; scatterDataProxy4.zPosRole = null;
+                            scatterDataProxy5.xPosRole = null; scatterDataProxy5.yPosRole = null; scatterDataProxy5.zPosRole = null;
+                            scatterDataProxy6.xPosRole = null; scatterDataProxy6.yPosRole = null; scatterDataProxy6.zPosRole = null;
+                            scatterDataProxy7.xPosRole = null; scatterDataProxy7.yPosRole = null; scatterDataProxy7.zPosRole = null;
+                            scatterDataProxy8.xPosRole = null; scatterDataProxy8.yPosRole = null; scatterDataProxy8.zPosRole = null;
+                            scatterDataProxy9.xPosRole = null; scatterDataProxy9.yPosRole = null; scatterDataProxy9.zPosRole = null;
+
+                            var selectedAttributes = getSelectedAttributes();
+
                             if (selectedAttributes.length === 3) {
                                 scatter.orthoProjection = false;
 
@@ -175,7 +188,6 @@ ApplicationWindow {
                                 if (allSelected) {
                                     scatterDataProxy.xPosRole = selectedAttributes[0];
                                     scatterDataProxy.yPosRole = selectedAttributes[1];
-                                    scatterDataProxy.zPosRole = selectedAttributes[2];
                                 }
 
                                 for (var i = 0; i < scatterPlotMask.length; i++) {
@@ -634,10 +646,20 @@ ApplicationWindow {
                         stepSize: 0.01
 
                         onValueChanged: {
-                            scatterSeries.itemSize = value*0.95;scatterSeries0.itemSize = value;scatterSeries1.itemSize = value;
-                            scatterSeries2.itemSize = value;scatterSeries3.itemSize = value;scatterSeries4.itemSize = value;
-                            scatterSeries5.itemSize = value;scatterSeries6.itemSize = value;scatterSeries7.itemSize = value;
-                            scatterSeries8.itemSize = value;scatterSeries9.itemSize = value;
+                            var allSelected = scatterPlotMask.every(function(value) {
+                                    return value === 1;
+                                });
+                            if (!allSelected) scatterSeries.itemSize = 0; else scatterSeries.itemSize = value * 0.95;
+                            scatterPlotMask[0] === 0 ? scatterSeries0.itemSize = 0.000001 : scatterSeries0.itemSize = value;
+                            scatterPlotMask[1] === 0 ? scatterSeries1.itemSize = 0.000001 : scatterSeries1.itemSize = value;
+                            scatterPlotMask[2] === 0 ? scatterSeries2.itemSize = 0.000001 : scatterSeries2.itemSize = value;
+                            scatterPlotMask[3] === 0 ? scatterSeries3.itemSize = 0.000001 : scatterSeries3.itemSize = value;
+                            scatterPlotMask[4] === 0 ? scatterSeries4.itemSize = 0.000001 : scatterSeries4.itemSize = value;
+                            scatterPlotMask[5] === 0 ? scatterSeries5.itemSize = 0.000001 : scatterSeries5.itemSize = value;
+                            scatterPlotMask[6] === 0 ? scatterSeries6.itemSize = 0.000001 : scatterSeries6.itemSize = value;
+                            scatterPlotMask[7] === 0 ? scatterSeries7.itemSize = 0.000001 : scatterSeries7.itemSize = value;
+                            scatterPlotMask[8] === 0 ? scatterSeries8.itemSize = 0.000001 : scatterSeries8.itemSize = value;
+                            scatterPlotMask[9] === 0 ? scatterSeries9.itemSize = 0.000001 : scatterSeries9.itemSize = value;
                         }
                     }
 
